@@ -1,0 +1,76 @@
+/**
+ * CI 세션
+ */
+CREATE TABLE `ci_sessions` (
+  `id` varchar(48) NOT NULL DEFAULT '0',
+  `ip_address` varchar(16) NOT NULL DEFAULT '0',
+  `timestamp` int unsigned NOT NULL DEFAULT '0',
+  `user_agent` varchar(128) NOT NULL,
+  `last_activity` int unsigned NOT NULL DEFAULT '0',
+  `data` text NOT NULL,
+  PRIMARY KEY (`id`,`ip_address`),
+  KEY `ci_sessions_timestamp` (`timestamp`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;;
+
+/**
+ * 회원
+ * - member_type:
+ *  + A: Admin
+ *  + M: Manager
+ *  + B: Basic
+ */
+CREATE TABLE bmt_members (
+	seq BIGINT NOT NULL AUTO_INCREMENT,
+	user_id VARCHAR(32) NOT NULL,    
+	email VARCHAR(64) NULL,
+	name VARCHAR(32) NOT NULL,
+	password VARCHAR(128) NOT NULL,
+	member_type CHAR(1) NOT NULL DEFAULT 'B',
+	created_at DATETIME NOT NULL DEFAULT now(),
+	updated_at DATETIME NOT NULL DEFAULT now(),
+	deleted_at DATETIME NULL DEFAULT NULL,
+	PRIMARY KEY (seq, user_id),
+	UNIQUE INDEX user_id (user_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+/**
+ * 공지사항
+ *  - level: 3: 긴급, 2: 중요, 1: 일반
+ *  - top: Y: 상단 고정, N: 일반 글 (default)
+ */
+CREATE TABLE bmt_notice (
+	seq BIGINT NOT NULL AUTO_INCREMENT, 
+    level INT NOT NULL DEFAULT 0, 
+    top CHAR(1) NOT NULL DEFAULT 'N', 
+    title VARCHAR(512) NOT NULL, 
+	view_count INT NOT NULL DEFAULT 0, 
+	created_at DATETIME NOT NULL DEFAULT now(),
+	updated_at DATETIME NOT NULL DEFAULT now(),
+	deleted_at DATETIME NULL DEFAULT NULL, 
+    contents TEXT NOT NULL,
+	PRIMARY KEY (`seq` )
+) COLLATE='utf8mb4_unicode_ci' ENGINE=InnoDB;
+
+/**
+ * 견적 문의
+ *  - hide: 글 숨김 처리(비밀글) / Y: 숨김(비밀 글), N: 노출(default) 
+ *  - status: 답변 여부 / Q: 질문(default), A: 답변 완료
+ */
+CREATE TABLE bmt_contact (
+	seq BIGINT NOT NULL AUTO_INCREMENT, 
+    name VARCHAR(32) NOT NULL,
+    email VARCHAR(64) NOT NULL,	
+	password VARCHAR(128) NOT NULL,
+    hide CHAR(1) NOT NULL DEFAULT 'N', 
+    status CHAR(1) NOT NULL DEFAULT 'Q', 
+    title VARCHAR(512) NOT NULL, 
+    answer_id VARCHAR(32) NOT NULL,
+	created_at DATETIME NOT NULL DEFAULT now(),
+	updated_at DATETIME NOT NULL DEFAULT now(),
+	deleted_at DATETIME NULL DEFAULT NULL, 
+    answerd_at DATETIME NULL DEFAULT NULL,
+    question TEXT NOT NULL,
+    answer TEXT NULL,
+	PRIMARY KEY (`seq` )
+) COLLATE='utf8mb4_unicode_ci' ENGINE=InnoDB;
