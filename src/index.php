@@ -1,40 +1,14 @@
 <?php require_once('./fragment/header.php'); ?>
 
 <!-- contents -->
-<div class="content-w-main"><!-- 페이지 속성 분기 "content-w-aaa" -->
-    <!-- 비주얼 영역 -->
-    <div class="contentVisual-w">
-        <div class="contSection-left">
-            <p class="sloganText-w">
-                고객감동<br/>
-                끊임없는 도전<br/>
-                책임경영<br/>
-                고객과 함께<br/>
-                최고의 가치 실현
-            </p>
-            <!-- 좌측 퀵메뉴-->
-            <div class="quickMenu-w">
-                <div class="quickMenu-inner">
-                    <ul class="quickMenuList">
-                        <li class="quickMenuList-cont quickMenuCurrent">
-                            <a href="#none" class="quickMenuList-link">Main</a>
-                        </li>
-                        <li class="quickMenuList-cont">
-                            <a href="#none" class="quickMenuList-link">Back</a>
-                        </li>
-                        <li class="quickMenuList-cont">
-                            <a href="#none" class="quickMenuList-link">Front</a>
-                        </li>
-                        <li class="quickMenuList-cont">
-                            <a href="#none" class="quickMenuList-link">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+<div class="content-w-main" id="content-main"><!-- 페이지 속성 분기 "content-w-aaa" -->
+    <div class="contentVisual-w"> <!-- 비주얼 영역 -->
+
+        <?php require_once('./fragment/left.php'); ?>
+
         <!-- 우측 content-->
         <div class="contSection-right">
-            <div class="contentVisual-img-w">
+            <div class="contentVisual-img-w" id="content-image-slide">
                 <div class="contentVisual-img-inner">
                     <img src="./imgs/cont01-02-top.png" alt="" class="contentVisual-img">
                 </div>
@@ -82,5 +56,7 @@
 </div>
 
 <?php require_once('./fragment/footer.php'); ?>
+
+<script type="text/javascript" src="./js/main.js"></script>
 
 <?php require_once('./fragment/tail.php'); ?>
