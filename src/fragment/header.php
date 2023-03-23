@@ -7,20 +7,37 @@ require_once('head.php');
 <div class="commonGnb-w">
     <div class="gnb-w">
         <h1 class="gnb-logo">
-            <a href="#none" class="gnb-logo-link"><img src="./imgs/logo.png" alt="대산토탈"></a>
+            <a href="./index.php" class="gnb-logo-link"><img src="./imgs/logo.png" alt="대산토탈"></a>
         </h1>
         <!-- 1뎁스 메뉴 -->
         <div class="gnbList-w">
             <ul class="gnbList-inner">
-                <li class="gnbList-cont">
-                    <a href="#none" class="gnbList-link">회사소개</a>
+                <li class="gnbList-cont pc-menu-lv1">
+                    <a href="javascript: void(0)" class="gnbList-link">회사소개</a>
+                    <!-- 2뎁스 메뉴 -->
+                    <div class="gnbSub-w pc-menu-lv2">
+                        <ul class="gnbSub-inner">
+                            <li class="gnbSub-cont"><!-- gnb2depthCurrent 메뉴 활성화 -->
+                                <a href="./0101-ceo.php" class="gnbSub-link">CEO 인사말</a>
+                            </li>
+                            <li class="gnbSub-cont">
+                                <a href="./0102-history.php" class="gnbSub-link">주요 연혁</a>
+                            </li>
+                            <li class="gnbSub-cont">
+                                <a href="./0103-organization.php" class="gnbSub-link">조직도</a>
+                            </li>
+                            <li class="gnbSub-cont">
+                                <a href="./0104-map.php" class="gnbSub-link">오시는 길</a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
-                <li class="gnbList-cont gnb1depthCurrent">
+                <li class="gnbList-cont pc-menu-lv1">
                     <a href="#none" class="gnbList-link">사업부 및 제품소개</a>
                     <!-- 2뎁스 메뉴 -->
-                    <div class="gnbSub-w">
+                    <div class="gnbSub-w pc-menu-lv2">
                         <ul class="gnbSub-inner">
-                            <li class="gnbSub-cont gnb2depthCurrent"><!-- 메뉴 활성화 -->
+                            <li class="gnbSub-cont"><!-- 메뉴 활성화 -->
                                 <a href="#none" class="gnbSub-link">장비임대 사업부</a>
                             </li>
                             <li class="gnbSub-cont">
@@ -38,10 +55,10 @@ require_once('head.php');
                         </ul>
                     </div>
                 </li>
-                <li class="gnbList-cont">
+                <li class="gnbList-cont pc-menu-lv1">
                     <a href="#none" class="gnbList-link">견적문의</a>
                 </li>
-                <li class="gnbList-cont">
+                <li class="gnbList-cont pc-menu-lv1">
                     <a href="#none" class="gnbList-link">공지사항</a>
                 </li>
             </ul>
@@ -51,7 +68,7 @@ require_once('head.php');
     <div class="mGnb-w"><!-- 전체메뉴 오픈클래스 : allMenuOpen -->
         <div class="mHeader-w">
             <h1 class="mheaderLogo">
-                <a href="#none" class="mheaderLogo-link"><img src="./imgs/m/mheaderLogo.png" alt="대신토탈"></a>
+                <a href="./index.php" class="mheaderLogo-link"><img src="./imgs/m/mheaderLogo.png" alt="대신토탈"></a>
             </h1>
             <button type="button" class="stepPrev">
                 <span class="iconPrevArrow"><img src="./imgs/m/iconArrowPrev.png" alt="이전"></span>
@@ -67,22 +84,22 @@ require_once('head.php');
                 <ul class="gnbList-inner">
                     <li class="gnbList-cont">
                         <div class="gnbList-1depth">
-                            <a href="#none" class="gnbList-link">회사소개</a>
+                            <a href="javascript: void(0)" class="gnbList-link">회사소개</a>
                             <a href="#none" class="btnSubOpen01"><span class="iconArrow"><i class="hide">열기/닫기</i></span></a>
                         </div>
                         <div class="gnbSub-w">
                             <ul class="gnbSub-inner">
                                 <li class="gnbSub-cont"><!-- 메뉴 활성화  gnb2depthCurrent-->
-                                    <a href="#none" class="gnbSub-link">CEO인사말</a>
+                                    <a href="./0101-ceo.php" class="gnbSub-link">CEO인사말</a>
                                 </li>
                                 <li class="gnbSub-cont">
-                                    <a href="#none" class="gnbSub-link">주요연혁</a>
+                                    <a href="./0102-history.php" class="gnbSub-link">주요연혁</a>
                                 </li>
                                 <li class="gnbSub-cont">
-                                    <a href="#none" class="gnbSub-link">조직도</a>
+                                    <a href="./0103-organization.php" class="gnbSub-link">조직도</a>
                                 </li>
                                 <li class="gnbSub-cont">
-                                    <a href="#none" class="gnbSub-link">오시는 길</a>
+                                    <a href="./0104-map.php" class="gnbSub-link">오시는 길</a>
                                 </li>
                             </ul>
                         </div>
