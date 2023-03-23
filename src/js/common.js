@@ -7,6 +7,13 @@ $(document).ready(function() {
 });
 
 function initMenu_pc() {
+    pcMenu_top();
+    pcMenu_right();
+
+    $('.rightMenuSub-w').hide();
+}
+
+function pcMenu_top() {
     $('.pc-menu-lv2').hide();
     $('.pc-menu-lv1').on('click', function() {
         var $lv2 = $(this).find('.pc-menu-lv2');
@@ -20,9 +27,21 @@ function initMenu_pc() {
     // $('.pc-menu-lv1').on('mouseout', function() {
     //     $('.pc-menu-lv2').hide();
     // });
-
-    $('.rightMenuSub-w').hide();
 }
+
+function pcMenu_right() {
+    $('.pc-right-menu-lv2').hide();
+    $('.pc-right-menu-lv1').on('click', function() {
+        var $lv2 = $(this).find('.pc-right-menu-lv2');
+        if($lv2.css('display') == 'none') {
+            $('.pc-right-menu-lv2').hide();
+            $lv2.show();
+        }else{
+            $lv2.hide();
+        }
+    });
+}
+
 
 function initMenu_mobile() {
     allMenuOpen(); //전체메뉴열기
