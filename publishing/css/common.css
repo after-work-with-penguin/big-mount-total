@@ -16,7 +16,7 @@ em, address {font-style: normal;}
 img {display:inline-block; vertical-align: top; max-width: 100%;}
 select, input[type="text"], input[type="password"], input[type="number"], input[type="tel"], input[type="submit"], input[type="rest"], input[type="button"], textarea {border-radius: 0;background-color: transparent;-webkit-appearance: none;-moz-appearance: none;appearance: none;}
 .txtBlue {color:#000168;}
-.txtGreen {color:#98BB1A;}
+.txtGreen {color:#81b500; font-weight:700;}
 .hide {position:Absolute; left:-999px; top:-999px; color:rgba(0,0,0,0);}
 
 /* gnb */
@@ -37,12 +37,13 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
                             .gnb2depthCurrent .gnbSub-link {font-weight:700; color:#000168;}
 
 /* content 공통 */
+.content-wrap {margin-bottom:150px; border-bottom:1px solid #ccc;}
 [class^="content-w-"] {position:relative; max-width:1170px; margin:0 auto;}
-    .rightMenu-w {position:absolute; right:0; top:0; width:20%; max-width:267px; height:100%;}
+    .rightMenu-w {position:absolute; right:0; top:0; width:168px; height:100%;}
    .rightMenu-w:after {display:block; content:''; width:1px; height:100%; position:absolute; left:0; top:0; background-color:rgba(255,255,255,.75);}
        .rightMenu-inner {position:absolute; left:0; top:25%;}
            .rightMenuList {}
-               .rightMenuList-cont {position:relative; max-width:200px;}
+               .rightMenuList-cont {position:relative; max-width:168px;}
                    .rightMenuList-link {display:inline-block; position:relative; padding:15px 20px; color:#fff; font-size:16px; }
                    .rMenuCurrent .rightMenuList-link:after,
                    .rightMenuList-link:hover:after {display:block; content:''; position:absolute; left:-1.5px; top:15px; width:4px; height:20px; background-color:#fff; }
@@ -63,7 +64,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
                 .sloganText-w:before {display:block; content:''; position:absolute; right:0; top:0; width:20px; height:20px; border:6px solid #cacaca; border-width:6px 6px 0 0;}
                 .sloganText-w:before {right:auto; top:auto; left:0; bottom:0; transform:rotate(180deg);}
             /* 퀵메뉴 */
-            .quickMenu-w {display:flex; align-items:center; justify-content:center; position:fixed; left:50%; top:40%; margin-left:-580px; z-index:2; width:120px; height:151px; text-align:left; background-color:#000168; border-radius:30px 0 30px 0;}
+            .quickMenu-w {display:flex; align-items:center; justify-content:center; position:fixed; left:50%; top:40%; margin-top:-75px; margin-left:-580px; z-index:2; width:120px; height:151px; text-align:left; background-color:#000168; border-radius:30px 0 30px 0;}
             .quickMenu-w:after {display:block; content:''; width:1px; height:100%; position:absolute; left:30px; top:0; background-color:rgba(255,255,255,.75);}
                 .quickMenu-inner {}
                     .quickMenuList {padding-left:30px;}
@@ -75,23 +76,25 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
                 .sectionTitle {position:absolute; left:5%; bottom:10%; display:inline-block; text-transform:uppercase; font-size:48px; color:#fff; font-weight:400; letter-spacing:-1.75px;}
                     .sectionTitle-bg {display:inline-block; padding:0 10px; font-weight:700; background-color:#000168;}
                     .sectionTitle-eng{display:inline-block;}
-            .contentArticle-w {padding:8% 5% 6%; max-width:1000px; box-sizing:border-box; background-color:#EAEAEA;}
+            .contentArticle-w {padding:8% 168px 6% 80px; max-width:1000px; box-sizing:border-box; background-color:#EAEAEA;}
                 .contentTitle {font-size:24px; color:#000168; font-weight:600;}
                 .contentTitle span {display:block; margin-top:10px; font-size:24px; word-break:keep-all;}
 /* 메인 */
 .content-w-main {max-width:100%;}
+.content-w-main .contentVisual-w:after {display:block; content:''; position:absolute; left:55px; bottom:-2.5px; width:21px; height:5px; background-color:#c4c4c4;} 
     .content-w-main .contentVisual-w {max-width:1170px; margin:0 auto;}
 .content-w-main .contSection-right:after,
-.serviceList:after {display:block; content:''; width:1px; height:80%; position:absolute; left:0; top:20%; background-color:rgba(196,196,196.75);}
+.serviceList:after {display:block; content:''; width:1px; height:80%; position:absolute; left:0; top:20%; background-color:#c4c4c4;}
 .serviceList:after {top:0; height:100%;}
 .content-w-main .contentArticle-w {background-color:#fff; padding-left:0; }
-    .mainInfo-w {padding-left:5%; line-height:1.6rem;}
-    .serviceList-w { border-top:1px solid rgba(196,196,196.75);}
+    .mainInfo-w {padding-left:5%; line-height:1.6rem; color:#606060;}
+    .serviceList-w { border-top:1px solid #c4c4c4;}
         .serviceList-inner {max-width:1170px; padding-left:170px; box-sizing:border-box; margin:0 auto;}
             .serviceList {position:relative; display:flex; justify-content:space-between; padding:9% 0; width:calc(100% + 15px); max-width:1170px;}
                 .serviceList-cont {position:relative; width:242px; padding-right:15px; box-sizing:border-box;}
-                    .serviceList-text {display:inline-block; height:40px; line-height:26px; padding-right:15px; box-sizing:border-box; position:absolute; left:0; bottom:5%; width:100%; text-align:center; font-size:20px; font-weight:400; color:#fff; }
-                    .serviceList-cont:last-of-type .serviceList-text {height:auto;}
+                    .serviceList-link {display:block; }
+                        .serviceList-text {display:inline-block; height:40px; line-height:26px; padding-right:15px; box-sizing:border-box; position:absolute; left:0; bottom:5%; width:100%; text-align:center; font-size:20px; font-weight:400; color:#fff; }
+                        .serviceList-cont:last-of-type .serviceList-text {height:auto;}
 
 .contentVisual-img-w .slick-dots {position:absolute; left:0; bottom:17px; display:flex !important; justify-content: center; width:100%;}
 .contentVisual-img-w .slick-dots li {padding:0 5px;}
@@ -99,12 +102,12 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .contentVisual-img-w .slick-dots button {display:block; border-radius:100%; border:1px solid #C4C4C4; box-sizing:border-box; width:18px; height:18px; color:transparent;}
 
 /* ceo */
-.ceoInfo-w {display:flex; position:relative; left:-25%; max-width:100%; box-sizing:border-box;}
-    .ceoPhoto-w {flex-shrink:0; max-width:348px; }
+.ceoInfo-w {display:flex; position:relative; left:-35%; width:135%; box-sizing:border-box;}
+    .ceoPhoto-w {flex-shrink:0; max-width:370px; }
         .ceoPhoto-w img {}
-    .ceoText {line-height:40px; font-size:18px; color:#6B6B6B; word-break:keep-all;}
+    .ceoText {line-height:40px; font-size:18px; color:#6B6B6B;}
 /* history */
-.content-w-history .contentArticle-w {background-color:#fff;}
+.content-w-history .contentArticle-w {padding-right:80px; background-color:#fff;}
     [class^="historyMap-w"] {padding:135px 0; border-top:1px solid #C4C4C4;}
     .historyMap-w:first-of-type {padding-top:0; border-top:0;}
         .historyTitle {display:block; padding-left:30px; height:30px; line-height:30px; position:relative; font-size:24px; color:#000168;}
@@ -118,18 +121,24 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
                     .historyList-cont:after {display:block; content:''; position:absolute; left:50%; top:0;  margin-left:-40px; width:80px; height:100%; background-image:url('../imgs/history-dott.png'); background-repeat:repeat-x; background-position:center;}
                     .historyList-row:after {display:block; content:''; position:absolute; left:50%; top:50%; margin:-4.5px 0 0 -4.5px; border-radius:100%; width:9px; height:9px; background-color:#000168;  font-size:22px;}
                             .historyList-date {display:block; flex-shrink:0; width:50%; text-align:right; padding:0 30px; box-sizing:border-box;}
-                                .historyList-date span {display:inline-block; position:relative; z-index:1; width:90px; height:30px; line-height:30px; text-align:center; border-radius:8px; background-color:#000168; color:#fff; font-weight:400; font-size:16px;}
-                            .historyListText {width:50%; text-align:left; padding-left:30px;  box-sizing:border-box; min-height:36px; }
-                                .historyListText span {position:relative; z-index:1; display:inline-flex; align-items:center; padding:5px 10px; min-height:36px; background-color:#E6E5E3; color:#000168; border-radius:8px; font-size:16px;}
+                                .historyList-date span {display:inline-block; position:relative; z-index:1; width:90px; height:32px; line-height:32px; text-align:center; border-radius:8px; background-color:#000168; color:#fff; font-weight:400; font-size:18px;}
+                            .historyListText {position:relative; width:50%; text-align:left; padding-left:30px; box-sizing:border-box; min-height:36px; align-items:center;}
+                            .historyListText:After {display:block; content:''; position:absolute; left:25px; top:50%; z-index:1; margin-top:-5px; width:10px; height:10px; transform:rotate(45deg); background-color:#E6E5E3; }
+                            .historyList-row:nth-of-type(even) .historyListText:after,
+                            .historyMap-w2 .historyList-row:nth-of-type(odd) .historyListText:after {left:auto; right:25px;}
+                            .historyMap-w2 .historyList-row:nth-of-type(even) .historyListText:after {left:25px; right:auto;}
+                                .historyListText span {position:relative; z-index:1; display:inline-flex; align-items:center; padding:5px 10px; min-width:105px; min-height:36px; background-color:#E6E5E3; color:#000168; border-radius:8px; font-size:16px;}
+                            
                 /* 정렬변경 */
                 .historyList-row:nth-of-type(even) .historyList-cont {flex-direction:row-reverse; text-align: left;}
                     .historyList-row:nth-of-type(even) .historyList-cont {padding-left:0; }
                         .historyList-row:nth-of-type(even) .historyList-date {text-align:left;}
-                        .historyList-row:nth-of-type(even) .historyListText {text-align:right; padding:0 30px; justify-content:end;}
+                        .historyList-row:nth-of-type(even) .historyListText {text-align:right; padding:0 30px 0 0; justify-content:end;}
         /* 주요실적(정렬변경) */
         .historyMap-w2 {padding-bottom:100px;}
             .historyMap-w2 .historyList-row:nth-of-type(even) .historyList-cont  {flex-direction:row; text-align:right;}
             .historyMap-w2 .historyList-row:nth-of-type(odd) .historyList-cont {flex-direction:row-reverse; text-align: left;}
+                .historyMap-w2 .historyList-row:nth-of-type(even) .historyListText {padding:0 0 0 30px;}
                 .historyMap-w2 .historyList-row:nth-of-type(even) .historyListText,
                 .historyMap-w2 .historyList-row:nth-of-type(odd) .historyList-date {text-align:left; display:flex; justify-content:left;}
                 .historyMap-w2 .historyList-row:nth-of-type(odd) .historyListText {text-align:right; padding:0 30px; justify-content:end;}
@@ -178,32 +187,35 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
         .tableImage-img {display:inline-block; width:auto; }
 /* 장비임대 사업부 - 부속장비 */
 .rentalList-w {margin-top:8px;}
-    .rentalList-inner {display:flex; justify-content: flex-start; flex-wrap:wrap; max-width:90%;}
+    .rentalList-inner {display:flex; justify-content: flex-start; flex-wrap:wrap; width:104.5%;}
         .rentalList-cont {width:33.3%; padding:55px 4.5% 0 0; box-sizing:border-box;}
         .rentalList-cont:last-of-type {width:66.6%;}
 /* 도장 사업부 - 현황 */
 .paintList-w {padding-top:50px; width:100%;}
-    .paintList-inner {display:flex; justify-content:left; flex-wrap:wrap; max-width:90%;}
-        .paintList-cont {width:50%; flex-shrink:0; margin-top:2%;}
+    .paintList-inner {display:flex; justify-content:left; flex-wrap:wrap; width:100%;}
+        .paintList-cont {width:376px; flex-shrink:0; margin-top:2%;}
             .paintList-cont img {width:auto;}
-            .paintList-cont:nth-of-type(1) img{width:252px; max-width:525px;}
-            .paintList-cont:nth-of-type(2) img{width:313px; max-width:313px;}
-            .paintList-cont:nth-of-type(3) img{width:278px; max-width:278px;}
-            .paintList-cont:nth-of-type(4) img{width:203px; max-width:203px;}
+            .paintList-cont:nth-of-type(1) img{width:282px; max-width:282px;}
+            .paintList-cont:nth-of-type(2) img{width:365px; max-width:365px;}
+            .paintList-cont:nth-of-type(3) img{width:332px; max-width:332px;}
+            .paintList-cont:nth-of-type(4) img{width:233px; max-width:233px;}
     .dbdottDetail-w,
-    .detailList-w {margin-top:15%; text-align:center; width:80%;}
+    .detailList-w {margin-top:15%; text-align:center; width:100%;}
         .dbdottDetail-title,
-        .detailList-title {display:inline-block; margin:0 auto; padding:0 20px; height:35px; line-height:35px; box-sizing:border-box; border-radius:27px; text-align:center; color:#fff; background-color:#000168; font-size:22px;}
+        .detailList-title {display:inline-block; position:relative; margin:0 auto; padding:0 20px; height:35px; line-height:35px; box-sizing:border-box; border-radius:27px; text-align:center; color:#fff; background-color:#000168; font-size:22px;}
+        .detailList-title:after,
+        .detailList-title:before {display:block; content:''; position:absolute; top:50%; left:-10px; margin-top:-8px; width:14px; height:17px; background-repeat:no-repeat; background-position:center; background-image:url('../imgs/titlePicker.png')}
+        .detailList-title:after {left:auto; right:-10px; transform:rotate(180deg);}
         .dbdottDetail-inner,
-        .detailList-inner {margin-top:30px; padding:3% 10%; border-top:2px solid #000168; border-radius:0 0 40px 40px; background-color:#fff; }
+        .detailList-inner {margin-top:30px; padding:3% 9%; border-top:2px solid #000168; border-radius:0 0 40px 40px; background-color:#fff; }
             .dbdottDetail-list {text-align:left;}
-                .dbdottDetail-inner { padding:5% 10% 5%; }
-                    .dbdottDetail-cont {display:block; margin-top:20px; padding-left:25px; min-height:20px; position:relative; color:#000168; font-weight:700; font-size:16px; line-height:22px; box-sizing:border-box;}
+                .dbdottDetail-inner { padding:5% 9% 5%; }
+                    .dbdottDetail-cont {display:block; margin-top:20px; padding-left:25px; min-height:20px; position:relative; color:#000168; font-weight:700; font-size:16px; line-height:22px; box-sizing:border-box; letter-spacing:-0.25px;}
                     .dbdottDetail-cont:first-of-type {margin-top:0;}
                         .dbdottDetail-cont:after {display:block; content:''; width:16px; height:16px; position:absolute; left:0; top:2px; background-repeat:no-repeat; background-size:16px auto; background-position:center; background-image:url('../imgs/dbdott.png');}
 /* 도장 사업부 - 설비 */
 .imgList-w {}
-    .imgList-inner {display:flex; flex-wrap:wrap; width:90%; padding-top:10px;}
+    .imgList-inner {display:flex; flex-wrap:wrap; width:104.5%; padding-top:10px;}
         [class^="imgList-cont"] { padding:4.5% 4.5% 0 0; box-sizing:border-box;}
         .imgList-cont {width:40%;}
         .imgList-cont25 {width:25%;}
@@ -218,7 +230,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
 /* 환경사업부 - 드럼스크린 */
 .detailList-wrap {padding-top:50px; }
     .detailList-w {margin-top:55px; position:relative;}
-        .detailList-title-w {position:absolute; left:0; top:-17px; text-align:center; width:100%;}
+        .detailList-title-w {position:absolute; left:0; top:-20px; text-align:center; width:100%;}
             .detailList-title {}
         .detailList-inner {margin-top:0; padding:7% 10% 5%;}
             .detailList-inner ol {max-width:250px; margin:0 auto; text-align:left;}
@@ -228,26 +240,32 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
 /* 환경사업부 - 환경관련 사업현황 */
 .environmentalList-inner {display:flex; flex-wrap:wrap;}
 /* 환경사업부 - 튜브식 소독기 소개 */
-.infoTable-w {margin-top:100px; width:80%;}
+.content-w-envi03 .contentArticle-w {padding-right:8%;}
+.content-w-envi03 .textNimgList-w {width:calc(100% + 30px);}
+.content-w-envi03 .textNimgList-inner {padding-right:30px;}
+.infoTable-w {margin-top:100px; width:100%;}
     .infoBgTitle-w {text-align:center; }
-        .infoBgTitle {display:inline-block; margin-bottom:30px; padding:5px 10px; background-color:#000168; color:#fff; font-size:24px;}
+        .infoBgTitle {display:inline-block; margin-bottom:5px; padding:5px 10px; background-color:#000168; color:#fff; font-size:24px;}
         .infoBgTitleSub {display:block; margin-top:5px; font-size:20px; color:#000168;}
         .infoTable-w table {margin-top:55px; background-color:#fff; border-radius:12px 12px 0 0; overflow:hidden;}
             .infoTable-w table th {height:41px; background-color:#000168; color:#fff; font-size:16px; text-align:center; border-left:1px solid #fff;}
             .infoTable-w table th:first-of-type {border-left:0;}
-            .infoTable-w table td {padding:20px; text-align:center; border-left:1px solid #000168; color:#494949; }
+            .infoTable-w table td {padding:20px 10px; text-align:center; border-left:1px solid #000168; color:#494949; }
             .infoTable-w table td:first-of-type {border-left:0;}
-                .infoTable-w table td span {display:inline-block; text-align:left; font-size:16px; line-height:22px;}
-        .tubeInfo-img-w {margin:60px auto 0; display:flex; justify-content: center; align-items: center;}
+                .infoTable-w table td span {display:inline-block; text-align:left; font-size:16px; line-height:22px; letter-spacing:-0.26px;}
+        .tubeInfo-img-w {margin:60px auto 0; max-width:95%; display:flex; justify-content: center; align-items: center;}
         .tubeInfo-img-w .arrow {display:block; width:144px; height:75px;}
+.content-w-envi04 .textNimgList-inner:first-of-type .detailList-image-w {padding:0;}
+
 /* 환경사업부 - 소독기부품 */
-.lampList-w {margin-top:100px; text-align:center; max-width:80%;}
-    .content-w-envi09 .detailList-w {margin:40px auto 0;}
+.lampList-w {margin-top:70px; text-align:center;}
+    .content-w-envi09 .detailList-w {margin:40px auto 0; position:relative; left:-5px; width:calc(100% - 30px);}
     .lampList-inner {margin-top:85px;}
     .lampList-inner:first-of-type {margin-top:50px;}
         .lampList-cont {margin-top:35px;}
+        .lampTable-img {margin-top:30px;}
 /* 모듈 : 이미지+리스트 조합 */
-.textNimgList-w {margin-top:10%; max-width:90%; display:flex; justify-content:space-between;}
+.textNimgList-w {margin-top:10%; width:calc(100% + 50px); display:flex; justify-content:space-between;}
     .textNimgList-inner {display:flex; flex-wrap:wrap;  max-width:50%; min-width:50%; padding-right:50px; box-sizing:border-box; }
         .textNimgList-cont {display:flex; flex-wrap:wrap; width:100%; position:relative; margin-top:23px; height:100%; background-color:#fff; border-top:2px solid #000168; border-radius:0 0 36px 36px;}
             .textNimgList-cont .detailList-title {position:relative; z-index:1; height:38px; border-radius:20px; line-height:38px; font-size:24px;}
@@ -257,10 +275,10 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
         .splitRow2 + .splitRow2 {margin-top:45px;}
             .textNimgText-w {padding:30px 5%;  width:100%; box-sizing:border-box; background-color:rgba(174,174,195,.3); border-radius:0 0 36px 36px;}
                 .textNimgText-title {display:block; margin:15px 0; text-align:center; font-size:18px; color:#000168; font-weight:700;}
-                .textNimgText-inner {font-size:16px; margin:0 auto; max-width:90%; word-break:keep-all;}
-                    .textNimgText-inner li {margin-top:5px; position:relative; padding-left:15px; line-height:20px; font-size:16px;}
+                .textNimgText-inner {font-size:16px; margin:0 auto; max-width:97%;}
+                    .textNimgText-inner li {margin-top:5px; position:relative; padding-left:12px; line-height:20px; font-size:14px; color:#494949;}
                     .textNimgText-inner li:first-of-type {margin-top:0;}
-                    .textNimgText-inner li:after {display:block; content:''; position:absolute; left:0; top:5px; width:5px; height:5px; background-color:#494949; border-radius:100%;}
+                    .textNimgText-inner li:after {display:block; content:''; position:absolute; left:0; top:7px; width:5px; height:5px; background-color:#494949; border-radius:100%;}
 
 /* 모듈 : 이미지+리스트(리스트 와이드형) */
 .listWideType {display:block; width:100% !important; max-width:100% !important;}
@@ -269,7 +287,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
 
 /* 모듈 : 이미지+리스트(리스트 가로형) */
 .listRowType .detailList-image-w {width:55%; }
-    .listRowType .textNimgText-w {display:flex; align-items:center; width:45%; border-bottom-left-radius:0; position:relative;}
+    .listRowType .textNimgText-w {display:flex; align-items:center; padding-right:3%; width:45%; border-bottom-left-radius:0; position:relative;}
     .listRowType .textNimgText-w:after {display:block; content:''; position:absolute; left:-15px; top:50%; margin-top:-15px; width:30px; height:30px; background-color:#fff; transform:rotate(45deg);}
         .listRowType .textNimgText-inner {max-width:90%;}
 /* 컨테이너사업-운용대수현황 */
@@ -279,8 +297,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
 .content-w-contain10 .contentArticle-w:before,
 .content-w-contain10 .contentArticle-w:after {display:block; content:''; width:367px; height:256px; position:absolute; left:0; top:0; background-image:url('../imgs/contain10-bg-left.png'); background-repeat:no-repeat; background-size:100% auto;}
 .content-w-contain10 .contentArticle-w:after {left:auto; right:0; top:auto; bottom:0; width:452px; height:316px; background-image:url('../imgs/contain10-bg-right.png');}
-.content-w-contain10 .imgList-inner {width:100%;}
-.content-w-contain10 .dbdottDetail-inner {max-width:calc(100% - 4.5%); box-sizing:border-box;}
+.content-w-contain10 .dbdottDetail-inner {width:100%; box-sizing:border-box;}
 .intorText-w {margin-bottom:50px; padding-top:50px;}
     .intorText-title {font-size:16px; font-weight:700; color:#000168;}
     .intorText-inner {margin-top:10px; color:#767676; font-size:14px; line-height:21px;}
@@ -302,7 +319,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
             .roundBtn {display:inline-block; padding:0 25px; height:55px; line-height:55px; text-align:center; background-color:#00096F; border-radius:27px; font-size:36px; font-weight:700; color:#fff; }
 
 /* footer */
-.footer-w {margin-top:150px; background-color:#000074;}
+.footer-w {background-color:#000074;}
     .footer-inner {max-width:1170px; margin:0 auto; position:relative; padding:29px 0 35px 170px; box-sizing:border-box;}
         .footerLogo {position:absolute; left:30px; top:50%; margin-top:-45px;}
             .footerLogo-link {display:block; width:90px;}
@@ -329,7 +346,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     /* 메인 */
     .serviceList-inner {padding:0 5%; width:100%; max-width:100%;}
     .serviceList:after  {display:none;}
-    .contentArticle-w {max-width:100%;}
+    .contentArticle-w {max-width:100%; width:100%; padding:8% 5%;}
     .serviceList {flex-wrap:wrap; justify-content: center; max-width:805px;}
         .serviceList-cont {padding-bottom:20px; width:220px;}
         .serviceList-text {bottom:13%;}
@@ -381,7 +398,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
                 .footerLogo {display:none;}
                 .footerList-right {margin-left:0;}
     /* ceo */
-    .ceoInfo-w {left:0;}
+    .ceoInfo-w {left:0; width:100%;}
     .ceoPhoto-w {position:relative; left:-20px;}
         .ceoText {line-height:36px; }
     /* history */
@@ -405,6 +422,8 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .orgChartList-cont:first-of-type {padding-left:365px;}
     .orgChartList-cont:first-of-type:before {left:97px;}
     .orgChartList-cont:first-of-type:after {left:97px;}
+    /* 연혁  */
+    .content-w-history .contentArticle-w {padding-right:5%;}
     /* 장비사업부-건설장비보유현황 */
     .contentTitle,
     .contentTitle span {font-size:22px;}
@@ -498,6 +517,8 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .serviceList-text {font-size:15px; line-height:20px;}
     /* 공통 */
     .contentArticle-w {padding:50px 20px;}
+    /* 연혁 */
+    .historyInfoText {font-size:18px; line-height:30px;}
     /* 조직도 */
     .orgChartList-w {padding:50px 20px;}
     .orgChartList-cont,
@@ -555,14 +576,22 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .mainInfo-w {font-size:14px; line-height:24px;}
     .serviceList {justify-content:flex-start;}
     .serviceList-cont {width:50%;}
+    .paintList-w {padding-top:30px;}
+        .paintList-cont {width:100%;}
+            .paintList-cont:nth-of-type(1) img{width:222px; max-width:222px;}
+            .paintList-cont:nth-of-type(2) img{width:283px; max-width:283px;}
+            .paintList-cont:nth-of-type(3) img{width:248px; max-width:248px;}
+            .paintList-cont:nth-of-type(4) img{width:173px; max-width:173px;}
+    /*연혁*/
+    .historyListText span{min-width:auto; font-size:14px; line-height:20px;}
+    .historyList-date span {font-size:14px;}
+    .historyInfoText {font-size:14px; line-height:22px;}
+    
+       
 }
 /* Mobile 버전 */
 @media screen and (max-width:345px) {
-    .paintList-w {padding-top:30px;}
-    .paintList-cont:nth-of-type(1) img{width:202px; max-width:202px;}
-    .paintList-cont:nth-of-type(2) img{width:263px; max-width:263px;}
-    .paintList-cont:nth-of-type(3) img{width:228px; max-width:228px;}
-    .paintList-cont:nth-of-type(4) img{width:153px; max-width:153px;}
+    
 
 
 
