@@ -1,7 +1,7 @@
 @charset "utf-8";
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
-html {overflow-x: hidden;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; font-family: 'Pretendard';}
+html {overflow-x: hidden;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; font-family: 'Pretendard'; color:#49494;}
 html, body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select, option, img, div {margin: 0;padding: 0;}
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
 img, fieldset {border: 0;}
@@ -25,7 +25,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
         .gnb-logo-link {display:inline-block;}
     .gnbList-w {position:absolute; left:0; top:9px; z-index:2; width:100%; padding-left:170px; box-sizing:border-box;}
         .gnbList-inner {display:flex; justify-content:center; align-items:center; height:100px; }
-            .gnbList-cont {position:relative;}
+            .gnbList-cont {position:relative; overflow:hidden;}
                 .gnb1depthCurrent .gnbList-link {font-weight:700;}
                 .gnbList-link {display:inline-block; padding:0 25px; color:#fff; font-size:20px;}
                 .gnbList-link:hover {font-weight:700;}
@@ -37,7 +37,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
                             .gnb2depthCurrent .gnbSub-link {font-weight:700; color:#000168;}
 
 /* content 공통 */
-.content-wrap {margin-bottom:150px; border-bottom:1px solid #ccc;}
+.content-wrap {position:relative; margin-bottom:150px; border-bottom:1px solid #ccc; min-height:calc(100vh - 317px);}
 [class^="content-w-"] {position:relative; max-width:1170px; margin:0 auto;}
     .rightMenu-w {position:absolute; right:0; top:0; width:168px; height:100%;}
    .rightMenu-w:after {display:block; content:''; width:1px; height:100%; position:absolute; left:0; top:0; background-color:rgba(255,255,255,.75);}
@@ -81,7 +81,9 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
                 .contentTitle span {display:block; margin-top:10px; font-size:24px; word-break:keep-all;}
 /* 메인 */
 .content-w-main {max-width:100%;}
-.content-w-main .contentVisual-w:after {display:block; content:''; position:absolute; left:55px; bottom:-2.5px; width:21px; height:5px; background-color:#c4c4c4;} 
+.content-w-main .contentVisual-w:after,
+.content-wrap:after {display:block; content:''; position:absolute; left:55px; bottom:-2.5px; width:21px; height:5px; background-color:#c4c4c4;} 
+.content-wrap:after {left:50%; margin-left:-540px;}
     .content-w-main .contentVisual-w {max-width:1170px; margin:0 auto;}
 .content-w-main .contSection-right:after,
 .serviceList:after {display:block; content:''; width:1px; height:80%; position:absolute; left:0; top:20%; background-color:#c4c4c4;}
@@ -148,12 +150,14 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
                     .historyListIText-sub li {position:relative; padding-left:7px; }
                     .historyListIText-sub li:after {display:block; content:''; position:Absolute; left:0; top:9px; width:2px; height:2px; border-radius:100%; background-color:#6B6B6B;}
     .historyInfoText-w {position:relative; text-align:center; width:100%; height:0; padding-top:65.3%; background-image:url('../imgs/historyInfo-bg.png'); background-repeat:no-repeat; background-size:auto 100%; background-position:center;}
-        .historyInfoText {position:Absolute; left:50%; top:50%; transform:translate(-50%, -50%); width:100%; padding-top:7%; box-sizing:border-box; font-size:24px; line-height:45px; color:#000168;  word-break: keep-all;}
+        .historyInfoText-inner {position:Absolute; left:50%; top:50%; transform:translate(-50%, -50%); width:100%; padding-top:7%; box-sizing:border-box;}
+            .historyInfoText {display:inline-block; padding:15px 0; font-size:24px; line-height:45px; color:#000168;  word-break: keep-all; background-color:rgba(255,255,255,.5);}
+
 
 /*  조직도 */
 .content-w-orgChart {}
-    .content-w-orgChart .contentArticle-w {font-size:20px; line-height:32px; padding:6% 5%; color:#000168;}
-        .orgChartList-w {padding:115px 5% 150px;}
+    .content-w-orgChart .contentArticle-w {font-size:20px; line-height:32px; color:#000168;}
+        .orgChartList-w {padding:115px 168px 150px 80px;}
         .orgChartList:after {display:block; content:''; width:1px; height:calc(100% - 60px); position:Absolute; left:140px; top:0; background-color:#000168;}
             .orgChartList {position:relative;}
                 .orgChartList-inner {}
@@ -161,7 +165,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
                     .orgChartList-cont:after {display:block; content:''; width:380px; height:100%; position:absolute; left:0; top:0; background-image:url('../imgs/history-dott.png'); background-position:left; background-repeat:repeat-x;}
                         .orgChartList-cont:first-of-type:before {display:block; content:''; width:9px; height:9px; position:absolute; left:136px; top:20px; border-radius:100%; background-color:#000168; }
                         [class^="orgChartList-value"] {display:block; text-align:center; position:Absolute; left:0; top:50%; margin-top:-24px;}
-                            .orgChartList-label {position:relative; z-index:1; display:inline-flex; align-items:center; justify-content:center; margin:0 auto; padding:0 20px; box-sizing:border-box; width:280px; height:43px; text-align:center; border-radius:8px; background-color:#000168; color:#fff; font-size:20px; font-weight:500;}
+                            .orgChartList-label {position:relative; z-index:1; display:inline-flex; align-items:center; justify-content:center; margin:0 auto; padding:0 20px; box-sizing:border-box; width:270px; height:43px; text-align:center; border-radius:8px; background-color:#000168; color:#fff; font-size:22px; font-weight:500;}
                             .orgChartList-text {display:inline-block; max-width:805px; position:relative; z-index:1; padding:10px; box-sizing:border-box; font-size:20px; text-align:left; border-radius:8px; color:#000168; background-color:#E6E5E3; word-break:keep-all;}
                             .orgChartList-valueCEO {display:block; position:static; width:280px;}
                                 .orgChartList-valueCEO .orgChartList-label {width:156px !important;}
@@ -181,7 +185,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
                         .directionsList-num {display:inline-block; margin-right:25px;}
 
 /* 장비임대 사업부 - 건설장비 */
-.tableImage-w {display:flex; justify-content:flex-start; margin-top:60px; }
+.tableImage-w {display:flex; justify-content:flex-start; margin-top:60px; width:calc(100% + 50px);}
     .tableWideType {width:100% !important; max-width:90% !important;}
     .tableImage-cont {padding-right:50px; box-sizing:border-box; width:50%; max-width:740px;}
     .tableImage-cont:first-of-type {max-width:516px;}
@@ -208,7 +212,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
         .detailList-title:before {display:block; content:''; position:absolute; top:50%; left:-10px; margin-top:-8px; width:14px; height:17px; background-repeat:no-repeat; background-position:center; background-image:url('../imgs/titlePicker.png')}
         .detailList-title:after {left:auto; right:-10px; transform:rotate(180deg);}
         .dbdottDetail-inner,
-        .detailList-inner {margin-top:30px; padding:3% 9%; border-top:2px solid #000168; border-radius:0 0 40px 40px; background-color:#fff; }
+        .detailList-inner {margin-top:30px; padding:3% 9%; border-top:2px solid #000168; border-radius:0 0 40px 40px; background-color:#fff; color:#494949;}
             .dbdottDetail-list {text-align:left;}
                 .dbdottDetail-inner { padding:5% 9% 5%; }
                     .dbdottDetail-cont {display:block; margin-top:20px; padding-left:25px; min-height:20px; position:relative; color:#000168; font-weight:700; font-size:16px; line-height:22px; box-sizing:border-box; letter-spacing:-0.25px;}
@@ -277,7 +281,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
             .textNimgText-w {padding:30px 5%;  width:100%; box-sizing:border-box; background-color:rgba(174,174,195,.3); border-radius:0 0 36px 36px;}
                 .textNimgText-title {display:block; margin:15px 0; text-align:center; font-size:18px; color:#000168; font-weight:700;}
                 .textNimgText-inner {font-size:16px; margin:0 auto; max-width:97%;}
-                    .textNimgText-inner li {margin-top:5px; position:relative; padding-left:12px; line-height:20px; font-size:14px; color:#494949;}
+                    .textNimgText-inner li {margin-top:5px; position:relative; padding-left:12px; line-height:20px; font-size:14px; color:#494949; letter-spacing:-0.7px;}
                     .textNimgText-inner li:first-of-type {margin-top:0;}
                     .textNimgText-inner li:after {display:block; content:''; position:absolute; left:0; top:7px; width:5px; height:5px; background-color:#494949; border-radius:100%;}
 
@@ -287,6 +291,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .listWideType .textNimgList-inner + .textNimgList-inner {margin-top:53px;}
 
 /* 모듈 : 이미지+리스트(리스트 가로형) */
+.listRowType .textNimgList-cont {justify-content:space-between;}
 .listRowType .detailList-image-w {width:55%; }
     .listRowType .textNimgText-w {display:flex; align-items:center; padding-right:3%; width:45%; border-bottom-left-radius:0; position:relative;}
     .listRowType .textNimgText-w:after {display:block; content:''; position:absolute; left:-15px; top:50%; margin-top:-15px; width:30px; height:30px; background-color:#fff; transform:rotate(45deg);}
@@ -344,6 +349,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
 
 /* Mobile 버전 */
 @media screen and (max-width:1040px) {
+    .content-wrap {min-height:calc(100vh - 388px);}
     /* 메인 */
     .serviceList-inner {padding:0 5%; width:100%; max-width:100%;}
     .serviceList:after  {display:none;}
@@ -358,10 +364,10 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .contentVisual-w {padding-left:0;}
     /* 모바일 Gnb, 공통레이아웃 */
     .mGnb-w {display:block;}
-        .mGnb-allMenu { position:fixed; right:-9999px; top:0; z-index:9; width:100%; height:100vh; padding-top:130px; box-sizing:border-box; background-color:#000B6F; transition:all 0.3s;}
+        .mGnb-allMenu {position:fixed; right:-9999px; top:0; z-index:9; width:100%; height:100vh; padding-top:130px; box-sizing:border-box; overflow:hidden; overflow-y:auto; background-color:#000B6F; transition:all .3s ease-out;}
         .allMenuOpen .mGnb-allMenu {right:0;}
-            .mGnb-w .gnbList-inner {display:block;}
-                .mGnb-w .gnbList-w {position:static; padding-left:0; text-align:center;}
+            .mGnb-w .gnbList-inner {display:block; height:auto;}
+                .mGnb-w .gnbList-w {position:static; padding-left:0; text-align:center; padding-bottom:90px;}
                     .gnbList-1depth {position:relative;}
                     .mGnb-w .gnbList-link {display:block; width:100%; text-align:center; padding:12px; position:relative;}
                         [class^="btnSubOpen"] {position:absolute; right:0; top:0; width:60px; height:48px;}
@@ -416,11 +422,12 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     [class^="historyMap-w"] {padding:60px 0;}
     .historyMap-w2 {padding-bottom:60px;}
     /* 조직도 */
+    .orgChartList-w {padding-left:5%; padding-right:5%;}
     .orgChartList-label,
-    .orgChartList-valueCEO {width:200px;}
+    .orgChartList-valueCEO {width:195px; font-size:18px;}
     .orgChartList-cont {padding-left:40%;}
     .orgChartList:after {left:100px;}
-    .orgChartList-cont:first-of-type {padding-left:365px;}
+    .orgChartList-cont:first-of-type {padding-left:390px;}
     .orgChartList-cont:first-of-type:before {left:97px;}
     .orgChartList-cont:first-of-type:after {left:97px;}
     /* 연혁  */
@@ -461,6 +468,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
 
 /* Mobile 버전 */
 @media screen and (max-width:768px) {
+    .content-wrap {min-height:calc(100vh - 406px);}
     /* 메인 */
     .serviceList {flex-wrap:wrap; justify-content: center; max-width:805px;}
            .serviceList-cont {padding-bottom:20px; width:33.3%;}
