@@ -11,7 +11,7 @@ $result_array = array();
 $isSuccess = true;
 
 $login_id = mysqli_real_escape_string($conn, $_POST['login_id']);
-$login_pw = mysqli_real_escape_string($conn, $_POST['login_pw']);
+$login_pw = base64_decode(mysqli_real_escape_string($conn, $_POST['login_pw']));
 
 $sql  = "SELECT ";
 $sql .= "seq, user_id, name, member_type, password ";

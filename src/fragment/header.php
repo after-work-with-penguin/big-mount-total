@@ -262,3 +262,20 @@ require_once('head.php');
         </div>
     </div>
 </div>
+
+<?php
+$isLogin = false;
+if (isset($_SESSION['is_login']) && !empty($_SESSION['is_login']) && $_SESSION['is_login'] == 1) {
+    $isLogin = true;
+}
+
+if($isLogin) {
+    $login_info = unserialize($_SESSION['login_user_info']);
+    $logout = ' | <a href="./admin/action/logout.php">로그 아웃</a>';
+    $login_msg 
+        = '<div class="manager-w"><span>[' . $login_info['name'] . ']</span>님 환영합니다.'
+        . $logout
+        . '</div>';
+    echo $login_msg;
+}
+?>

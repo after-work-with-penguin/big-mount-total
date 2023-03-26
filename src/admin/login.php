@@ -380,7 +380,7 @@ if (isset($_SESSION['is_login']) && !empty($_SESSION['is_login']) && $_SESSION['
                 type: 'POST',
                 data: {
                     login_id: $('#login_id').val(),
-                    login_pw: $('#login_pw').val()
+                    login_pw: btoa($('#login_pw').val())
                 },
                 success: function(resultData) {
                     console.log('login request result: ', resultData);
