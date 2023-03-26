@@ -6,17 +6,17 @@ require_once('head.php');
     
 <div class="commonGnb-w">
     <div class="gnb-w">
-        <h1 class="gnb-logo">
+        <h1 class="gnb-logo" onclick="javascript: location.href='./index.php'">
             <a href="./index.php" class="gnb-logo-link"><img src="./imgs/logo.png" alt="대산토탈"></a>
         </h1>
         <!-- 1뎁스 메뉴 -->
         <div class="gnbList-w">
             <ul class="gnbList-inner">
                 <li class="gnbList-cont pc-menu-lv1">
-                    <a href="javascript: void(0)" class="gnbList-link">회사소개</a>
+                    <a href="javascript: void(0);" class="gnbList-link">회사소개</a>
                     <!-- 2뎁스 메뉴 -->
-                    <div class="gnbSub-w pc-menu-lv2">
-                        <ul class="gnbSub-inner">
+                    <div class="gnbSub-w pc-menu-lv2" id="pc-menu-lv2-1">
+                         <ul class="gnbSub-inner" id="pc-menu-lv2-1-ul">
                             <li class="gnbSub-cont"><!-- gnb2depthCurrent 메뉴 활성화 -->
                                 <a href="./0101-ceo.php" class="gnbSub-link">CEO 인사말</a>
                             </li>
@@ -32,34 +32,34 @@ require_once('head.php');
                         </ul>
                     </div>
                 </li>
-                <li class="gnbList-cont pc-menu-lv1">
-                    <a href="#none" class="gnbList-link">사업부 및 제품소개</a>
+                <li class="gnbList-cont pc-menu-lv1"> <!-- gnb1depthCurrent -->
+                    <a href="javascript: void(0);" class="gnbList-link">사업부 및 제품소개</a>
                     <!-- 2뎁스 메뉴 -->
-                    <div class="gnbSub-w pc-menu-lv2">
+                    <div class="gnbSub-w pc-menu-lv2"  id="pc-menu-lv2-2">
                         <ul class="gnbSub-inner">
-                            <li class="gnbSub-cont"><!-- 메뉴 활성화 -->
-                                <a href="#none" class="gnbSub-link">장비임대 사업부</a>
+                            <li class="gnbSub-cont"><!-- 메뉴 활성화 gnb2depthCurrent -->
+                                <a href="javascript: void(0);" class="gnbSub-link">장비임대 사업부</a>
                             </li>
                             <li class="gnbSub-cont">
-                                <a href="" class="gnbSub-link">컨테이너 사업부</a>
+                                <a href="javascript: void(0);" class="gnbSub-link">컨테이너 사업부</a>
                             </li>
                             <li class="gnbSub-cont">
-                                <a href="" class="gnbSub-link">도장 사업부</a>
+                                <a href="javascript: void(0);" class="gnbSub-link">도장 사업부</a>
                             </li>
                             <li class="gnbSub-cont">
-                                <a href="" class="gnbSub-link">가설재 임대사업부</a>
+                                <a href="javascript: void(0);" class="gnbSub-link">가설재 임대사업부</a>
                             </li>
                             <li class="gnbSub-cont">
-                                <a href="" class="gnbSub-link">환경 사업부</a>
+                                <a href="javascript: void(0);" class="gnbSub-link">환경 사업부</a>
                             </li>
                         </ul>
                     </div>
                 </li>
-                <li class="gnbList-cont pc-menu-lv1">
-                    <a href="#none" class="gnbList-link">견적문의</a>
+                <li class="gnbList-cont">
+                    <a href="javascript: void(0);" class="gnbList-link">견적문의</a>
                 </li>
-                <li class="gnbList-cont pc-menu-lv1">
-                    <a href="#none" class="gnbList-link">공지사항</a>
+                <li class="gnbList-cont">
+                    <a href="javascript: void(0);" class="gnbList-link">공지사항</a>
                 </li>
             </ul>
         </div>
@@ -249,10 +249,10 @@ require_once('head.php');
                         </div>
                     </li>
                     <li class="gnbList-cont">
-                        <a href="#none" class="gnbList-link">견적문의</a>
+                        <a href="./0301-contact-us.php" class="gnbList-link">견적문의</a>
                     </li>
                     <li class="gnbList-cont">
-                        <a href="#none" class="gnbList-link">공지사항</a>
+                        <a href="./0302-notice.php" class="gnbList-link">공지사항</a>
                     </li>
                 </ul>
             </div>

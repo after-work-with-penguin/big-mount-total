@@ -10,16 +10,17 @@ CREATE TABLE `ci_sessions` (
   `data` text NOT NULL,
   PRIMARY KEY (`id`,`ip_address`),
   KEY `ci_sessions_timestamp` (`timestamp`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /**
  * 회원
  * - member_type:
+ *  + S: Super Admin
  *  + A: Admin
  *  + M: Manager
  *  + B: Basic
  */
-CREATE TABLE bmt_members (
+CREATE TABLE dst_members (
 	seq BIGINT NOT NULL AUTO_INCREMENT,
 	user_id VARCHAR(32) NOT NULL,    
 	email VARCHAR(64) NULL,
@@ -39,7 +40,7 @@ CREATE TABLE bmt_members (
  *  - level: 3: 긴급, 2: 중요, 1: 일반
  *  - top: Y: 상단 고정, N: 일반 글 (default)
  */
-CREATE TABLE bmt_notice (
+CREATE TABLE dst_notice (
 	seq BIGINT NOT NULL AUTO_INCREMENT, 
     level INT NOT NULL DEFAULT 0, 
     top CHAR(1) NOT NULL DEFAULT 'N', 
@@ -57,7 +58,7 @@ CREATE TABLE bmt_notice (
  *  - hide: 글 숨김 처리(비밀글) / Y: 숨김(비밀 글), N: 노출(default) 
  *  - status: 답변 여부 / Q: 질문(default), A: 답변 완료
  */
-CREATE TABLE bmt_contact (
+CREATE TABLE dst_contact (
 	seq BIGINT NOT NULL AUTO_INCREMENT, 
     name VARCHAR(32) NOT NULL,
     email VARCHAR(64) NOT NULL,	

@@ -1,12 +1,12 @@
 # root 계정, pw 변경 필요
-create user bmt_user@localhost identified by 'bmt_pw';
+create user dst_user@localhost identified by 'dst_pw';
 #select * from user;
-create database bmtdb default character set utf8 COLLATE utf8_general_ci;
-GRANT ALL privileges ON bmtdb.* TO bmt_user@localhost;
+create database dstdb default character set utf8 COLLATE utf8_general_ci;
+GRANT ALL privileges ON dstdb.* TO dst_user@localhost;
 flush privileges;
 
 # 개발 계정
-insert into bmt_members (user_id, name, password, member_type, created_at, updated_at)
+insert into dst_members (user_id, name, password, member_type, created_at, updated_at)
 values ('devadmin', 'devadmin', '$2y$10$fQsR7C52KW7VeEl8NinHs.mWQF5MJ.10O5uPfC2MFvlQIfZ95MvM2', 'A', NOW(), NOW());
 
 

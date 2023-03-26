@@ -20,7 +20,7 @@
                     <a href="#content-main" class="quickMenuList-link">Front</a>
                 </li>
                 <li class="quickMenuList-cont">
-                    <a href="#none" class="quickMenuList-link">Contact Us</a>
+                    <a href="./0301-contact-us.php" class="quickMenuList-link">Contact Us</a>
                 </li>
             </ul>
         </div>

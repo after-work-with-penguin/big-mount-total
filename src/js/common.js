@@ -17,6 +17,8 @@ function pcMenu_top() {
     $('.pc-menu-lv2').hide();
     $('.pc-menu-lv1').on('click', function() {
         var $lv2 = $(this).find('.pc-menu-lv2');
+        console.log('pc-menu-top / lv2: ', $lv2);
+        console.log('pc-menu-top / lv2 - display: ', $lv2.css('display'));
         if($lv2.css('display') == 'none') {
             $('.pc-menu-lv2').hide();
             $lv2.show();
