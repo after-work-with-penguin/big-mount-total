@@ -6,7 +6,7 @@ require_once('head.php');
     
 <div class="commonGnb-w">
     <div class="gnb-w">
-        <h1 class="gnb-logo" onclick="javascript: location.href='./index.php'">
+        <h1 class="gnb-logo" id="gnb-logo">
             <a href="./index.php" class="gnb-logo-link"><img src="./imgs/logo.png" alt="대산토탈"></a>
         </h1>
         <!-- 1뎁스 메뉴 -->

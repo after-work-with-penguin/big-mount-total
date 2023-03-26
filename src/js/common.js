@@ -2,6 +2,11 @@ $(document).ready(function() {
     initMenu_pc();
     initMenu_mobile();
 
+    
+    $('#gnb-logo').on('click', function() {
+        location.href = './index.php';
+    });
+    
     /* 리사이즈 */
     // $(window).resize(function () {  });
 });
