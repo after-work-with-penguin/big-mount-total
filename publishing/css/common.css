@@ -255,7 +255,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
         .infoBgTitle {display:inline-block; margin-bottom:5px; padding:5px 10px; background-color:#000168; color:#fff; font-size:24px;}
         .infoBgTitleSub {display:block; margin-top:5px; font-size:20px; color:#000168;}
         .infoTable-w table,
-        .boardList-w table {margin-top:55px; background-color:#fff; border-radius:12px 12px 0 0; overflow:hidden; }
+        .boardList-w table {margin-top:35px; background-color:#fff; border-radius:12px 12px 0 0; overflow:hidden; }
             .infoTable-w table th,
             .boardList-w table th  {height:41px; background-color:#000168; color:#fff; font-size:16px; text-align:center; border-left:1px solid #fff;}
             .infoTable-w table th:first-of-type,
@@ -304,7 +304,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
             .boardBtnList-cont {display:inline-block; padding:0 3px;}
                 .boardBtnList-num {display:inline-block; width:25px; height:25px; line-height:25px; text-align:center; color:#494949;}
                 .pagingCurrent .boardBtnList-num {background-color:#00096F; color:#fff;}
-    .boardList-w .moduleBtn-w {}          
+    .boardList-w .moduleBtn-w {text-align:right;}          
         .boardList-w .roundBtn {height:45px; line-height:45px; font-size:24px;}
 .boardBtnList-w [class^="arrowBtn-"] {display:inline-block; padding:0 10px; cursor:pointer;}
 .arrowBtn-next img {transform:rotate(180deg);}
