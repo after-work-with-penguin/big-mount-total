@@ -1,7 +1,7 @@
 @charset "utf-8";
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
-html {overflow-x: hidden;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; font-family: 'Pretendard'; color:#49494;}
+html {overflow-x: hidden;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; font-family: 'Pretendard'; color:#49494; scroll-behavior: smooth;}
 html, body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select, option, img, div {margin: 0;padding: 0;}
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
 img, fieldset {border: 0;}
@@ -26,6 +26,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .gnbList-w {position:absolute; left:0; top:9px; z-index:2; width:100%; padding-left:170px; box-sizing:border-box;}
         .gnbList-inner {display:flex; justify-content:center; align-items:center; height:100px; }
             .gnbList-cont {position:relative; overflow:hidden;}
+            .gnb1depthCurrent {overflow:visible;}    
                 .gnb1depthCurrent .gnbList-link {font-weight:700;}
                 .gnbList-link {display:inline-block; padding:0 25px; color:#fff; font-size:20px;}
                 .gnbList-link:hover {font-weight:700;}
@@ -37,6 +38,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
                             .gnb2depthCurrent .gnbSub-link {font-weight:700; color:#000168;}
 
 /* content 공통 */
+.manager-w {position:absolute; right:0; top:0; z-index:2; padding:20px; background-color:rgba(0,0,0,.5); color:#fff;}
 .content-wrap {position:relative; margin-bottom:150px; border-bottom:1px solid #ccc; min-height:calc(100vh - 317px);}
 [class^="content-w-"] {position:relative; max-width:1170px; margin:0 auto;}
     .rightMenu-w {position:absolute; right:0; top:0; width:168px; height:100%;}
