@@ -261,7 +261,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
             .infoTable-w table th:first-of-type,
             .boardList-w table th:first-of-type  {border-left:0;}
             .infoTable-w table td,
-            .boardList-w table td {padding:20px 10px; text-align:center; border-left:1px solid #000168; color:#494949; }
+            .boardList-w table td {padding:20px 10px; text-align:center; border-left:1px solid #000168; color:#494949; cursor:pointer;}
             .infoTable-w table td:first-of-type,
             .boardList-w table td:first-of-type {border-left:0;}
     .boardList-w {position:relative; }  
@@ -269,6 +269,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
             .boardList-w table tr:nth-of-type(even) {background-color:rgba(169,169,190,.3);}
                 .boardList-w table td {padding:0px;}   
                     .boardList-w td span {display:block; padding:10px; word-wrap:break-word;}
+                    .boardList-w table tr:hover {font-weight:700;}
                     .infoTable-w table td span,
                     .boardList-w table td span, {display:inline-block; text-align:left; font-size:16px; line-height:22px; letter-spacing:-0.26px;}
         .tubeInfo-img-w {margin:60px auto 0; max-width:95%; display:flex; justify-content: center; align-items: center;}
