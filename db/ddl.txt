@@ -12,6 +12,7 @@ CREATE TABLE `ci_sessions` (
   KEY `ci_sessions_timestamp` (`timestamp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
 /**
  * 회원
  * - member_type:
@@ -26,14 +27,13 @@ CREATE TABLE dst_members (
 	email VARCHAR(64) NULL,
 	name VARCHAR(32) NOT NULL,
 	password VARCHAR(128) NOT NULL,
-	member_type CHAR(1) NOT NULL DEFAULT 'B',
+	member_type CHAR(1) NOT NULL DEFAULT 'B' comment '타입(S: Super Admin, A: Admin, M: Manager, B: Basic)',
 	created_at DATETIME NOT NULL DEFAULT now(),
 	updated_at DATETIME NOT NULL DEFAULT now(),
 	deleted_at DATETIME NULL DEFAULT NULL,
 	PRIMARY KEY (seq, user_id),
 	UNIQUE INDEX user_id (user_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 
 /**
  * 공지사항
@@ -42,8 +42,8 @@ CREATE TABLE dst_members (
  */
 CREATE TABLE dst_notice (
 	seq BIGINT NOT NULL AUTO_INCREMENT, 
-    level INT NOT NULL DEFAULT 0, 
-    top CHAR(1) NOT NULL DEFAULT 'N', 
+    level INT NOT NULL DEFAULT 0 comment '3: 긴급, 2: 중요, 1: 일반', 
+    top CHAR(1) NOT NULL DEFAULT 'N' comment 'Y: 상단 고정, N: 일반 글 (default)', 
     title VARCHAR(512) NOT NULL, 
 	view_count INT NOT NULL DEFAULT 0, 
 	created_at DATETIME NOT NULL DEFAULT now(),
@@ -52,6 +52,7 @@ CREATE TABLE dst_notice (
     contents TEXT NOT NULL,
 	PRIMARY KEY (`seq` )
 ) COLLATE='utf8mb4_unicode_ci' ENGINE=InnoDB;
+
 
 /**
  * 견적 문의
@@ -63,8 +64,8 @@ CREATE TABLE dst_contact (
     name VARCHAR(32) NOT NULL,
     email VARCHAR(64) NOT NULL,	
 	password VARCHAR(128) NOT NULL,
-    hide CHAR(1) NOT NULL DEFAULT 'N', 
-    status CHAR(1) NOT NULL DEFAULT 'Q', 
+    hide CHAR(1) NOT NULL DEFAULT 'N' comment '글 숨김 처리(비밀글) / Y: 숨김(비밀 글), N: 노출(default) ', 
+    status CHAR(1) NOT NULL DEFAULT 'Q' comment '답변 여부(Q: 질문(default), A: 답변 완료)', 
     title VARCHAR(512) NOT NULL, 
     answer_id VARCHAR(32) NOT NULL,
 	created_at DATETIME NOT NULL DEFAULT now(),

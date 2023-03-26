@@ -6,7 +6,13 @@ GRANT ALL privileges ON dstdb.* TO dst_user@localhost;
 flush privileges;
 
 # 개발 계정
+
+-- dsadmin!23
 insert into dst_members (user_id, name, password, member_type, created_at, updated_at)
-values ('devadmin', 'devadmin', '$2y$10$fQsR7C52KW7VeEl8NinHs.mWQF5MJ.10O5uPfC2MFvlQIfZ95MvM2', 'A', NOW(), NOW());
+values ('admin', '관리자', '$2y$10$wJ4shLuCVFAKq0Ecr5l5Due0gRNYEm0bQZdsJnHdQaojjPCWYUVnC', 'A', NOW(), NOW());
+
+-- dev!23
+insert into dst_members (user_id, name, password, member_type, created_at, updated_at)
+values ('devadmin', '개발-관리자', '$2y$10$8wAiFG0DrpShBlIiapvAP.pO20htWIggOgUfqlwsNZzdVozHzHQey', 'A', NOW(), NOW());
 
 
