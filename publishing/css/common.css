@@ -9,7 +9,7 @@ table {width: 100%;border-collapse: collapse;border-spacing: 0px;empty-cells: sh
 legend, caption {visibility: hidden;width: 0;height: 0;line-height: 0;margin: 0;padding: 0;font-size: 0;}
 h1, h2, h3, h4, h5, h6, strong, em {font-weight: bold;}
 a {color: inherit; display:inline-block; text-decoration: none; box-sizing:border-box;}
-button {display:inline-block; background:none; border:0;}
+button {display:inline-block; background:none; border:0; cursor:pointer;}
 ul, ol {list-style: none;}
 input, select {vertical-align: middle;}
 em, address {font-style: normal;}
@@ -21,8 +21,8 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
 
 /* gnb */
 .gnb-w {position:relative; padding-left:170px; max-width:1170px; margin:0 auto; box-sizing:border-box;}
-    .gnb-logo {position:absolute; left:11px; top:9px; z-index:2; display:flex; align-items:center; max-width:110px; height:100px;  margin:0 auto;}
-        .gnb-logo-link {display:inline-block;}
+    .gnb-logo {position:absolute; left:11px; top:9px; z-index:3; display:flex; align-items:center; max-width:110px; height:100px;  margin:0 auto;}
+        .gnb-logo-link {display:inline-block; }
     .gnbList-w {position:absolute; left:0; top:9px; z-index:2; width:100%; padding-left:170px; box-sizing:border-box;}
         .gnbList-inner {display:flex; justify-content:center; align-items:center; height:100px; }
             .gnbList-cont {position:relative; overflow:hidden;}
@@ -255,7 +255,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
         .infoBgTitle {display:inline-block; margin-bottom:5px; padding:5px 10px; background-color:#000168; color:#fff; font-size:24px;}
         .infoBgTitleSub {display:block; margin-top:5px; font-size:20px; color:#000168;}
         .infoTable-w table,
-        .boardList-w table {margin-top:55px; background-color:#fff; border-radius:12px 12px 0 0; overflow:hidden; }
+        .boardList-w table {margin-top:35px; background-color:#fff; border-radius:12px 12px 0 0; overflow:hidden; }
             .infoTable-w table th,
             .boardList-w table th  {height:41px; background-color:#000168; color:#fff; font-size:16px; text-align:center; border-left:1px solid #fff;}
             .infoTable-w table th:first-of-type,
@@ -304,7 +304,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
             .boardBtnList-cont {display:inline-block; padding:0 3px;}
                 .boardBtnList-num {display:inline-block; width:25px; height:25px; line-height:25px; text-align:center; color:#494949;}
                 .pagingCurrent .boardBtnList-num {background-color:#00096F; color:#fff;}
-    .boardList-w .moduleBtn-w {}          
+    .boardList-w .moduleBtn-w {text-align:right;}          
         .boardList-w .roundBtn {height:45px; line-height:45px; font-size:24px;}
 .boardBtnList-w [class^="arrowBtn-"] {display:inline-block; padding:0 10px; cursor:pointer;}
 .arrowBtn-next img {transform:rotate(180deg);}
