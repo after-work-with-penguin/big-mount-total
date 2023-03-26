@@ -254,12 +254,23 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .infoBgTitle-w {text-align:center; }
         .infoBgTitle {display:inline-block; margin-bottom:5px; padding:5px 10px; background-color:#000168; color:#fff; font-size:24px;}
         .infoBgTitleSub {display:block; margin-top:5px; font-size:20px; color:#000168;}
-        .infoTable-w table {margin-top:55px; background-color:#fff; border-radius:12px 12px 0 0; overflow:hidden;}
-            .infoTable-w table th {height:41px; background-color:#000168; color:#fff; font-size:16px; text-align:center; border-left:1px solid #fff;}
-            .infoTable-w table th:first-of-type {border-left:0;}
-            .infoTable-w table td {padding:20px 10px; text-align:center; border-left:1px solid #000168; color:#494949; }
-            .infoTable-w table td:first-of-type {border-left:0;}
-                .infoTable-w table td span {display:inline-block; text-align:left; font-size:16px; line-height:22px; letter-spacing:-0.26px;}
+        .infoTable-w table,
+        .boardList-w table {margin-top:55px; background-color:#fff; border-radius:12px 12px 0 0; overflow:hidden; }
+            .infoTable-w table th,
+            .boardList-w table th  {height:41px; background-color:#000168; color:#fff; font-size:16px; text-align:center; border-left:1px solid #fff;}
+            .infoTable-w table th:first-of-type,
+            .boardList-w table th:first-of-type  {border-left:0;}
+            .infoTable-w table td,
+            .boardList-w table td {padding:20px 10px; text-align:center; border-left:1px solid #000168; color:#494949; }
+            .infoTable-w table td:first-of-type,
+            .boardList-w table td:first-of-type {border-left:0;}
+    .boardList-w {position:relative; }  
+        .boardList-inner {}        
+            .boardList-w table tr:nth-of-type(even) {background-color:rgba(169,169,190,.3);}
+                .boardList-w table td {padding:0px;}   
+                    .boardList-w td span {display:block; padding:10px; word-wrap:break-word;}
+                    .infoTable-w table td span,
+                    .boardList-w table td span, {display:inline-block; text-align:left; font-size:16px; line-height:22px; letter-spacing:-0.26px;}
         .tubeInfo-img-w {margin:60px auto 0; max-width:95%; display:flex; justify-content: center; align-items: center;}
         .tubeInfo-img-w .arrow {display:block; width:144px; height:75px;}
 .content-w-envi04 .textNimgList-inner:first-of-type .detailList-image-w {padding:0;}
@@ -286,6 +297,17 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
                     .textNimgText-inner li {margin-top:5px; position:relative; padding-left:12px; line-height:20px; font-size:14px; color:#494949; letter-spacing:-0.7px;}
                     .textNimgText-inner li:first-of-type {margin-top:0;}
                     .textNimgText-inner li:after {display:block; content:''; position:absolute; left:0; top:7px; width:5px; height:5px; background-color:#494949; border-radius:100%;}
+/* 모듈 : 페이징리스트  */
+.boardBtnList-w {margin-top:50px; display:flex; justify-content:center; width:100%; flex-wrap:wrap;}
+    .boardBtnList-inner {}
+        .boardBtnList {display:flex;}
+            .boardBtnList-cont {display:inline-block; padding:0 3px;}
+                .boardBtnList-num {display:inline-block; width:25px; height:25px; line-height:25px; text-align:center; color:#494949;}
+                .pagingCurrent .boardBtnList-num {background-color:#00096F; color:#fff;}
+    .boardList-w .moduleBtn-w {}          
+        .boardList-w .roundBtn {height:45px; line-height:45px; font-size:24px;}
+.boardBtnList-w [class^="arrowBtn-"] {display:inline-block; padding:0 10px; cursor:pointer;}
+.arrowBtn-next img {transform:rotate(180deg);}
 
 /* 모듈 : 이미지+리스트(리스트 와이드형) */
 .listWideType {display:block; width:100% !important; max-width:100% !important;}
@@ -325,6 +347,25 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
         .textArea::-webkit-scrollbar-thumb {background:#A9A9BE; width:10px; border-radius:5px;}
         .moduleBtn-w {text-align:center; margin-top:50px; }
             .roundBtn {display:inline-block; padding:0 25px; height:55px; line-height:55px; text-align:center; background-color:#00096F; border-radius:27px; font-size:36px; font-weight:700; color:#fff; }
+/* 공지사항 리스트  */
+.content-w-notice table tr td:nth-of-type(2) {text-align:left; }
+.content-w-notice table tr td:nth-of-type(2) span {padding:10px 20px;} 
+/* 공지사항 상세  */
+.boardDetail-w {}
+    .boardDetail-writer {margin-top:100px; font-size:18px; color:#000168;}
+        .writerName {display:inline-block; padding-right:20px;}    
+        .writerDate {display:inline-block; padding-right:20px;}
+    .boardDetail-inner {display:flex; flex-wrap:wrap; width:100%; padding-bottom:45px; margin-top:45px; border-bottom:1px solid #c4c4c4;}  
+        .boardDetail-title {display:block;font-size:24px; color:#000168; font-weight:700;}
+        .boardDetail-value {display:inline-block; width:40px; flex-shrink:0; font-size:24px; font-weight:700; color:#000168;}
+        .boardDetail-text {width:100%; color:#494949; line-height:32px; font-size:18px;}
+    .boardDetail-comment-w {position:relative;}
+        .boardDetail-comment-w .boardDetail-inner {border-bottom:0;}
+        .boardDetail-comment-w .boardDetail-value {color:#494949;}
+    .content-w-contactEnd .moduleBtn-w,
+    .content-w-noticeEnd .moduleBtn-w   {text-align:left;}
+    .content-w-contactEnd .roundBtn,
+    .content-w-noticeEnd .roundBtn {font-size:24px; height:45px; line-height:45px; font-weight:500;}
 
 /* footer */
 .footer-w {background-color:#000074;}
@@ -351,6 +392,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
 
 /* Mobile 버전 */
 @media screen and (max-width:1040px) {
+    .manager-w {top:80px;}
     .content-wrap {min-height:calc(100vh - 388px);}
     /* 메인 */
     .serviceList-inner {padding:0 5%; width:100%; max-width:100%;}
@@ -519,6 +561,8 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .textNimgList-cont .detailList-title {font-size:18px;}
     /* 환경사업부-소독기부품 */
     .lampList-w {margin-top:80px;}
+    /* 게시판  */
+    .boardList-w td span {font-size:14px;}
 
 }
 
@@ -578,7 +622,8 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .contactForm-dash {font-size:20px; width:32px;}
     .contactForm-row {width:calc(100% + 32px);}
     .contactForm-cell {padding-right:32px;}
-
+    /* 공지사항  */
+    .content-w-notice table tr td:nth-of-type(2) span {padding:10px;} 
 }
 
 /* Mobile 버전 */
@@ -597,6 +642,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .historyListText span{min-width:auto; font-size:14px; line-height:20px;}
     .historyList-date span {font-size:14px;}
     .historyInfoText {font-size:14px; line-height:22px;}
+    .boardList-w table th {font-size:14px;}
     
        
 }
