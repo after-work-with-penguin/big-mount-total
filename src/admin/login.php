@@ -328,7 +328,6 @@ if (isset($_SESSION['is_login']) && !empty($_SESSION['is_login']) && $_SESSION['
 <body>
 
     <div class="wrapper fadeInDown">
-        <h3>대산토탈 관리자</h3>
         <div id="formContent">
             <!-- Tabs Titles -->
 
