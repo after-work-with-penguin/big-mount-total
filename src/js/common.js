@@ -16,7 +16,11 @@ function initMenu_pc() {
 function pcMenu_top() {
     $('.pc-menu-lv2').hide();
     $('.pc-menu-lv1').on('click', function() {
-        var $lv2 = $(this).find('.pc-menu-lv2');
+        $('.pc-menu-lv1').removeClass('gnb1depthCurrent');
+
+        var _$this = $(this);
+        _$this.addClass('gnb1depthCurrent');
+        var $lv2 = _$this.find('.pc-menu-lv2');
         console.log('pc-menu-top / lv2: ', $lv2);
         console.log('pc-menu-top / lv2 - display: ', $lv2.css('display'));
         if($lv2.css('display') == 'none') {
@@ -24,11 +28,9 @@ function pcMenu_top() {
             $lv2.show();
         }else{
             $lv2.hide();
+            $('.pc-menu-lv1').removeClass('gnb1depthCurrent');
         }
     });
-    // $('.pc-menu-lv1').on('mouseout', function() {
-    //     $('.pc-menu-lv2').hide();
-    // });
 }
 
 function pcMenu_right() {

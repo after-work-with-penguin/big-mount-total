@@ -1,7 +1,7 @@
 <?php require_once('./fragment/header.php'); ?>
 
 <!-- contents -->
-<div class="content-w-main" id="content-main"><!-- 페이지 속성 분기 "content-w-aaa" -->
+<div class="content-w-directions" id="content-main"><!-- 페이지 속성 분기 "content-w-aaa" -->
     <div class="contentVisual-w"> <!-- 비주얼 영역 -->
 
         <?php require_once('./fragment/left.php'); ?>

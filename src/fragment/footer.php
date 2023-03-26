@@ -1,3 +1,5 @@
+</div>
+
 <!-- 공통푸터 -->
 <div class="footer-w">
     <div class="footer-inner">
