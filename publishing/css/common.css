@@ -9,7 +9,7 @@ table {width: 100%;border-collapse: collapse;border-spacing: 0px;empty-cells: sh
 legend, caption {visibility: hidden;width: 0;height: 0;line-height: 0;margin: 0;padding: 0;font-size: 0;}
 h1, h2, h3, h4, h5, h6, strong, em {font-weight: bold;}
 a {color: inherit; display:inline-block; text-decoration: none; box-sizing:border-box;}
-button {display:inline-block; background:none; border:0;}
+button {display:inline-block; background:none; border:0; cursor:pointer;}
 ul, ol {list-style: none;}
 input, select {vertical-align: middle;}
 em, address {font-style: normal;}
@@ -21,8 +21,8 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
 
 /* gnb */
 .gnb-w {position:relative; padding-left:170px; max-width:1170px; margin:0 auto; box-sizing:border-box;}
-    .gnb-logo {position:absolute; left:11px; top:9px; z-index:2; display:flex; align-items:center; max-width:110px; height:100px;  margin:0 auto;}
-        .gnb-logo-link {display:inline-block;}
+    .gnb-logo {position:absolute; left:11px; top:9px; z-index:3; display:flex; align-items:center; max-width:110px; height:100px;  margin:0 auto;}
+        .gnb-logo-link {display:inline-block; }
     .gnbList-w {position:absolute; left:0; top:9px; z-index:2; width:100%; padding-left:170px; box-sizing:border-box;}
         .gnbList-inner {display:flex; justify-content:center; align-items:center; height:100px; }
             .gnbList-cont {position:relative; overflow:hidden;}
