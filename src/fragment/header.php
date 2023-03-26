@@ -38,28 +38,28 @@ require_once('head.php');
                     <div class="gnbSub-w pc-menu-lv2"  id="pc-menu-lv2-2">
                         <ul class="gnbSub-inner">
                             <li class="gnbSub-cont"><!-- 메뉴 활성화 gnb2depthCurrent -->
-                                <a href="javascript: void(0);" class="gnbSub-link">장비임대 사업부</a>
+                                <a href="./020101-construction.php" class="gnbSub-link">장비임대 사업부</a>
                             </li>
                             <li class="gnbSub-cont">
-                                <a href="javascript: void(0);" class="gnbSub-link">컨테이너 사업부</a>
+                                <a href="./020201-container-business.php" class="gnbSub-link">컨테이너 사업부</a>
                             </li>
                             <li class="gnbSub-cont">
-                                <a href="javascript: void(0);" class="gnbSub-link">도장 사업부</a>
+                                <a href="./020301-painting.php" class="gnbSub-link">도장 사업부</a>
                             </li>
                             <li class="gnbSub-cont">
-                                <a href="javascript: void(0);" class="gnbSub-link">가설재 임대사업부</a>
+                                <a href="./020401-material.php" class="gnbSub-link">가설재 임대사업부</a>
                             </li>
                             <li class="gnbSub-cont">
-                                <a href="javascript: void(0);" class="gnbSub-link">환경 사업부</a>
+                                <a href="./020501-environment.php" class="gnbSub-link">환경 사업부</a>
                             </li>
                         </ul>
                     </div>
                 </li>
                 <li class="gnbList-cont">
-                    <a href="javascript: void(0);" class="gnbList-link">견적문의</a>
+                    <a href="./0301-contact-us.php" class="gnbList-link">견적문의</a>
                 </li>
                 <li class="gnbList-cont">
-                    <a href="javascript: void(0);" class="gnbList-link">공지사항</a>
+                    <a href="./0302-notice.php" class="gnbList-link">공지사항</a>
                 </li>
             </ul>
         </div>
