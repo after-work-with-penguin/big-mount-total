@@ -9,7 +9,7 @@ table {width: 100%;border-collapse: collapse;border-spacing: 0px;empty-cells: sh
 legend, caption {visibility: hidden;width: 0;height: 0;line-height: 0;margin: 0;padding: 0;font-size: 0;}
 h1, h2, h3, h4, h5, h6, strong, em {font-weight: bold;}
 a {color: inherit; display:inline-block; text-decoration: none; box-sizing:border-box;}
-button {display:inline-block; background:none; border:0;}
+button {display:inline-block; background:none; border:0; cursor:pointer;}
 ul, ol {list-style: none;}
 input, select {vertical-align: middle;}
 em, address {font-style: normal;}
@@ -21,8 +21,8 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
 
 /* gnb */
 .gnb-w {position:relative; padding-left:170px; max-width:1170px; margin:0 auto; box-sizing:border-box;}
-    .gnb-logo {position:absolute; left:11px; top:9px; z-index:2; display:flex; align-items:center; max-width:110px; height:100px;  margin:0 auto;}
-        .gnb-logo-link {display:inline-block;}
+    .gnb-logo {position:absolute; left:11px; top:9px; z-index:3; display:flex; align-items:center; max-width:110px; height:100px;  margin:0 auto;}
+        .gnb-logo-link {display:inline-block; }
     .gnbList-w {position:absolute; left:0; top:9px; z-index:2; width:100%; padding-left:170px; box-sizing:border-box;}
         .gnbList-inner {display:flex; justify-content:center; align-items:center; height:100px; }
             .gnbList-cont {position:relative; overflow:hidden;}
@@ -255,13 +255,13 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
         .infoBgTitle {display:inline-block; margin-bottom:5px; padding:5px 10px; background-color:#000168; color:#fff; font-size:24px;}
         .infoBgTitleSub {display:block; margin-top:5px; font-size:20px; color:#000168;}
         .infoTable-w table,
-        .boardList-w table {margin-top:55px; background-color:#fff; border-radius:12px 12px 0 0; overflow:hidden; }
+        .boardList-w table {margin-top:35px; background-color:#fff; border-radius:12px 12px 0 0; overflow:hidden; }
             .infoTable-w table th,
             .boardList-w table th  {height:41px; background-color:#000168; color:#fff; font-size:16px; text-align:center; border-left:1px solid #fff;}
             .infoTable-w table th:first-of-type,
             .boardList-w table th:first-of-type  {border-left:0;}
             .infoTable-w table td,
-            .boardList-w table td {padding:20px 10px; text-align:center; border-left:1px solid #000168; color:#494949; }
+            .boardList-w table td {padding:20px 10px; text-align:center; border-left:1px solid #000168; color:#494949; cursor:pointer;}
             .infoTable-w table td:first-of-type,
             .boardList-w table td:first-of-type {border-left:0;}
     .boardList-w {position:relative; }  
@@ -269,6 +269,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
             .boardList-w table tr:nth-of-type(even) {background-color:rgba(169,169,190,.3);}
                 .boardList-w table td {padding:0px;}   
                     .boardList-w td span {display:block; padding:10px; word-wrap:break-word;}
+                    .boardList-w table tr:hover {font-weight:700;}
                     .infoTable-w table td span,
                     .boardList-w table td span, {display:inline-block; text-align:left; font-size:16px; line-height:22px; letter-spacing:-0.26px;}
         .tubeInfo-img-w {margin:60px auto 0; max-width:95%; display:flex; justify-content: center; align-items: center;}
@@ -304,7 +305,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
             .boardBtnList-cont {display:inline-block; padding:0 3px;}
                 .boardBtnList-num {display:inline-block; width:25px; height:25px; line-height:25px; text-align:center; color:#494949;}
                 .pagingCurrent .boardBtnList-num {background-color:#00096F; color:#fff;}
-    .boardList-w .moduleBtn-w {}          
+    .boardList-w .moduleBtn-w {text-align:right;}          
         .boardList-w .roundBtn {height:45px; line-height:45px; font-size:24px;}
 .boardBtnList-w [class^="arrowBtn-"] {display:inline-block; padding:0 10px; cursor:pointer;}
 .arrowBtn-next img {transform:rotate(180deg);}
@@ -345,8 +346,26 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
         .textArea {resize:none; display:block; padding:10px; box-sizing:border-box; width:100%; height:355px; font-weight:700; overflow:hidden; overflow-y:auto; font-size:18px; line-height:26px; border:0; background-color:rgba(169, 169, 190, .3); color:#494949;}
         .textArea::-webkit-scrollbar {width:10px; background:rgba(0,0,0,0);}
         .textArea::-webkit-scrollbar-thumb {background:#A9A9BE; width:10px; border-radius:5px;}
-        .moduleBtn-w {text-align:center; margin-top:50px; }
-            .roundBtn {display:inline-block; padding:0 25px; height:55px; line-height:55px; text-align:center; background-color:#00096F; border-radius:27px; font-size:36px; font-weight:700; color:#fff; }
+        .moduleBtn-w {text-align:center; margin-top:50px;}
+            .bdlineBtn,
+            .content-w-contactPw .roundBtn {display:inline-block; min-width:200px; height:45px; line-height:45px; padding:0 25px; font-size:24px; font-weight:700; text-align:center; border-radius:27px; border:1px solid #00096F; background-color:#fff; box-sizing:border-box; color:#00096F;}
+            .roundBtn {display:inline-block; padding:0 25px; height:55px; line-height:55px; text-align:center; background-color:#00096F !important; border-radius:27px; font-size:36px; font-weight:700; color:#fff !important; }
+        /* 자동입력 방지 */
+        .captchaType {flex-wrap:wrap;}
+            .captchaType .contactForm-cell:first-of-type {width:40%;}
+            .captcha-box {display:flex; align-items:center; margin-bottom:5px;}
+
+
+/* 비밀번호 확인 */
+.passwordCheck-w {padding:100px 0; box-sizing:border-box;}
+    .passwordCheck-inner {text-align:center;}
+        .passwordCheck-label {display:block; width:100%; font-size:24px; color:#000168; font-weight:700;}
+        .passwordCheck-label br {display:none;}
+        .passwordCheck-ip {display:inline-block; margin-top:50px; max-width:296px;  width:100%; height:45px; box-sizing:border-box; background:rgba(169, 169, 190, .3) !important; border:0;}
+    .passwordCheck-w .moduleBtn-w {display:flex; justify-content: center;}
+        .passwordCheck-w .moduleBtn-inner {padding:0 3%; box-sizing:border-box;}
+
+
 /* 공지사항 리스트  */
 .content-w-notice table tr td:nth-of-type(2) {text-align:left; }
 .content-w-notice table tr td:nth-of-type(2) span {padding:10px 20px;} 
@@ -622,6 +641,10 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .contactForm-dash {font-size:20px; width:32px;}
     .contactForm-row {width:calc(100% + 32px);}
     .contactForm-cell {padding-right:32px;}
+    .passwordCheck-label{font-size:20px; line-height:30px;}
+        .passwordCheck-label br {display:block;}
+    .passwordCheck-w .moduleBtn-inner {width:50% !important;}
+        .passwordCheck-w button {min-width:100% !important;}
     /* 공지사항  */
     .content-w-notice table tr td:nth-of-type(2) span {padding:10px;} 
 }
