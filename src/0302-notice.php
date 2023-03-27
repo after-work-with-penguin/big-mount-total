@@ -109,7 +109,7 @@ for ($i = $paging_info['page_start']; $i <= $paging_info['page_end']; $i++) {
     if ($i == $page) {
         echo '<li class="boardBtnList-cont pagingCurrent"><a href="#none" class="boardBtnList-num">' . $i . '</a></li>';
     } else {
-        echo '<li class="boardBtnList-cont pagingCurrent"><a href="0302-notice.php?page=' . $i . '" class="boardBtnList-num">' . $i . '</a></li>';
+        echo '<li class="boardBtnList-cont"><a href="0302-notice.php?page=' . $i . '" class="boardBtnList-num">' . $i . '</a></li>';
     }
 }
 ?>
@@ -117,7 +117,7 @@ for ($i = $paging_info['page_start']; $i <= $paging_info['page_end']; $i++) {
                         </div>
 <?php
 if ($paging_info['page_next'] < $paging_info['page_total']) {
-    echo '<button type="button" onclick="movePage(' . $paging_info['page_prev'] . ')" class="arrowBtn-next"><img src="./imgs/pagingArrow.png" alt="다음버튼"></button>';
+    echo '<button type="button" onclick="movePage(' . $paging_info['page_next'] . ')" class="arrowBtn-next"><img src="./imgs/pagingArrow.png" alt="다음버튼"></button>';
 }
 ?>
                     </div>
