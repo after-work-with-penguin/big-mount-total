@@ -16,7 +16,7 @@
 
     <!-- contents -->
     <div class="content-wrap">
-        <div class="content-w-contact"><!-- 페이지 속성 분기 "content-w-aaa" -->
+        <div class="content-w-contactPw"><!-- 페이지 속성 분기 "content-w-aaa" -->
             <!-- 비주얼 영역 -->
             <div class="contentVisual-w">
                 <div class="contSection-left">
@@ -92,67 +92,21 @@
                     <!-- 콘텐츠 내용-->
                    <div class="contentArticle-w">
                        <h5 class="contactTitle">견적문의</h5>
-                       <div class="contactForm-w">
-                           <div class="contactForm-row">
-                               <div class="contactForm-cell">
-                                   <label for="name">성함</label>
-                                   <input type="text" id="name"/>
-                               </div>
-                               <div class="contactForm-cell">
-                                  <label for="call">연락처</label>
-                                  <input type="text" id="call"/>
-                              </div>
+                       <div class="passwordCheck-w">
+                           <div class="passwordCheck-inner">
+                               <label for="passwordCheck" class="passwordCheck-label">이 글은 비밀글입니다. <br/>비밀번호를 입력하여 주세요.</label>
+                               <input type="password" name="passwordCheck" class="passwordCheck-ip">
                            </div>
-                           <!-- 이메일-->
-                           <div class="contactForm-row rowEtc">
-                               <div class="contactForm-cell">
-                                   <label for="email">이메일</label>
-                                   <input type="text" id="email"/>
-                                   <span class="contactForm-dash">@</span>
-                               </div>
-                               <div class="contactForm-cell">
-                                   <input type="text" id="email2" placeholder="주소입력">
-                               </div>
-                           </div>
-                            <!-- 비밀번호 -->
-                            <div class="contactForm-row">
-                                <div class="contactForm-cell">
-                                    <label for="password">비밀번호</label>
-                                    <input type="password" id="password"/>
-                                </div>
-                                <div class="contactForm-cell">
-                                    <label for="passwordCheck">비밀번호 확인</label>
-                                    <input type="password" id="passwordCheck"/>
-                                </div>
-                            </div>
-                            <!-- 제목 -->
-                            <div class="contactForm-row wideType">
-                                <div class="contactForm-cell">
-                                    <label for="formTitle">제목</label>
-                                    <input type="text" id="formTitle"/>
-                                </div>
-                            </div>
-                           <!-- 문의 내용 -->
-                           <div class="contactForm-row">
-                               <div class="contactForm-cell">
-                                   <label for="formText">문의내용</label>
-                                   <textarea id="formText" class="textArea"></textarea>
-                               </div>
-                           </div>
-                           <div class="contactForm-row captchaType">
-                                <div class="contactForm-cell">
-                                    <label for="formCaptcha">자동 등록 방지</label>
-                                    <div class="captcha-box">
-                                        <img style="float: left; padding-right: 5px; height: 45px;" id="captcha_image" src="/dev/vendor/securimage/securimage_show.php?86d9cd1464a8126205f452f7eee005d7" alt="CAPTCHA Image"><a tabindex="-1" style="border: 0" href="#" title="Refresh Image" onclick="if (typeof window.captcha_image_audioObj !== 'undefined') captcha_image_audioObj.refresh(); document.getElementById('captcha_image').src = '/dev/vendor/securimage/securimage_show.php?' + Math.random(); this.blur(); return false"><img height="32" width="32" src="/dev/vendor/securimage/images/refresh.png" alt="Refresh Image" onclick="this.blur()" style="border: 0px; vertical-align: bottom"></a><br><div style="clear: both"></div><label for="formCaptchaTemp"></label> <input type="text" name="ct_captcha" id="formCaptchaTemp" autocomplete="off" style="display: none;">                        </div>
-                                    </div>
-                                <div class="contactForm-cell">
-                                    <input type="text" id="formCaptcha" autocomplete="off">
-                                </div>
-                            </div>
                            <div class="moduleBtn-w">
-                                <button type="button" class="roundBtn">견적 문의하기</button>
+                            <div class="moduleBtn-inner">
+                                <button type="button" class="bdlineBtn">목록</button>
+                            </div>  
+                            <div class="moduleBtn-inner">
+                                <button type="button" class="roundBtn">확인</button>
+                            </div>
                            </div>
                        </div>
+                       
                     
                    </div>
                 </div>
