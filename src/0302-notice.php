@@ -1,5 +1,30 @@
 <?php require_once('./fragment/header.php'); ?>
 
+
+<?php
+include('./admin/db_conn.php');
+include('./admin/common.php');
+?>
+
+<?php
+// 게시굴 수
+$item_row_count = 10;
+// 하단 페이지 block 수 (1, 2, 3, 4, ...  이런거)
+$page_block_count = 10;
+
+$sql = "SELECT COUNT(*) FROM dst_notice WHERE deleted_at IS NULL";
+
+$result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+$total_count = mysqli_fetch_array($result);
+$total_count = intval($total_count[0]);
+$result->free();
+
+// 현재 페이지
+$page = isset($_GET['page']) ? trim($_GET['page']) : 1;
+
+$paging_info = getPagingInfo($page, $total_count, $item_row_count, $page_block_count);
+?>
+
 <!-- contents -->
 <div class="content-w-notice" id="content-main"><!-- 페이지 속성 분기 "content-w-aaa" -->
     <div class="contentVisual-w"> <!-- 비주얼 영역 -->
@@ -9,7 +34,7 @@
         <!-- 우측 content-->
         <div class="contSection-right">
             <div class="contentVisual-img-w">
-                <img src="./imgs/cont03-01-top.png" alt="" class="contentVisual-img">
+                <img src="./imgs/cont04-01-top.png" alt="" class="contentVisual-img">
                 <h3 class="sectionTitle">
                     <strong class="sectionTitle-bg">공지사항</strong>
                     <span class="sectionTitle-eng">Notice</span>
@@ -22,6 +47,12 @@
             <div class="contentArticle-w">
                 <h5 class="contactTitle">공지사항</h5>
                 <div class="boardList-w">
+
+<?php if($isLogin) { ?>
+                    <div class="moduleBtn-w">
+                        <button type="button" class="roundBtn" onclick="noticeWrite()">글쓰기</button>
+                    </div>
+<?php } ?>
                     <div class="boardList-inner">
                         <table>
                             <colgroup>
@@ -37,106 +68,58 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td><span>12</span></td>
-                                    <td><span>주요가이드|가이드안내</span></td>
-                                    <td><span>2023.3.25</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span>11</span></td>
-                                    <td><span>견적 문의 안내</span></td>
-                                    <td><span>2023.3.25</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span>10</span></td>
-                                    <td><span>자료실</span></td>
-                                    <td><span>2023.3.25</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span>9</span></td>
-                                    <td><span>대산토탈 자료실</span></td>
-                                    <td><span>2023.3.25</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span>8</span></td>
-                                    <td><span>주요가이드|가이드안내</span></td>
-                                    <td><span>2023.3.25</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span>7</span></td>
-                                    <td><span>주요가이드|가이드안내</span></td>
-                                    <td><span>2023.3.25</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span>6</span></td>
-                                    <td><span>주요가이드|가이드안내</span></td>
-                                    <td><span>2023.3.25</span></td>
-                                </tr><tr>
-                                    <td><span>5</span></td>
-                                    <td><span>주요가이드|가이드안내</span></td>
-                                    <td><span>2023.3.25</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span>4</span></td>
-                                    <td><span>주요가이드|가이드안내</span></td>
-                                    <td><span>2023.3.25</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span>3</span></td>
-                                    <td><span>주요가이드|가이드안내</span></td>
-                                    <td><span>2023.3.25</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span>2</span></td>
-                                    <td><span>주요가이드|가이드안내</span></td>
-                                    <td><span>2023.3.25</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span>1</span></td>
-                                    <td><span>주요가이드|가이드안내</span></td>
-                                    <td><span>2023.3.25</span></td>
-                                </tr>
+<?php
+$sql  = "
+SELECT notice_page.* FROM ( 
+    SELECT @rownum:=@rownum-1 as num, notice.seq, notice.level, notice.title, notice.view_count, notice.created_at 
+    FROM dst_notice notice, (SELECT @rownum:=(select count(*) from dst_notice WHERE deleted_at IS NULL)+1) rownum_temp 
+    WHERE notice.deleted_at IS NULL ORDER BY notice.seq desc 
+) notice_page LIMIT " . $paging_info['page_db'] . ", $item_row_count
+";
+$result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+$notice_length = $result->num_rows;
+
+if ($notice_length > 0) {
+    while ($row = $result->fetch_array()) {
+        echo '<tr onclick=getNoticeInfo(' . RemoveXSS($row['seq']) . ')>';
+        echo '    <td><span>' . RemoveXSS($row['num']) . '</span></td>';
+        echo '    <td><span>' . RemoveXSS($row['title']) . '</span></td>';
+        echo '    <td><span>' . $row['created_at'] . '</span></td>';
+        echo '</tr>';
+    }
+} else {
+    echo '<tr><td colspan="3"><span>등록된 공지사항이 없습니다.</span></td></tr>';
+}
+
+?>
                             </tbody>
                         </table>
                     </div>
                     <!-- 페이징버튼 -->
                     <div class="boardBtnList-w">
-                        <button type="button" class="arrowBtn-prev"><img src="./imgs/pagingArrow.png" alt="이전버튼"></button>
+<?php
+if ($paging_info['page_prev'] > 0) {
+    echo '<button type="button" onclick="movePage(' . $paging_info['page_prev'] . ')" class="arrowBtn-prev"><img src="./imgs/pagingArrow.png" alt="이전버튼"></button>';
+}
+?>
                         <div class="boardBtnList-inner">
-                            <ul class="boardBtnList">
-                                <li class="boardBtnList-cont pagingCurrent"><!-- 페이징 활성화 -->
-                                    <a href="#none" class="boardBtnList-num">1</a>
-                                </li>
-                                <li class="boardBtnList-cont">
-                                    <a href="#none" class="boardBtnList-num">2</a>
-                                </li>
-                                <li class="boardBtnList-cont">
-                                    <a href="#none" class="boardBtnList-num">3</a>
-                                </li>
-                                <li class="boardBtnList-cont">
-                                    <a href="#none" class="boardBtnList-num">4</a>
-                                </li>
-                                <li class="boardBtnList-cont">
-                                    <a href="#none" class="boardBtnList-num">5</a>
-                                </li>
-                                <li class="boardBtnList-cont">
-                                    <a href="#none" class="boardBtnList-num">6</a>
-                                </li>
-                                <li class="boardBtnList-cont">
-                                    <a href="#none" class="boardBtnList-num">7</a>
-                                </li>
-                                <li class="boardBtnList-cont">
-                                    <a href="#none" class="boardBtnList-num">8</a>
-                                </li>
-                                <li class="boardBtnList-cont">
-                                    <a href="#none" class="boardBtnList-num">9</a>
-                                </li>
-                                <li class="boardBtnList-cont">
-                                    <a href="#none" class="boardBtnList-num">10</a>
-                                </li>
+                            <ul class="boardBtnList"></ul>
+<?php
+for ($i = $paging_info['page_start']; $i <= $paging_info['page_end']; $i++) {
+    if ($i == $page) {
+        echo '<li class="boardBtnList-cont pagingCurrent"><a href="#none" class="boardBtnList-num">' . $i . '</a></li>';
+    } else {
+        echo '<li class="boardBtnList-cont pagingCurrent"><a href="0302-notice.php?page=' . $i . '" class="boardBtnList-num">' . $i . '</a></li>';
+    }
+}
+?>
                             </ul>
                         </div>
-                        <button type="button" class="arrowBtn-next"><img src="./imgs/pagingArrow.png" alt="다음버튼"></button>
+<?php
+if ($paging_info['page_next'] < $paging_info['page_total']) {
+    echo '<button type="button" onclick="movePage(' . $paging_info['page_prev'] . ')" class="arrowBtn-next"><img src="./imgs/pagingArrow.png" alt="다음버튼"></button>';
+}
+?>
                     </div>
                 </div>
             </div>
@@ -146,5 +129,13 @@
 </div>
 
 <?php require_once('./fragment/footer.php'); ?>
+<script> 
+    function getNoticeInfo(id) { location.href = './0302-notice-view.php?seq=' + id; }
+    function movePage(page) { location.href = './0302-notice.php?page=' + page; } 
+</script>
+
+<?php if($isLogin) { ?>
+<script> function noticeWrite() { location.href = './0302-notice-write.php'; } </script>
+<?php } ?>
 
 <?php require_once('./fragment/tail.php'); ?>

@@ -1,5 +1,26 @@
 <?php require_once('./fragment/header.php'); ?>
 
+<?php
+if(!$isLogin) {
+    echo ("<script>alert('관리자만 등록할 수 있습니다.');</script>");
+    echo ('<meta http-equiv="refresh" content="0 url=./0302-notice.php" />');
+    exit;
+}
+?>
+
+<?php
+include('./admin/db_conn.php');
+include('./admin/common.php');
+
+$notice_seq = 0;
+if ($_SERVER['QUERY_STRING'] != '') {
+    $notice_seq = $_GET['seq'];
+}
+
+$notice_seq = intval(mysqli_real_escape_string($conn, $notice_seq));
+
+?>
+
 <!-- contents -->
 <div class="content-w-notice" id="content-main"><!-- 페이지 속성 분기 "content-w-aaa" -->
     <div class="contentVisual-w"> <!-- 비주얼 영역 -->
@@ -9,7 +30,7 @@
         <!-- 우측 content-->
         <div class="contSection-right">
             <div class="contentVisual-img-w">
-                <img src="./imgs/cont03-01-top.png" alt="" class="contentVisual-img">
+                <img src="./imgs/cont04-01-top.png" alt="" class="contentVisual-img">
                 <h3 class="sectionTitle">
                     <strong class="sectionTitle-bg">공지사항</strong>
                     <span class="sectionTitle-eng">Notice</span>
@@ -21,130 +42,44 @@
             <!-- 콘텐츠 내용-->
             <div class="contentArticle-w">
                 <h5 class="contactTitle">공지사항</h5>
-                <div class="boardList-w">
-                    <div class="boardList-inner">
-                        <table>
-                            <colgroup>
-                                <col scope="col" width="15%">
-                                <col scope="col" width="60%">
-                                <col scope="col" width="25%">
-                            </colgroup>
-                            <thead>
-                                <tr>
-                                    <th>번호</th>
-                                    <th>제목</th>
-                                    <th>등록일</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><span>12</span></td>
-                                    <td><span>주요가이드|가이드안내</span></td>
-                                    <td><span>2023.3.25</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span>11</span></td>
-                                    <td><span>견적 문의 안내</span></td>
-                                    <td><span>2023.3.25</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span>10</span></td>
-                                    <td><span>자료실</span></td>
-                                    <td><span>2023.3.25</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span>9</span></td>
-                                    <td><span>대산토탈 자료실</span></td>
-                                    <td><span>2023.3.25</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span>8</span></td>
-                                    <td><span>주요가이드|가이드안내</span></td>
-                                    <td><span>2023.3.25</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span>7</span></td>
-                                    <td><span>주요가이드|가이드안내</span></td>
-                                    <td><span>2023.3.25</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span>6</span></td>
-                                    <td><span>주요가이드|가이드안내</span></td>
-                                    <td><span>2023.3.25</span></td>
-                                </tr><tr>
-                                    <td><span>5</span></td>
-                                    <td><span>주요가이드|가이드안내</span></td>
-                                    <td><span>2023.3.25</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span>4</span></td>
-                                    <td><span>주요가이드|가이드안내</span></td>
-                                    <td><span>2023.3.25</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span>3</span></td>
-                                    <td><span>주요가이드|가이드안내</span></td>
-                                    <td><span>2023.3.25</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span>2</span></td>
-                                    <td><span>주요가이드|가이드안내</span></td>
-                                    <td><span>2023.3.25</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span>1</span></td>
-                                    <td><span>주요가이드|가이드안내</span></td>
-                                    <td><span>2023.3.25</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- 페이징버튼 -->
-                    <div class="boardBtnList-w">
-                        <button type="button" class="arrowBtn-prev"><img src="./imgs/pagingArrow.png" alt="이전버튼"></button>
-                        <div class="boardBtnList-inner">
-                            <ul class="boardBtnList">
-                                <li class="boardBtnList-cont pagingCurrent"><!-- 페이징 활성화 -->
-                                    <a href="#none" class="boardBtnList-num">1</a>
-                                </li>
-                                <li class="boardBtnList-cont">
-                                    <a href="#none" class="boardBtnList-num">2</a>
-                                </li>
-                                <li class="boardBtnList-cont">
-                                    <a href="#none" class="boardBtnList-num">3</a>
-                                </li>
-                                <li class="boardBtnList-cont">
-                                    <a href="#none" class="boardBtnList-num">4</a>
-                                </li>
-                                <li class="boardBtnList-cont">
-                                    <a href="#none" class="boardBtnList-num">5</a>
-                                </li>
-                                <li class="boardBtnList-cont">
-                                    <a href="#none" class="boardBtnList-num">6</a>
-                                </li>
-                                <li class="boardBtnList-cont">
-                                    <a href="#none" class="boardBtnList-num">7</a>
-                                </li>
-                                <li class="boardBtnList-cont">
-                                    <a href="#none" class="boardBtnList-num">8</a>
-                                </li>
-                                <li class="boardBtnList-cont">
-                                    <a href="#none" class="boardBtnList-num">9</a>
-                                </li>
-                                <li class="boardBtnList-cont">
-                                    <a href="#none" class="boardBtnList-num">10</a>
-                                </li>
-                            </ul>
+                <div class="contactForm-w">
+                    <input type="hidden" id="notice_seq" name="notice_seq" value="<?php echo $notice_seq; ?>">
+                    
+                    <!-- 제목 -->
+                    <div class="contactForm-row wideType">
+                        <div class="contactForm-cell">
+                            <label for="formTitle">제목</label>
+                            <input type="text" id="formTitle"/>
                         </div>
-                        <button type="button" class="arrowBtn-next"><img src="./imgs/pagingArrow.png" alt="다음버튼"></button>
+                    </div>
+                    <!-- 내용 -->
+                    <div class="contactForm-row">
+                        <div class="contactForm-cell">
+                            <label for="formText">내용</label>
+                            <div id="formText" class="textArea"></div>
+                        </div>
+                    </div>
+                    <div class="moduleBtn-w">
+                        <button type="button" class="roundBtn" id="submitBtn" onclick="doSubmit(event)">등록하기</button>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </div>
 </div>
 
 <?php require_once('./fragment/footer.php'); ?>
+
+<!-- include libraries(bootstrap) -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<!-- include summernote css/js-->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/lang/summernote-ko-KR.js"></script>
+
+<script src="./js/notice.write.js"></script>
 
 <?php require_once('./fragment/tail.php'); ?>
