@@ -12,12 +12,14 @@
                 <div class="contentVisual-img-inner">
                     <img src="./imgs/cont01-02-top.png" alt="" class="contentVisual-img">
                 </div>
-                <div class="contentVisual-img-inner">
+                <!-- <div class="contentVisual-img-inner">
                     <img src="./imgs/cont01-02-top.png" alt="" class="contentVisual-img">
                 </div>
                 <div class="contentVisual-img-inner">
                     <img src="./imgs/cont01-02-top.png" alt="" class="contentVisual-img">
-                </div>
+                </div> -->
+
+                <?php require_once('./fragment/right.php'); ?>
             </div>
             <!-- 콘텐츠 내용-->
             <div class="contentArticle-w">
@@ -67,6 +69,6 @@
 
 <?php require_once('./fragment/footer.php'); ?>
 
-<script type="text/javascript" src="./js/main.js"></script>
+<!-- <script type="text/javascript" src="./js/main.js"></script> -->
 
 <?php require_once('./fragment/tail.php'); ?>
