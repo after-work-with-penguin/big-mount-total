@@ -42,7 +42,7 @@ CREATE TABLE dst_members (
  */
 CREATE TABLE dst_notice (
 	seq BIGINT NOT NULL AUTO_INCREMENT, 
-    level INT NOT NULL DEFAULT 0 comment '3: 긴급, 2: 중요, 1: 일반', 
+    level INT NOT NULL DEFAULT 1 comment '3: 긴급, 2: 중요, 1: 일반', 
     top CHAR(1) NOT NULL DEFAULT 'N' comment 'Y: 상단 고정, N: 일반 글 (default)', 
     title VARCHAR(512) NOT NULL, 
 	view_count INT NOT NULL DEFAULT 0, 
