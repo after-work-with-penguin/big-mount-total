@@ -57,6 +57,7 @@ function requestContact() {
         type: 'post',
         url: './action/contactus_quest.php',
         data: { 
+            seq: $('#contact-seq').val(),
             name: name,
             phone: phone,
             email: email1 + '@' + email2,

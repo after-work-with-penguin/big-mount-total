@@ -32,7 +32,7 @@ flush();
 
 if ($contact_count == 0) {
     echo '<script> alert("등록된 문의가 없습니다.");</script>';
-    echo '<meta http-equiv="refresh" content="0 url=../0301-contact-check.php?seq="' . $seq . ' />';
+    echo '<meta http-equiv="refresh" content="0 url=../0301-contact-us.php" />';
     exit;
 }
 

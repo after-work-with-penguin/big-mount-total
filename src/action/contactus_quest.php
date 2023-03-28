@@ -37,6 +37,7 @@ if (!$securimage->check($captcha)) {
     exit;
 }
 
+$seq = intval(mysqli_real_escape_string($conn, $_POST['seq']));
 $name = mysqli_real_escape_string($conn, $_POST['name']);
 $email = mysqli_real_escape_string($conn, $_POST['email']);
 $phone = mysqli_real_escape_string($conn, $_POST['phone']);
@@ -44,19 +45,43 @@ $password = mysqli_real_escape_string($conn, $_POST['password']);
 $title = mysqli_real_escape_string($conn, $_POST['title']);
 $contants = mysqli_real_escape_string($conn, $_POST['contants']);
 
-$sql  = " INSERT INTO dst_contact ( name, email, phone, password, hide, title, question ) VALUES ( ";
-$sql .= "'" . $name . "', ";
-$sql .= "'" . $email . "', ";
-$sql .= "'" . $phone . "', ";
-$sql .= "'" . base64_decode($password) . "', ";
-$sql .= "'" . 'Y' . "', ";
-$sql .= "'" . $title . "', ";
-$sql .= "'" . $contants . "') ";
+$sql = '';
+$message = '';
+$result_id = $seq;
 
-$result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
-$result_id = $conn->insert_id;
+// update
+if($seq > 0) {
+    $sql  = "UPDATE dst_contact SET ";
+    $sql .= "name = '" . $name . "', ";
+    $sql .= "email = '" . $email . "', ";
+    $sql .= "phone = '" . $phone . "', ";
+    $sql .= "password = '" . base64_decode($password) . "', ";
+    $sql .= "title = '" . $title . "', ";
+    $sql .= "question = '" . $contants . "', ";
+    $sql .= "updated_at = now() ";
+    $sql .= "WHERE seq = " . $seq;
 
-$message = '견적 문의가 등록되었습니다.';
+    $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+
+    $message = '견적 문의가 수정되었습니다.';
+}
+// insert
+else {
+    $sql  = " INSERT INTO dst_contact ( name, email, phone, password, hide, title, question ) VALUES ( ";
+    $sql .= "'" . $name . "', ";
+    $sql .= "'" . $email . "', ";
+    $sql .= "'" . $phone . "', ";
+    $sql .= "'" . base64_decode($password) . "', ";
+    $sql .= "'" . 'Y' . "', ";
+    $sql .= "'" . $title . "', ";
+    $sql .= "'" . $contants . "') ";
+
+    $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+    $result_id = $conn->insert_id;
+
+    $message = '견적 문의가 등록되었습니다.';
+} 
+
 
 $result_array['message'] = $message;
 $result_array['result'] = 1;

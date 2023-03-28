@@ -6,11 +6,14 @@ include('./admin/common.php');
 ?>
 
 <?php 
-// if($isLogin) {
-//     echo '<script> alert("관리자는 문의글을 작성할 수 없습니다."); </script>';
-//     echo '<meta http-equiv="refresh" content="0 url=./0301-contact-us.php" />';
-//     exit;
-// }
+if(!$isLogin) {
+    $check = mysqli_real_escape_string($conn, $_GET['check']);
+    if(base64_decode($check) != 'pwchecked') {
+        echo '<script> alert("잘못된 접근 입니다"); </script>';
+        echo '<meta http-equiv="refresh" content="0 url=./0301-contact-us.php" />';
+        exit;
+    }
+}
 
 $seq = 0;
 $is_access = false;
@@ -22,19 +25,11 @@ if ($_SERVER['QUERY_STRING'] != '') {
 }
 
 if (!$is_access) {
-    viewAlert('잘못된 접근 입니다');
+    viewAlert('잘못된 접근 입니다.');
     mysqli_close($conn);
     flush();
     //historyBack();
     echo ('<meta http-equiv="refresh" content="0 url=./0301-contact-us.php" />');
-    exit;
-}
-
-$check = mysqli_real_escape_string($conn, $_GET['check']);
-
-if(base64_decode($check) != 'pwchecked') {
-    echo '<script> alert("잘못된 접근 입니다."); </script>';
-    echo '<meta http-equiv="refresh" content="0 url=./0301-contact-us.php" />';
     exit;
 }
 
@@ -79,7 +74,7 @@ if ($contact_count <= 0) {
                 <div class="boardDetail-w">
                     <div class="boardDetail-writer">
                         <strong class="writerName"><?php echo RemoveXSS($contact_info['name']); ?></strong>
-                        <span class="writerDate"><?php echo $notice_info['created_at']; ?></span>
+                        <span class="writerDate"><?php echo $contact_info['created_at']; ?></span>
                     </div>
                     <div class="boardDetail-inner">
                         <span class="boardDetail-value">Q.</span> 
@@ -102,8 +97,17 @@ if ($contact_count <= 0) {
 <?php } ?>
                     <div class="moduleBtn-w">
                         <button type="button" class="roundBtn" onclick="moveContactList()">목록 보기</button>
-                        <button type="button" class="bdlineBtn">수정하기</button>
-                    </div>
+<?php if($contact_info['status'] != 'A') { ?>
+    <?php if($isLogin) { ?>
+                        <button type="button" class="bdlineBtn" onclick="answerContact()">답글 달기</button>
+    <?php } else { ?> 
+                        <button type="button" class="bdlineBtn" onclick="editContact()">수정 하기</button>
+    <?php } ?>
+<?php } ?>
+                    </div>                    
+                    <input type="hidden" id="contact-seq" value="<?php echo $seq; ?>" />
+                    <input type="hidden" id="contact-status" value="<?php echo $contact_info['status']; ?>" />
+                    <input type="hidden" id="contact-cp" value="<?php echo base64_encode($contact_info['password']); ?>" />
                 </div>
             </div>
         </div>
