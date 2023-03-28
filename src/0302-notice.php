@@ -103,7 +103,7 @@ if ($paging_info['page_prev'] > 0) {
 }
 ?>
                         <div class="boardBtnList-inner">
-                            <ul class="boardBtnList"></ul>
+                            <ul class="boardBtnList">
 <?php
 for ($i = $paging_info['page_start']; $i <= $paging_info['page_end']; $i++) {
     if ($i == $page) {
