@@ -1,42 +1,33 @@
 <?php require_once('./fragment/header.php'); ?>
 
 <?php
-include('./admin/db_conn.php');
-include('./admin/common.php');
+if(!$isLogin) {
+    echo '<script> alert("관리자만 문의글을 작성할 수 있습니다."); </script>';
+    echo '<meta http-equiv="refresh" content="0 url=./0301-contact-us.php" />';
+    exit;
+}
 ?>
 
-<?php 
-if(!$isLogin) {
-    $check = mysqli_real_escape_string($conn, $_GET['check']);
-    if(base64_decode($check) != 'pwchecked') {
-        echo '<script> alert("잘못된 접근 입니다"); </script>';
-        echo '<meta http-equiv="refresh" content="0 url=./0301-contact-us.php" />';
-        exit;
-    }
-}
+<?php
+include('./admin/db_conn.php');
+include('./admin/common.php');
 
 $seq = 0;
-$is_access = false;
 if ($_SERVER['QUERY_STRING'] != '') {
-    $seq = intVal($_GET['seq']);
-    if (!isEmpty($seq) && is_numeric($seq)) {
-        $is_access = true;
-    }
-}
-
-if (!$is_access) {
-    viewAlert('잘못된 접근 입니다.');
-    mysqli_close($conn);
-    flush();
-    //historyBack();
-    echo ('<meta http-equiv="refresh" content="0 url=./0301-contact-us.php" />');
-    exit;
+    $seq = $_GET['seq'];
 }
 
 $seq = intval(mysqli_real_escape_string($conn, $seq));
+if (isEmpty($seq) || $seq == 0) {
+    viewAlert('잘못된 접근 입니다.');
+    echo ('<meta http-equiv="refresh" content="0 url=./0301-contact-us.php" />');
+    mysqli_close($conn);
+    flush();
+    exit;
+}
 
-$sql  = "SELECT seq, name, email, phone, password, created_at, status, title, answer_id, ";
-$sql .= "created_at, updated_at, deleted_at, answerd_at, question, answer FROM dst_contact WHERE seq = " . $seq;
+$sql  = "SELECT seq, name, email, phone, status, title, answer_id, ";
+$sql .= "created_at, updated_at, answerd_at, question, answer FROM dst_contact WHERE seq = " . $seq;
 $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 $contact_count = $result->num_rows;
 $contact_info = $result->fetch_array();
@@ -50,6 +41,10 @@ if($contact_count == 0) {
     exit;
 }
 
+$submitButtonText = '답글 달기';
+if($contact_info['status'] == 'A') {
+    $submitButtonText = '수정 하기';
+}
 ?>
 
 <!-- contents -->
@@ -85,31 +80,22 @@ if($contact_count == 0) {
                             <p class="boardDetail-text"><?php echo RemoveXSS($contact_info['question']); ?></p>
                         </div>
                     </div>
-<?php if($contact_info['status'] == 'A') { ?>
                     <div class="boardDetail-comment-w">
                         <div class="boardDetail-inner">
                             <span class="boardDetail-value">A.</span>
-                            <div class="boardDetail-cont">
-                                <p class="boardDetail-text">
-                                    <?php echo RemoveXSS($contact_info['answer']); ?>
-                                </p>
+                            <div class="boardDetail-text"> <!-- boardDetail-cont -->
+                                <div class="contactForm-cell"> <!-- boardDetail-text -->
+                                    <textarea id="contact-answer" class="textArea"></textarea>
+                                </div>
                             </div>
                         </div>
                     </div>
-<?php } ?>
                     <div class="moduleBtn-w">
                         <button type="button" class="roundBtn" onclick="moveContactList()">목록 보기</button>
-<?php if($contact_info['status'] != 'A') { ?>
-    <?php if($isLogin) { ?>
-                        <button type="button" class="bdlineBtn" onclick="answerContact()">답글 달기</button>
-    <?php } else { ?> 
-                        <button type="button" class="bdlineBtn" onclick="editContact()">수정 하기</button>
-    <?php } ?>
-<?php } ?>
+                        <button type="button" class="bdlineBtn" onclick="saveAnswerContact()"><?php echo $submitButtonText; ?></button>
                     </div>                    
                     <input type="hidden" id="contact-seq" value="<?php echo $seq; ?>" />
                     <input type="hidden" id="contact-status" value="<?php echo $contact_info['status']; ?>" />
-                    <input type="hidden" id="contact-cp" value="<?php echo base64_encode($contact_info['password']); ?>" />
                 </div>
             </div>
         </div>
@@ -118,6 +104,20 @@ if($contact_count == 0) {
 
 <?php require_once('./fragment/footer.php'); ?>
 
-<script src="./js/contactus.view.js"></script>
+<script>
+function saveAnswerContact() {
+    const $tempForm = $('<form></form>');
+    $tempForm.attr('method', 'post');
+    $tempForm.attr('action', './admin/action/contactus_answer.php');
+
+    $tempForm.append($('<input />', { type: 'hidden', name: 'seq', value: $('#contact-seq').val() }));
+    $tempForm.append($('<input />', { type: 'hidden', name: 'status', value: $('#contact-status').val() }));
+    $tempForm.append($('<input />', { type: 'hidden', name: 'answer', value: $('#contact-answer').val() }));    
+    
+    $tempForm.appendTo('body');
+
+    $tempForm.submit();
+}
+</script>
 
 <?php require_once('./fragment/tail.php'); ?>

@@ -14,5 +14,5 @@ function editContact() {
 }
 
 function answerContact() {
-    
+    location.href = './0301-contact-us-answer.php?seq=' + $('#contact-seq').val();
 }

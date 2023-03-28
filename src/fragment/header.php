@@ -269,6 +269,7 @@ if (isset($_SESSION['is_login']) && !empty($_SESSION['is_login']) && $_SESSION['
     $isLogin = true;
 }
 
+$login_info = array();
 if($isLogin) {
     $login_info = unserialize($_SESSION['login_user_info']);
     $logout = ' | <a href="./admin/action/logout.php">로그 아웃</a>';

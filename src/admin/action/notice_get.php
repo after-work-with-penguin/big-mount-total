@@ -22,11 +22,14 @@ header('Content-Type: text/html; charset=UTF-8');
 
 $notice_seq = $_GET['seq'];
 if (isEmpty($notice_seq) || !is_numeric($notice_seq)) {
-    viewAlert('잘못된 접근 입니다.');
     mysqli_close($conn);
     flush();
-    //historyBack();
-    echo ('<meta http-equiv="refresh" content="0 url=./0302-notice.php" />');
+    
+    $result_array['message'] = '잘못된 접근 입니다.';
+    $result_array['result'] = -404;
+
+    echo json_encode($result_array, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+    exit;
 }
 
 $sql  = "SELECT seq, level, title, view_count, created_at, updated_at, contents FROM dst_notice WHERE seq = " . $notice_seq;
