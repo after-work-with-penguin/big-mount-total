@@ -63,6 +63,7 @@ CREATE TABLE dst_contact (
 	seq BIGINT NOT NULL AUTO_INCREMENT, 
     name VARCHAR(32) NOT NULL,
     email VARCHAR(64) NOT NULL,	
+	phone VARCHAR(16) NOT NULL,
 	password VARCHAR(128) NOT NULL,
     hide CHAR(1) NOT NULL DEFAULT 'N' comment '글 숨김 처리(비밀글) / Y: 숨김(비밀 글), N: 노출(default) ', 
     status CHAR(1) NOT NULL DEFAULT 'Q' comment '답변 여부(Q: 질문(default), A: 답변 완료)', 
