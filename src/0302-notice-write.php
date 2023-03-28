@@ -22,7 +22,7 @@ $notice_seq = intval(mysqli_real_escape_string($conn, $notice_seq));
 ?>
 
 <!-- contents -->
-<div class="content-w-notice" id="content-main"><!-- 페이지 속성 분기 "content-w-aaa" -->
+<div class="content-w-noticeEnd" id="content-main"><!-- 페이지 속성 분기 "content-w-aaa" -->
     <div class="contentVisual-w"> <!-- 비주얼 영역 -->
 
         <?php require_once('./fragment/left.php'); ?>
@@ -60,7 +60,8 @@ $notice_seq = intval(mysqli_real_escape_string($conn, $notice_seq));
                         </div>
                     </div>
                     <div class="moduleBtn-w">
-                        <button type="button" class="roundBtn" id="submitBtn" onclick="doSubmit(event)">등록하기</button>
+                        <button type="button" class="roundBtn" onclick="moveList()">목록 보기</button>
+                        <button type="button" class="bdlineBtn" id="submitBtn" onclick="doSubmit(event)">등록하기</button>
                     </div>
                 </div>
             </div>

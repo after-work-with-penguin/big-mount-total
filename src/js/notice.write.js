@@ -158,3 +158,6 @@ function doDelete(event) {
     }    
 }
 
+function moveList() {
+    location.href = './0302-notice.php';
+}

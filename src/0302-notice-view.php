@@ -43,7 +43,7 @@ if ($notice_count <= 0) {
 ?>
 
 <!-- contents -->
-<div class="content-w-notice" id="content-main"><!-- 페이지 속성 분기 "content-w-aaa" -->
+<div class="content-w-noticeEnd" id="content-main"><!-- 페이지 속성 분기 "content-w-aaa" -->
     <div class="contentVisual-w"> <!-- 비주얼 영역 -->
 
         <?php require_once('./fragment/left.php'); ?>
@@ -82,6 +82,10 @@ if ($notice_count <= 0) {
                 </div>
                 <div class="moduleBtn-w">
                     <button type="button" class="roundBtn" onclick="moveNoticeList()">목록 보기</button>
+                    <div class="moduleBtn-inner">
+                        <button type="button" class="bdlineBtn" onclick="editNotice(<?php echo $notice_seq ?>);">수정하기</button>
+                        <button type="button" class="bdlineBtn" onclick="deleteNotice(<?php echo $notice_seq ?>);">삭제하기</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -97,5 +101,41 @@ flush();
 <?php require_once('./fragment/footer.php'); ?>
 
 <script> function moveNoticeList() { location.href = './0302-notice.php'; } </script>
+
+<?php if($isLogin) { ?>
+<script>
+function editNotice(notice_seq) {
+    location.href = './0302-notice-write.php?seq=' + notice_seq;
+}
+
+function deleteNotice(seq) {
+    const notice_seq = parseInt(seq, 10);
+    if (notice_seq == 0) {
+        alert('잘못된 접근 입니다.');
+        location.href = './0302-notice.php';
+        return false;
+    }
+
+    if(confirm('공지사항글을 정말로 삭제하시겠습니까?')) {
+        $.ajax({
+            type: 'post',
+            url: './admin/action/notice_delete.php',
+            data: { seq: notice_seq },
+            dataType: 'json',
+            success: function (result) {
+                console.log('[deleteNotice] result:: ', result);
+                alert(result.message);
+                location.href = './0302-notice.php';
+            },
+            error: function (xhr, status, error) {
+                console.error('[deleteNotice] ajax error:: ', error);
+            },
+
+        });
+    }
+}
+</script>
+
+<?php } ?>
 
 <?php require_once('./fragment/tail.php'); ?>
