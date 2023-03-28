@@ -139,7 +139,10 @@ if ($paging_info['page_next'] <= $paging_info['page_total']) {
 
 <?php require_once('./fragment/footer.php'); ?>
 
-<script> function movePage(page) { location.href = './0301-contact-us.php?page=' + page; }  </script>
+<script> 
+    function movePage(page) { location.href = './0301-contact-us.php?page=' + page; }  
+    function getContactInfo(seq) { location.href = './0301-contact-check.php?seq=' + seq; }
+</script>
 
 <?php if(!$isLogin) { ?>
 <script> function writeContactUs() { location.href = './0301-contact-us-write.php'; } </script>
