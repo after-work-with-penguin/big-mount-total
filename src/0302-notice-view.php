@@ -22,7 +22,7 @@ if (!$is_access) {
     mysqli_close($conn);
     flush();
     //historyBack();
-    echo ('<meta http-equiv="refresh" content="0 url=./notice.php" />');
+    echo ('<meta http-equiv="refresh" content="0 url=./0302-notice.php" />');
     exit;
 }
 
