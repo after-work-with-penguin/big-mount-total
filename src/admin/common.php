@@ -231,3 +231,7 @@ function password_matches($password, $hashed_password) {
         return 0;
     }
 }
+
+function maskingMiddle($str) {
+    return mb_substr($str, 0, 1).str_repeat('*', mb_strlen($str) - 2).mb_substr($str, -1, 1);
+}

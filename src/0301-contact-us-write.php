@@ -24,49 +24,49 @@
                 <div class="contactForm-w">
                     <div class="contactForm-row">
                         <div class="contactForm-cell">
-                            <label for="name">성함</label>
-                            <input type="text" id="name"/>
+                            <label for="contact-name">성함</label>
+                            <input type="text" id="contact-name"/>
                         </div>
                         <div class="contactForm-cell">
-                            <label for="call">연락처</label>
-                            <input type="text" id="call"/>
+                            <label for="contact-phone">연락처</label>
+                            <input type="text" id="contact-phone"/>
                         </div>
                     </div>
                     <!-- 이메일-->
                     <div class="contactForm-row rowEtc">
                         <div class="contactForm-cell">
-                            <label for="email">이메일</label>
-                            <input type="text" id="email"/>
+                            <label for="contact-email-id">이메일</label>
+                            <input type="text" id="contact-email-id"/>
                             <span class="contactForm-dash">@</span>
                         </div>
                         <div class="contactForm-cell">
-                            <input type="text" id="email2" placeholder="주소입력">
+                            <input type="text" id="contact-email-host" placeholder="주소입력">
                         </div>
                     </div>
                     <!-- 비밀번호 -->
                     <div class="contactForm-row">
                         <div class="contactForm-cell">
-                            <label for="password">비밀번호</label>
-                            <input type="password" id="password"/>
+                            <label for="contact-password">비밀번호</label>
+                            <input type="password" id="contact-password"/>
                         </div>
                     </div>
                     <!-- 제목 -->
                     <div class="contactForm-row wideType">
                         <div class="contactForm-cell">
-                            <label for="formTitle">제목</label>
-                            <input type="text" id="formTitle"/>
+                            <label for="contact-title">제목</label>
+                            <input type="text" id="contact-title"/>
                         </div>
                     </div>
                     <!-- 문의 내용 -->
-                    <div class="contactForm-row wideType">
+                    <div class="contactForm-row">
                         <div class="contactForm-cell">
-                            <label for="formText">문의내용</label>
-                            <textarea id="formText" class="textArea"></textarea>
+                            <label for="contact-contants">문의내용</label>
+                            <textarea id="contact-contants" class="textArea"></textarea>
                         </div>
                     </div>
-                    <div class="contactForm-row wideType">
+                    <div class="contactForm-row captchaType">
                         <div class="contactForm-cell">
-                            <label for="formCaptcha">자동 등록 방지</label>
+                            <label for="contact-captcha">자동 등록 방지</label>
                             <?php
                                 require_once './vendor/securimage/securimage.php';
 
@@ -81,11 +81,11 @@
                             ?>
                         </div>
                         <div class="contactForm-cell">
-                            <input type="text" id="formCaptcha" autocomplete="off">
+                            <input type="text" id="contact-captcha" autocomplete="off">
                         </div>
                     </div>
                     <div class="moduleBtn-w">
-                        <button type="button" class="roundBtn" onclick="sendContact()">견적 문의하기</button>
+                        <button type="button" class="roundBtn" onclick="requestContact()">견적 문의하기</button>
                     </div>
                 </div>
             </div>
@@ -95,6 +95,6 @@
 
 <?php require_once('./fragment/footer.php'); ?>
 
-<script src="./js/contactus.js"></script>
+<script src="./js/contactus.write.js"></script>
 
 <?php require_once('./fragment/tail.php'); ?>
