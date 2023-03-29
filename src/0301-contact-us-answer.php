@@ -42,8 +42,10 @@ if($contact_count == 0) {
 }
 
 $submitButtonText = '답글 달기';
+$answerText = '';
 if($contact_info['status'] == 'A') {
     $submitButtonText = '수정 하기';
+    $answerText = RemoveXSS($contact_info['answer']);
 }
 ?>
 
@@ -85,7 +87,7 @@ if($contact_info['status'] == 'A') {
                             <span class="boardDetail-value">A.</span>
                             <div class="boardDetail-text"> <!-- boardDetail-cont -->
                                 <div class="contactForm-cell"> <!-- boardDetail-text -->
-                                    <textarea id="contact-answer" class="textArea"></textarea>
+                                    <textarea id="contact-answer" class="textArea"><?php echo $answerText; ?></textarea>
                                 </div>
                             </div>
                         </div>

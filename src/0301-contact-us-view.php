@@ -75,8 +75,12 @@ if($contact_count == 0) {
                 <h5 class="contactTitle">견적문의</h5>
                 <div class="boardDetail-w">
                     <div class="boardDetail-writer">
-                        <strong class="writerName"><?php echo RemoveXSS($contact_info['name']); ?></strong>
                         <span class="writerDate"><?php echo $contact_info['created_at']; ?></span>
+                        <strong class="writerName"><?php echo RemoveXSS($contact_info['name']); ?></strong>
+                        <div class="userProfile-w">
+                            <sapn class="userProfile-text"><?php echo RemoveXSS($contact_info['email']); ?></sapn>
+                            <span class="userProfile-text"><?php echo RemoveXSS($contact_info['phone']); ?></sapn>
+                        </div>
                     </div>
                     <div class="boardDetail-inner">
                         <span class="boardDetail-value">Q.</span> 
@@ -87,6 +91,9 @@ if($contact_count == 0) {
                     </div>
 <?php if($contact_info['status'] == 'A') { ?>
                     <div class="boardDetail-comment-w">
+                        <div class="boardDetail-writer">
+                            <span class="writerDate"><?php echo $contact_info['answerd_at']; ?></span>
+                        </div>
                         <div class="boardDetail-inner">
                             <span class="boardDetail-value">A.</span>
                             <div class="boardDetail-cont">
@@ -99,13 +106,19 @@ if($contact_count == 0) {
 <?php } ?>
                     <div class="moduleBtn-w">
                         <button type="button" class="roundBtn" onclick="moveContactList()">목록 보기</button>
-<?php if($contact_info['status'] != 'A') { ?>
-    <?php if($isLogin) { ?>
-                        <button type="button" class="bdlineBtn" onclick="answerContact()">답글 달기</button>
-    <?php } else { ?> 
+<?php 
+if($isLogin) { 
+    $answerButtonText = '답글 달기';
+    if($contact_info['status'] == 'A') {
+        $answerButtonText = '수정 하기';
+    }
+?>
+                        <button type="button" class="bdlineBtn" onclick="answerContact()"><?php echo $answerButtonText; ?></button>
+<?php } else { ?> 
                         <button type="button" class="bdlineBtn" onclick="editContact()">수정 하기</button>
-    <?php } ?>
 <?php } ?>
+
+
                     </div>                    
                     <input type="hidden" id="contact-seq" value="<?php echo $seq; ?>" />
                     <input type="hidden" id="contact-status" value="<?php echo $contact_info['status']; ?>" />
