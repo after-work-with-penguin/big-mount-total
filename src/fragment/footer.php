@@ -18,7 +18,7 @@
             </ul>
             <ul class="footerList-right">
                 <li class="footerList-inner2"><strong>TEL</strong> : 010-3235-9372</li>
-                <li class="footerList-inner2"><strong>FAX</strong> : 041-663-7331</li>
+                <li class="footerList-inner2"><strong>FAX</strong> : 041-663-7332</li>
                 <li class="footerList-inner"><strong>E-MAIL</strong> : daesantotal@daesantotal.com</li>
             </ul>
         </div>
