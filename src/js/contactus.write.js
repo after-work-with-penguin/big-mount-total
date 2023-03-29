@@ -16,18 +16,33 @@ function requestContact() {
         $('#contact-phone').focus();
         return false;
     }
+    const phoneRegex = /^[0-9]{3}[-]+[0-9]{4}[-]+[0-9]{4}$/;
+    if (!phoneRegex.test(phoneNumber)) {
+        alert('올바른 전화번호를 입력해 주세요. (010-1234-5678)');
+        $('#contact-phone').focus();
+        return false;
+    }
+
     const email1 = $('#contact-email-id').val();
     if(email1 == '') {
         alert('email ID 를 입력해 주세요.');
         $('#contact-email-id').focus();
         return false;
-    }
+    }    
     const email2 = $('#contact-email-host').val();
     if(email2 == '') {
         alert('email 주소를 입력해 주세요.');
         $('#contact-email-host').focus();
         return false;
     }
+    const email = email1 + '@' + email2;
+    const emailRegex = /^[0-9]{3}[-]+[0-9]{4}[-]+[0-9]{4}$/;
+    if (!emailRegex.test(email)) {
+        alert('올바른 이메일을 입력해 주세요.');
+        $('#contact-email-id').focus();
+        return false;
+    }
+
     const password = $('#contact-password').val();
     if(password == '') {
         alert('비밀번호를 입력해 주세요.');

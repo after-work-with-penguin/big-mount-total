@@ -45,6 +45,31 @@ $password = mysqli_real_escape_string($conn, $_POST['password']);
 $title = mysqli_real_escape_string($conn, $_POST['title']);
 $contants = mysqli_real_escape_string($conn, $_POST['contants']);
 
+$phone_pattern = '/^\d{2,3}-\d{3,4}-\d{4}$/'; // 전화번호 체크 정규식
+if(!preg_match($phone_pattern, $phone)) {
+    $result_array['message'] = '전화번호가 올바르지 않습니다.';
+    $result_array['result'] = -500;
+
+    echo json_encode($result_array, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+
+    mysqli_close($conn);
+    flush();
+    exit;
+}
+
+$email_pattern = '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/'; 
+if(!preg_match($email_pattern, $email)) {
+    $result_array['message'] = '이메일 주소가 올바르지 않습니다.';
+    $result_array['result'] = -500;
+
+    echo json_encode($result_array, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+
+    mysqli_close($conn);
+    flush();
+
+    echo '이메일 주소가 올바릅니다.';
+}
+
 $sql = '';
 $message = '';
 $result_id = $seq;
