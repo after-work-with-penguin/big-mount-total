@@ -1,5 +1,7 @@
 $(document).ready(function() {
-    mainVisualSlick();
+    // mainVisualSlick();
+    $('#content-wrap').removeClass('content-wrap');
+    $('#content-inner').removeClass('content-inner');
 });
 
 

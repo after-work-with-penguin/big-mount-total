@@ -1,4 +1,5 @@
-</div>
+</div> <!-- .content-inner -->
+</div> <!-- .content-wrap -->
 
 <!-- 공통푸터 -->
 <div class="footer-w">

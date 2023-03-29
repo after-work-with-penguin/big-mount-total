@@ -281,4 +281,5 @@ if($isLogin) {
 }
 ?>
 
-<div class="content-wrap">
+<div class="content-wrap" id="content-wrap">
+    <div class="content-inner" id="content-inner">
