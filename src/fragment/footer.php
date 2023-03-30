@@ -14,7 +14,7 @@
                 </li>
                 <li class="footerList-inner2">사업자등록번호 316-81-21855</li>
                 <li class="footerList-inner2">대표이사 <strong>최 태환</strong></li>
-                <li class="footerList-inner">www.daesantotal.com//</li>
+                <li class="footerList-inner">www.daesantotal.com</li>
             </ul>
             <ul class="footerList-right">
                 <li class="footerList-inner2"><strong>TEL</strong> : 010-3235-9372</li>
