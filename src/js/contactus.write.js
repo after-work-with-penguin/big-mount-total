@@ -17,7 +17,7 @@ function requestContact() {
         return false;
     }
     const phoneRegex = /^[0-9]{3}[-]+[0-9]{4}[-]+[0-9]{4}$/;
-    if (!phoneRegex.test(phoneNumber)) {
+    if (!phoneRegex.test(phone)) {
         alert('올바른 전화번호를 입력해 주세요. (010-1234-5678)');
         $('#contact-phone').focus();
         return false;
