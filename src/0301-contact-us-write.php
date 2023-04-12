@@ -97,7 +97,7 @@ if ($contact_count == 0) {
                         </div>
                         <div class="contactForm-cell">
                             <label for="contact-phone">연락처</label>
-                            <input type="text" id="contact-phone" value="<?php echo $contact_info['phone']; ?>" />
+                            <input type="text" id="contact-phone" value="<?php echo $contact_info['phone']; ?>" placeholder="010-xxxx-xxxx" />
                         </div>
                     </div>
                     <!-- 이메일-->
@@ -108,7 +108,7 @@ if ($contact_count == 0) {
                             <span class="contactForm-dash">@</span>
                         </div>
                         <div class="contactForm-cell">
-                            <input type="text" id="contact-email-host" placeholder="주소입력" value="<?php echo $contact_info['email2']; ?>" />
+                            <input type="text" id="contact-email-host" placeholder="주소입력 (예: daesantotal.com)" value="<?php echo $contact_info['email2']; ?>" />
                         </div>
                     </div>
                     <!-- 비밀번호 -->

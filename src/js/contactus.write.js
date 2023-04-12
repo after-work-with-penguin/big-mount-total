@@ -36,7 +36,7 @@ function requestContact() {
         return false;
     }
     const email = email1 + '@' + email2;
-    const emailRegex = /^[0-9]{3}[-]+[0-9]{4}[-]+[0-9]{4}$/;
+    const emailRegex = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;                       
     if (!emailRegex.test(email)) {
         alert('올바른 이메일을 입력해 주세요.');
         $('#contact-email-id').focus();
