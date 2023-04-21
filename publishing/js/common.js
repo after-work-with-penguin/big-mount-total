@@ -2,8 +2,9 @@
 
 //모바일:전체메뉴 열기
 function allMenuOpen(){
-    $('.mGnb-open').on('click',function(){
-       $(this).parents('.mGnb-w').addClass('allMenuOpen');
+    $('.mGnb-w .menu-trigger').on('click',function(){
+       $(this).parents('.mGnb-w').toggleClass('allMenuOpen');      
+       $(this).toggleClass('active');     
      });
 }
 //모바일:전체메뉴 닫기
@@ -27,19 +28,14 @@ function allMenu2depth(){
       });
 }
 
-function mainVisualSlick(){
-    $('.contentVisual-img-w').slick({
-        dots: true,
-        infinite: true,
-        autoplay: true,
-        autoplaySpeed: 3500,
-        draggable:true,
-        speed: 200,
-        fade: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows:false
+// 태블릿 전체메뉴
+function menuOpen(){
+    $('.gnb-w .menu-trigger').on('click',function(){
+        //$('.gnbList-cont').removeClass('gnb1depthCurrent');
+         $(this).parents('.gnbList-w').toggleClass('menuOpen');
+         $(this).toggleClass('active');
     });
+    
 }
 
 
