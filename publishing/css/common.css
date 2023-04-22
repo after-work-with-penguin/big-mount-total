@@ -111,6 +111,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
 .content-inner:after {display:block; content:''; position:absolute; left:50%; bottom:-2.5px; margin-left:-540px; width:21px; height:5px; background-color:#c4c4c4;} 
 .content-inner:after {}
     .content-w-main .contentVisual-w {max-width:1634px; margin:0 auto; padding:0 217px; box-sizing:border-box;}
+.serviceList {box-sizing:border-box;}
 .content-w-main .contSection-right:after,
 .serviceList:after {display:block; content:''; width:1px; height:80%; position:absolute; left:0; top:20%; background-color:#c4c4c4;}
 .serviceList:after {top:0; height:100%;}
@@ -462,6 +463,11 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
 
     
 }
+@media screen and (max-width:1400px) {
+    .serviceList-w {box-sizing:border-box; }
+    .serviceList-cont {width:20%;}
+
+}
 
 /* 1170 이하 일부요소 제어 */
 @media screen and (max-width:1200px) {
@@ -502,7 +508,12 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .menuOpen .gnbList-cont {position:static; }
     .menuOpen .gnbSub3depth-w {right:305px; padding:0;}
     .menuOpen .gnbSub3depth-cont {padding-right:30px; font-size:14px;}
-   
+    
+    /* 메인  */
+    .manager-w {top:100px;}   
+    .content-w-main .contentVisual-w,
+    .serviceList-w {padding:0 !important;}
+        .serviceList {padding:9% 15px; }
 
 
 }
