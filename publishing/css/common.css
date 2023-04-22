@@ -704,7 +704,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     /* 공통 */
     .contentArticle-w {padding:50px 20px;}
     .contentVisual-img-w,
-    .contentVisual-img {min-height:auto; max-height:none; width:100%;}
+    .contentVisual-img {min-height:auto !important; max-height:none; width:100%;}
 
     /* 연혁 */
     .historyInfoText {font-size:18px; line-height:30px;}
