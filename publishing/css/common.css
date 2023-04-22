@@ -205,7 +205,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
                         .directionsList-num {display:inline-block; margin-right:25px;}
 
 /* 장비임대 사업부 - 건설장비 */
-.tableImage-w {display:flex; justify-content:flex-start; margin-top:60px; width:calc(100% + 50px);}
+.tableImage-w {display:flex; justify-content:flex-start; margin-top:70px; width:calc(100% + 50px);}
     .tableWideType {width:100% !important; max-width:90% !important;}
     .tableImage-cont {padding-right:50px; box-sizing:border-box; width:50%; max-width:740px;}
     .tableImage-cont:first-of-type {max-width:516px;}
@@ -225,14 +225,14 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
             .paintList-cont:nth-of-type(3) img{width:332px; max-width:332px;}
             .paintList-cont:nth-of-type(4) img{width:233px; max-width:233px;}
     .dbdottDetail-w,
-    .detailList-w {margin-top:64px; text-align:center; width:100%;}
+    .detailList-w {margin-top:70px; text-align:center; width:100%;}
         .dbdottDetail-title,
-        .detailList-title {display:inline-block; position:relative; margin:0 auto; padding:0 20px; height:35px; line-height:35px; box-sizing:border-box; border-radius:27px; text-align:center; color:#fff; background-color:#000168; font-size:22px;}
+        .detailList-title {display:inline-block; position:relative; margin:0 auto; padding:0 24px; height:35px; line-height:35px; box-sizing:border-box; border-radius:27px; text-align:center; color:#fff; background-color:#000168; font-size:22px;}
         .detailList-title:after,
         .detailList-title:before {display:block; content:''; position:absolute; top:50%; left:-10px; margin-top:-8px; width:14px; height:17px; background-repeat:no-repeat; background-position:center; background-image:url('../imgs/titlePicker.png')}
         .detailList-title:after {left:auto; right:-10px; transform:rotate(180deg);}
         .dbdottDetail-inner,
-        .detailList-inner {margin-top:30px; padding:3% 9%; border-top:2px solid #000168; border-radius:0 0 40px 40px; background-color:#fff; color:#494949;}
+        .detailList-inner {margin-top:30px; padding:30px 9%; border-top:2px solid #000168; border-radius:0 0 40px 40px; background-color:#fff; color:#494949;}
             .dbdottDetail-list {text-align:left;}
                 .dbdottDetail-inner { padding:5% 9% 5%; }
                     .dbdottDetail-cont {display:block; margin-top:20px; padding-left:25px; min-height:20px; position:relative; color:#000168; font-weight:700; font-size:16px; line-height:22px; box-sizing:border-box; letter-spacing:-0.25px;}
@@ -346,7 +346,16 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
 .content-w-ceo .contentVisual-img-w,
 .content-w-history .contentVisual-img-w,
 .content-w-orgChart .contentVisual-img-w,
-.content-w-directions .contentVisual-img-w {min-height:600px; max-height:600px;}
+.content-w-directions .contentVisual-img-w,
+.content-w-rental01 .contentVisual-img-w,
+.content-w-paint02  .contentVisual-img-w,
+.content-w-envi01 .contentVisual-img-w,
+.content-w-contact .contentVisual-img-w,
+.content-w-contactEnd .contentVisual-img-w,
+.content-w-contactPw .contentVisual-img-w,
+.content-w-notice .contentVisual-img-w,
+.content-w-noticeEnd .contentVisual-img-w,
+.content-w-main .contentVisual-img-w {min-height:600px; max-height:600px;}
 .content-w-contain02 .tableImage-cont:first-of-type {max-width:100%; width:100%;}
 /* 컨테이너-투명돔하우스 */
 .content-w-contain10 .contentArticle-w  {position:relative;}
@@ -354,7 +363,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
 .content-w-contain10 .contentArticle-w:after {display:block; content:''; width:367px; height:256px; position:absolute; left:0; top:0; background-image:url('../imgs/contain10-bg-left.png'); background-repeat:no-repeat; background-size:100% auto;}
 .content-w-contain10 .contentArticle-w:after {left:auto; right:0; top:auto; bottom:0; width:452px; height:316px; background-image:url('../imgs/contain10-bg-right.png');}
 .content-w-contain10 .dbdottDetail-inner {width:100%; box-sizing:border-box;}
-.intorText-w {margin-bottom:50px; padding-top:50px;}
+.intorText-w {margin-bottom:50px; padding-top:50px; position:relative; z-index:2; }
     .intorText-title {font-size:16px; font-weight:700; color:#000168;}
     .intorText-inner {margin-top:10px; color:#767676; font-size:14px; line-height:21px;}
     .intorText-inner strong {display:inline-block; margin-right:5px;font-weight:700; color:#000168; }
