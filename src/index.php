@@ -19,7 +19,7 @@
                     <img src="./imgs/cont01-02-top.png" alt="" class="contentVisual-img">
                 </div> -->
 
-                <?php require_once('./fragment/right.php'); ?>
+                <!-- right 메뉴 제거 -->
             </div>
             <!-- 콘텐츠 내용-->
             <div class="contentArticle-w">

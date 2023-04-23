@@ -12,22 +12,20 @@ $(document).ready(function() {
 });
 
 function initMenu_pc() {
-    pcMenu_top();
-    pcMenu_right();
+    // pcMenu_top();
+    // pcMenu_right();
 
     $('.rightMenuSub-w').hide();
 }
 
 function pcMenu_top() {
     $('.pc-menu-lv2').hide();
-    $('.pc-menu-lv1').on('click', function() {
+    $('.pc-menu-lv1').on('hover', function() {
         $('.pc-menu-lv1').removeClass('gnb1depthCurrent');
 
         var _$this = $(this);
         _$this.addClass('gnb1depthCurrent');
         var $lv2 = _$this.find('.pc-menu-lv2');
-        console.log('pc-menu-top / lv2: ', $lv2);
-        console.log('pc-menu-top / lv2 - display: ', $lv2.css('display'));
         if($lv2.css('display') == 'none') {
             $('.pc-menu-lv2').hide();
             $lv2.show();
@@ -40,7 +38,7 @@ function pcMenu_top() {
 
 function pcMenu_right() {
     $('.pc-right-menu-lv2').hide();
-    $('.pc-right-menu-lv1').on('click', function() {
+    $('.pc-right-menu-lv1').on('hover', function() {
         var $lv2 = $(this).find('.pc-right-menu-lv2');
         if($lv2.css('display') == 'none') {
             $('.pc-right-menu-lv2').hide();
@@ -51,18 +49,39 @@ function pcMenu_right() {
     });
 }
 
-
 function initMenu_mobile() {
+    menuOpen();
     allMenuOpen(); //전체메뉴열기
     allMenuClose(); //전체메뉴 닫기
     allMenu1depth();//서브1댑스열기
     allMenu2depth(); //서브2댑스
 }
 
+// 태블릿 전체메뉴 ??? 이건 뭐지??
+function menuOpen() {
+    $('.gnb-w .menu-trigger').on('click',function() {
+        //$('.gnbList-cont').removeClass('gnb1depthCurrent');
+        $(this).parents('.gnbList-w').toggleClass('menuOpen');
+        $(this).toggleClass('active');
+    });    
+}
+
 //모바일:전체메뉴 열기
 function allMenuOpen() {
-    $('.mGnb-open').on('click', function() {
-        $(this).parents('.mGnb-w').addClass('allMenuOpen');
+    // $('.mGnb-open').on('click', function() {
+    //     $(this).parents('.mGnb-w').addClass('allMenuOpen');
+    // });
+
+    //모바일+태블릿:전체메뉴 열기
+    $('.mGnb-open .menu-trigger').on('click',function() {
+        $(this).parents('.mGnb-w').toggleClass('allMenuOpen');
+        $(this).toggleClass('active');
+    });
+
+    //모바일:전체메뉴 열기
+    $('.mGnb-open').on('click',function() {
+        $(this).parents('.mGnb-w').toggleClass('allMenuOpen');
+        $(this).toggleClass('active');
     });
 }
 
@@ -86,6 +105,15 @@ function allMenu2depth() {
         //$('.gnbSub-cont').removeClass('gnb2depthCurrent');
         $(this).parents('.gnbSub-cont').toggleClass('gnb2depthCurrent');
     });
+}
+
+function menuOpen() {
+    $('.gnb-w .menu-trigger').on('click',function(){
+        //$('.gnbList-cont').removeClass('gnb1depthCurrent');
+         $(this).parents('.gnbList-w').toggleClass('menuOpen');
+         $(this).toggleClass('active');
+    });
+    
 }
 
 function readURL(input, previewElId) {

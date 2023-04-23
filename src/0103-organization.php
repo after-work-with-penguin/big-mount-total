@@ -15,7 +15,7 @@
                     <span class="sectionTitle-eng">Organization Chart</span>
                 </h3>
                 
-                <?php require_once('./fragment/right.php'); ?>
+                <!-- right 메뉴 제거 -->
 
             </div>
             <!-- 콘텐츠 내용-->
