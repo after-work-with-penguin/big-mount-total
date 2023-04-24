@@ -21,13 +21,13 @@
             <!-- 콘텐츠 내용-->
             <div class="contentArticle-w">
                 <div class="map-w">
-                    <div id="daumRoughmapContainer1679580463850" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+                    <div id="daumRoughmapContainer1682342707526" class="root_daum_roughmap root_daum_roughmap_landing" style="width:100%;"></div>
                     <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
                     <script charset="UTF-8">
                         new daum.roughmap.Lander({
-                            "timestamp" : "1679580463850",
-                            "key" : "2e7c7",
-                            "mapWidth" : "640",
+                            "timestamp" : "1682342707526",
+                            "key" : "2ejg5",
+                            // "mapWidth" : "640",
                             "mapHeight" : "360"
                         }).render();
                     </script>
