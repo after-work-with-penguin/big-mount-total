@@ -36,7 +36,7 @@ $notice_seq = intval(mysqli_real_escape_string($conn, $notice_seq));
                     <span class="sectionTitle-eng">Notice</span>
                 </h3>
                 
-                <?php require_once('./fragment/right.php'); ?>
+                <!-- right 메뉴 제거 -->
 
             </div>
             <!-- 콘텐츠 내용-->

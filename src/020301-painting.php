@@ -15,19 +15,21 @@
                     <span class="sectionTitle-eng">Shoot & Paint</span>
                 </h3>
                 
-                <?php require_once('./fragment/right.php'); ?>
+                <!-- right 메뉴 제거 -->
 
             </div>
             <!-- 콘텐츠 내용-->
             <div class="contentArticle-w">
                 <h4 class="contentTitle">도장사업부 현황</h4>
                 <div class="paintList-w">
+                    <!--
                     <ul class="paintList-inner">
                         <li class="paintList-cont"><img src="./imgs/paint01.png" alt="최신 자동쇼트 시설 보유"></li>
                         <li class="paintList-cont"><img src="./imgs/paint02.png" alt="여유있는 실내 ROOM (대형 4실)"></li>
                         <li class="paintList-cont"><img src="./imgs/paint03.png" alt="각실마다 최신 집진시설 운용"></li>
                         <li class="paintList-cont"><img src="./imgs/paint04.png" alt="넓은 야적장 보유"></li>
                     </ul>
+                    -->
                 </div>
                 <div class="dbdottDetail-w">
                     <strong class="dbdottDetail-title">도장 시설 현황</strong>
