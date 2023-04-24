@@ -21,6 +21,13 @@ function allMenu1depth(){
         //$('.gnbList-cont').removeClass('gnb1depthCurrent');
          $(this).parents('.gnbList-cont').toggleClass('gnb1depthCurrent');
     });
+
+    // // pc menu - 1 depth
+    // $('.gnb-w .gnbList-cont').hover(function() {
+    //     $(this).addClass('gnb1depthCurrent');
+    // }, function() {
+    //     $(this).removeClass('gnb1depthCurrent');
+    // });
 }
 
 function allMenu2depth(){
@@ -28,6 +35,13 @@ function allMenu2depth(){
         //$('.gnbSub-cont').removeClass('gnb2depthCurrent');
         $(this).parents('.gnbSub-cont').toggleClass('gnb2depthCurrent');
       });
+
+    // // pc menu - 2 depth
+    // $('.gnb-w .gnbSub-w .gnbSub-link').hover(function() {
+    //     $(this).parents('.gnbSub-cont').addClass('gnb2depthCurrent');
+    // }, function() {
+    //     $(this).parents('.gnbSub-cont').removeClass('gnb2depthCurrent');
+    // });
 }
 
 // 태블릿 전체메뉴
