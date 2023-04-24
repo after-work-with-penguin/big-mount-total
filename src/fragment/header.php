@@ -387,9 +387,11 @@ require_once('head.php');
                     </li>
                 </ul>
             </div>
+            <!--
             <button type="button" class="btnCloseX" title="닫기">
                 <span class="iconCloseX"><i class="hide">닫기</i></span>
             </button>
+            -->
         </div>
     </div>
 </div>
