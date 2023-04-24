@@ -437,8 +437,8 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
 
 /* footer */
 .footer-w {background-color:#000074;}
-    .footer-inner {max-width:945px; margin:0 auto; position:relative; padding:29px 0 35px 170px; box-sizing:border-box;}
-        .footerLogo {position:absolute; left:30px; top:50%; margin-top:-45px;}
+    .footer-inner {max-width:1634px; margin:0 auto; position:relative; padding:29px 0 35px 387px; box-sizing:border-box;}
+        .footerLogo {position:absolute; left:217px; top:50%; margin-top:-45px;}
             .footerLogo-link {display:block; width:90px;}
         .footerList-w {display:flex; justify-content:flex-start;}
             .footerList-left {}
@@ -508,7 +508,9 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .menuOpen .gnbList-cont {position:static; }
     .menuOpen .gnbSub3depth-w {right:305px; padding:0;}
     .menuOpen .gnbSub3depth-cont {padding-right:30px; font-size:14px;}
-    
+    /* 푸터  */
+    .footer-inner {max-width:945px; padding-left:170px;}
+        .footerLogo {left:0;}
     /* 메인  */
     .manager-w {top:100px;}   
     .content-w-main .contentVisual-w,
