@@ -1,19 +1,13 @@
 
 
-//태블릿:전체메뉴 열기
-function allMenuOpen(){
-    $('.mGnb-open .menu-trigger').on('click',function(){
-       $(this).parents('.mGnb-w').toggleClass('allMenuOpen');      
-       $(this).toggleClass('active');     
-     });
-}
 //모바일:전체메뉴 열기
-function mobileMenuOpen(){
-    $('.mGnb-open').on('click',function(){
+function allMenuOpen(){
+    $('.mGnb-w .menu-trigger').on('click',function(){
        $(this).parents('.mGnb-w').toggleClass('allMenuOpen');      
        $(this).toggleClass('active');     
      });
 }
+
 //모바일:전체메뉴 닫기
 function allMenuClose(){
    $('.btnCloseX').on('click',function(){
@@ -28,6 +22,7 @@ function allMenu1depth(){
          $(this).parents('.gnbList-cont').toggleClass('gnb1depthCurrent');
     });
 }
+
 function allMenu2depth(){
     $('.btnSubOpen,.gnbSub-link').on('click',function(){
         //$('.gnbSub-cont').removeClass('gnb2depthCurrent');
