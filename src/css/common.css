@@ -86,7 +86,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
                         .sloganText-w:before {display:block; content:''; position:absolute; right:0; top:0; width:20px; height:20px; border:6px solid #cacaca; border-width:6px 6px 0 0;}
                         .sloganText-w:before {right:auto; top:auto; left:0; bottom:0; transform:rotate(180deg);}
                     /* 퀵메뉴 */
-                    .quickMenu-w {display:flex; align-items:center; justify-content:center; position:fixed; left:50%; top:40%; margin-top:-75px; margin-left:-817px; z-index:2; width:167px; height:185px; text-align:left; background-color:#000168; border-radius:30px 0 30px 0;}
+                    .quickMenu-w {display:flex; align-items:center; justify-content:center; position:fixed; left:50%; top:45%; margin-top:-75px; margin-left:-817px; z-index:2; width:167px; height:185px; text-align:left; background-color:#000168; border-radius:30px 0 30px 0;}
                     .quickMenu-w:after {display:block; content:''; width:1px; height:100%; position:absolute; left:30px; top:0; background-color:rgba(255,255,255,.75);}
                         .quickMenu-inner {margin-left:-4px;}
                             .quickMenuList {}
@@ -437,8 +437,8 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
 
 /* footer */
 .footer-w {background-color:#000074;}
-    .footer-inner {max-width:945px; margin:0 auto; position:relative; padding:29px 0 35px 170px; box-sizing:border-box;}
-        .footerLogo {position:absolute; left:30px; top:50%; margin-top:-45px;}
+    .footer-inner {max-width:1634px; margin:0 auto; position:relative; padding:29px 0 35px 387px; box-sizing:border-box;}
+        .footerLogo {position:absolute; left:217px; top:50%; margin-top:-45px;}
             .footerLogo-link {display:block; width:90px;}
         .footerList-w {display:flex; justify-content:flex-start;}
             .footerList-left {}
@@ -508,13 +508,17 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .menuOpen .gnbList-cont {position:static; }
     .menuOpen .gnbSub3depth-w {right:305px; padding:0;}
     .menuOpen .gnbSub3depth-cont {padding-right:30px; font-size:14px;}
-    
+    /* 푸터  */
+    .footer-inner {max-width:945px; padding-left:170px;}
+        .footerLogo {left:0;}
     /* 메인  */
     .manager-w {top:100px;}   
     .content-w-main .contentVisual-w,
     .serviceList-w {padding:0 !important;}
         .serviceList {padding:9% 15px; }
-
+    /* ceo */
+    .ceoInfo-w {left:auto; width:100%;}
+    .ceoPhoto-w {position:relative; left:-30px;}
 
 }
 
