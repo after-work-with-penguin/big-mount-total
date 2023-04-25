@@ -66,28 +66,28 @@ function pcMenuOpen() {
 
 // PC 메뉴 - 1depth
 function pcMenu1depth() {
-    $('.gnb-w .gnbList-link').on('click',function() {
-        $(this).parents('.gnbList-cont').toggleClass('gnb1depthCurrent');
-    });
-
-    // $('.gnb-w .pc-menu-lv1').hover(function() {
-    //     $(this).addClass('gnb1depthCurrent');
-    // }, function() {
-    //     $(this).removeClass('gnb1depthCurrent');
+    // $('.gnb-w .gnbList-link').on('click',function() {
+    //     $(this).parents('.gnbList-cont').toggleClass('gnb1depthCurrent');
     // });
+
+    $('.gnb-w .pc-menu-lv1').hover(function() {
+        $(this).addClass('gnb1depthCurrent');
+    }, function() {
+        $(this).removeClass('gnb1depthCurrent');
+    });
 }
 
 // PC 메뉴 - 2depth
 function pcMenu2depth() {
-    $('.gnb-w .gnbSub-link').on('click',function() {
-        $(this).parents('.gnbSub-cont').toggleClass('gnb2depthCurrent');
-    });
-
-    // $('.gnb-w .pc-menu-lv2 .gnbSub-link').hover(function() {
-    //     $(this).parents('.gnbSub-cont').addClass('gnb2depthCurrent');
-    // }, function() {
-    //     $(this).parents('.gnbSub-cont').removeClass('gnb2depthCurrent');
+    // $('.gnb-w .gnbSub-link').on('click',function() {
+    //     $(this).parents('.gnbSub-cont').toggleClass('gnb2depthCurrent');
     // });
+
+    $('.gnb-w .pc-menu-lv2 .gnbSub-link-w').hover(function() {
+        $(this).parents('.gnbSub-cont').addClass('gnb2depthCurrent');
+    }, function() {
+        $(this).parents('.gnbSub-cont').removeClass('gnb2depthCurrent');
+    });
 }
 
 
