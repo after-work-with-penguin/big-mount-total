@@ -29,7 +29,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
             .gnbList-cont {position:relative; overflow:hidden;}
             .gnb1depthCurrent {overflow:visible;}    
                 .gnb1depthCurrent .gnbList-link {font-weight:700;}
-                .gnbList-link {display:inline-block; padding:0 25px; color:#fff; font-size:20px;}
+                .gnbList-link {display:inline-block; padding:2px 25px; color:#fff; font-size:20px;}
                 .gnbList-link:hover {font-weight:700;}
                 .gnbSub-w {position:absolute; left:50%; top:27px; margin-left:-70px; width:140px; padding:10px 0; box-sizing:border-box; background-color:rgba(255,255,255,.85); border-radius:30px 0 30px 0;}
                     .gnbSub-inner {}
@@ -42,10 +42,11 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .gnbSub-link {position:relative; width:100%;}
     .gnb2depthCurrent .gnbSub-link:after {display:block; content:''; position:Absolute; right:-24px; top:50%; margin-top:-5px; transform:rotate(-180deg); width:10px; height:10px; background-image:url('../imgs/gnbPicker.png'); background-repeat:no-repeat; background-position:center;}
         .gnb2depthCurrent .gnbSub3depth-w {display:block;}
-        .gnbSub3depth-w {display:none; position:absolute; left:163px; top:0; width:305px; padding:10px; box-sizing:border-box; background-color:rgba(255,255,255,.85);}
+        .gnbSub3depth-w {display:none; position:absolute; left:140px;/*163*/ top:0; width:325px; padding-left:23px;}
+        .gnbSub3depth-list { background-color:rgba(255,255,255,.85); padding:10px; box-sizing:border-box;}
             .gnbSub3depth-cont {padding:5px 0; color:#6B6B6B;}
             .gnb3depthCurrent .gnbSub3depth-cont,
-            .gnbSub3depth-cont:hover  {color:#000168; font-weight:700;}
+            .gnbSub3depth-cont:hover {color:#000168; font-weight:700;}
 .menu-trigger {display:none;}
 
 /*.svg-iconHambug {display:inline-block; width:24px; height:19px; background-size:24px auto; background-image: url("data:image/svg+xml,%3C!--%3Fxml version='1.0' %3F--%3E%3Csvg style='color: white' height='32px' id='Layer_1' version='1.1' viewBox='0 0 32 32' width='32px' xml:space='preserve' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cpath d='M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2 s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2 S29.104,22,28,22z' fill='white'%3E%3C/path%3E%3C/svg%3E");}*/
@@ -207,10 +208,10 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
 
 /* 장비임대 사업부 - 건설장비 */
 .tableImage-w {display:flex; justify-content:flex-start; margin-top:70px; width:calc(100% + 50px);}
-    .tableWideType {width:100% !important; max-width:90% !important;}
+    .tableWideType {width:100% !important; max-width:100% !important;}
     .tableImage-cont {padding-right:50px; box-sizing:border-box; width:50%; max-width:740px;}
     .tableImage-cont:first-of-type {max-width:516px;}
-        .tableImage-img {display:inline-block; width:auto; }
+        .tableImage-img {display:inline-block; width:100%; max-width:auto;}
 /* 장비임대 사업부 - 부속장비 */
 .rentalList-w {margin-top:8px;}
     .rentalList-inner {display:flex; justify-content: flex-start; flex-wrap:wrap; width:104.5%;}
@@ -249,6 +250,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
         .imgList-cont33 {width:33.3%;}
         .imgList-cont5 {width:50%;}
         .imgList-cont6 {width:60%;}
+            .imgList-w img {max-width:auto; width:100%;}
 /* 가설재 사업부 */
 .meterialTable-w {margin-top:105px; width:80%; }
     .meterialTable-cont {}
@@ -324,11 +326,11 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .boardBtnList-inner {}
         .boardBtnList {display:flex;}
             .boardBtnList-cont {display:inline-block; padding:0 3px;}
-                .boardBtnList-num {display:inline-block; width:25px; height:25px; line-height:25px; text-align:center; color:#494949;}
+                .boardBtnList-num {display:inline-block; width:25px; height:25px; line-height:25px; text-align:center; color:#494949; font-size:16px; background-color:#fff;}
                 .pagingCurrent .boardBtnList-num {background-color:#00096F; color:#fff;}
     .boardList-w .moduleBtn-w {text-align:right;}          
         .boardList-w .roundBtn {height:45px; line-height:45px; font-size:24px;}
-.boardBtnList-w [class^="arrowBtn-"] {display:inline-block; padding:0 10px; cursor:pointer;}
+.boardBtnList-w [class^="arrowBtn-"] {display:inline-block; padding:0 20px; cursor:pointer;}
 .arrowBtn-next img {transform:rotate(180deg);}
 
 /* 모듈 : 이미지+리스트(리스트 와이드형) */
@@ -750,7 +752,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     /* 환경사업부-수로형 */
     .content-w-envi06 .listRowType .detailList-image-w {width:100%;}
     .content-w-envi06 .listRowType .textNimgText-w {width:100%; border-radius:0 0 36px 36px;}
-    .content-w-envi06 .listRowType .textNimgText-w:after {left:50%; top:0;}
+    .content-w-envi06 .listRowType .textNimgText-w:after {left:50%; top:0; margin-left:-15px;}
     /* 환경사업부-소형소독기 */
     .content-w-envi07 .imgList-cont33,
     .content-w-envi10 .imgList-cont33 {width:50%;}
@@ -777,6 +779,10 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .moduleBtn-inner {}
     .content-w-noticeEnd .moduleBtn-inner .bdlineBtn{margin:20px 10px 0 0;}
     .content-w-noticeEnd .moduleBtn-w {display:block;}
+    /* 모듈공통  */
+    .imgList-cont33 {width:50%;}
+    .imgList-cont6 {width:100%;}
+    .imgList-cont {width:50%;}
 }
 
 /* Mobile 버전 */
