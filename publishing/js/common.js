@@ -17,12 +17,16 @@ function allMenuClose(){
 
 //모바일:전체메뉴-서브열기
 function allMenu1depth(){
-    $('.btnSubOpen01,.gnbList-link').on('click',function(){
-        //$('.gnbList-cont').removeClass('gnb1depthCurrent');
+    $('.btnSubOpen01,.gnbList-link').on('click',function(){  // PC + 모바일
          $(this).parents('.gnbList-cont').toggleClass('gnb1depthCurrent');
     });
 
-    // // pc menu - 1 depth
+    // // 모바일
+    // $('.mGnb-w .btnSubOpen01,.gnbList-link').on('click',function(){
+    //   $(this).parents('.gnbList-cont').toggleClass('gnb1depthCurrent');
+    // });
+
+    // // pc hover
     // $('.gnb-w .gnbList-cont').hover(function() {
     //     $(this).addClass('gnb1depthCurrent');
     // }, function() {
@@ -31,13 +35,18 @@ function allMenu1depth(){
 }
 
 function allMenu2depth(){
-    $('.btnSubOpen,.gnbSub-link').on('click',function(){
-        //$('.gnbSub-cont').removeClass('gnb2depthCurrent');
+    $('.btnSubOpen,.gnbSub-link').on('click',function(){  // PC + 모바일
         $(this).parents('.gnbSub-cont').toggleClass('gnb2depthCurrent');
       });
 
-    // // pc menu - 2 depth
-    // $('.gnb-w .gnbSub-w .gnbSub-link').hover(function() {
+
+    // // 모바일
+    // $('.mGnb-w .btnSubOpen,.gnbSub-link').on('click',function(){
+    //   $(this).parents('.gnbSub-cont').toggleClass('gnb2depthCurrent');
+    // });
+
+    // // pc hover
+    // $('.gnb-w .gnbSub-w .gnbSub-link-w').hover(function() {
     //     $(this).parents('.gnbSub-cont').addClass('gnb2depthCurrent');
     // }, function() {
     //     $(this).parents('.gnbSub-cont').removeClass('gnb2depthCurrent');
