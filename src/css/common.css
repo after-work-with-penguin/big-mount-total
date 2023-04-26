@@ -31,19 +31,25 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
                 .gnb1depthCurrent .gnbList-link {font-weight:700;}
                 .gnbList-link {display:inline-block; padding:2px 25px; color:#fff; font-size:20px;}
                 .gnbList-link:hover {font-weight:700;}
-                .gnbSub-w {position:absolute; left:50%; top:27px; margin-left:-70px; width:140px; padding:10px 0; box-sizing:border-box; background-color:rgba(255,255,255,.85); border-radius:30px 0 30px 0;}
+                .gnbSub-w {display:none; position:absolute; left:50%; top:28px; margin-left:-70px; width:140px; padding:10px 0; box-sizing:border-box; background-color:rgba(255,255,255,.85); border-radius:30px 0 30px 0;}
+                .gnb1depthCurrent .gnbSub-w {display:block;}
                     .gnbSub-inner {}
-                        .gnbSub-cont {}
+                        .gnbSub-cont {position:relative;}
                             .gnbSub-link {padding:5px 10px; color: #000168; font-size:16px; font-weight:400;}
                             .gnbSub-link:hover {font-weight:700;}
                             .gnb2depthCurrent .gnbSub-link {font-weight:700; color:#000168;}
+                }
+                .gnb-w .gnbSub-cont:first-of-type .gnbSub3depth-list {margin-top:0;}
+                .gnb-w .gnbList-cont:nth-of-type(2) .gnbSub-cont:nth-of-type(5) {position:static;}
+                .gnb-w .gnbList-cont:nth-of-type(2) .gnbSub-cont:nth-of-type(5) .gnbSub3depth-w {top:11px;}
+
 /*  header */
 .gnbSub-cont {}
     .gnbSub-link {position:relative; width:100%;}
     .gnb2depthCurrent .gnbSub-link:after {display:block; content:''; position:Absolute; right:-24px; top:50%; margin-top:-5px; transform:rotate(-180deg); width:10px; height:10px; background-image:url('../imgs/gnbPicker.png'); background-repeat:no-repeat; background-position:center;}
-        .gnb2depthCurrent .gnbSub3depth-w {display:block;}
         .gnbSub3depth-w {display:none; position:absolute; left:140px;/*163*/ top:0; width:325px; padding-left:23px;}
-        .gnbSub3depth-list { background-color:rgba(255,255,255,.85); padding:10px; box-sizing:border-box;}
+        .gnb2depthCurrent .gnbSub3depth-w {display:block;}
+        .gnbSub3depth-list {margin-top:-10px; background-color:rgba(255,255,255,.85); padding:10px; box-sizing:border-box;}
             .gnbSub3depth-cont {padding:5px 0; color:#6B6B6B;}
             .gnb3depthCurrent .gnbSub3depth-cont,
             .gnbSub3depth-cont:hover {color:#000168; font-weight:700;}
@@ -351,14 +357,14 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
 .content-w-orgChart .contentVisual-img-w,
 .content-w-directions .contentVisual-img-w,
 .content-w-rental01 .contentVisual-img-w,
-.content-w-paint02  .contentVisual-img-w,
 .content-w-envi01 .contentVisual-img-w,
 .content-w-contact .contentVisual-img-w,
 .content-w-contactEnd .contentVisual-img-w,
 .content-w-contactPw .contentVisual-img-w,
 .content-w-notice .contentVisual-img-w,
 .content-w-noticeEnd .contentVisual-img-w,
-.content-w-main .contentVisual-img-w {min-height:600px; max-height:600px;}
+.content-w-main .contentVisual-img-w,
+.content-w-paint01 .contentVisual-img-w {min-height:600px; max-height:600px;}
 .content-w-contain02 .tableImage-cont:first-of-type {max-width:100%; width:100%;}
 /* 컨테이너-투명돔하우스 */
 .content-w-contain10 .contentArticle-w  {position:relative;}
@@ -492,6 +498,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .gnb-logo {max-width:185px; top:21px; left:32px;}
     .gnb-logo-link {left:0;}
     [class^="content-w-"] {padding-left:0;}
+    .gnb1depthCurrent .gnb2depthCurrent .gnbSub3depth-list {background:none;}
     /* 전체메뉴  */
     .menuOpen {position:fixed; left:0; top:0; z-index:9; width:100%; height:435px; padding:0; background-color:#fff;}
     .menuOpen .gnbList-inner {position:absolute; right:0; top:0; display:block; width:306px; height:100%; padding:50px 0 0; background:#EBEBEB;}
@@ -561,10 +568,10 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
                             .mGnb-w .gnbSub-link {padding:20px 12px; background-color:#EFEFEF; width:100%; text-align:center; box-sizing:border-box;}
                                 .gnbSub-link-w .btnSubOpen {height:59px; background-color:#efefef;}
                                     .iconArrow2 {background-image:url('../imgs/m/iconArrow-bl.png');}
+                    .mGnb-w .gnbSub3depth-w {display:none; position:static; left:0; top:0; background:none; }       
                     .mGnb-w .gnb1depthCurrent .gnbSub-w,
                     .mGnb-w .gnb2depthCurrent .gnbSub3depth-w {display:block; padding:0; text-align:center; width:100%;}
-                        .mGnb-w .gnbSub3depth-w {display:none; position:static; left:0; top:0; background:none; }
-                            .mGnb-w .gnbSub3depth-cont {padding:15px 12px; display:block; box-sizing:border-box; width:100%;}
+                        .mGnb-w .gnbSub3depth-cont {padding:15px 12px; display:block; box-sizing:border-box; width:100%;}
             .btnCloseX {display:block; position:absolute; right:0; top:36px; padding:20px; cursor:pointer;}
                 .iconCloseX {display:block; width:16px; height:16px; background-size:16px; background-image:url('../imgs/m/closeX.png'); background-repeat:no-repeat;}
      /* 모바일 헤더 */
