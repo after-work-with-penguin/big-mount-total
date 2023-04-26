@@ -17,7 +17,7 @@ function initMenu_pc() {
 
     // $('.rightMenuSub-w').hide();
 
-    // pcMenuOpen();
+    pcMenuOpen();
     pcMenu1depth();
     pcMenu2depth();
 }
