@@ -103,7 +103,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
                 .contSection-right {}
                     .contentVisual-img-w {position:relative; padding-top:450px; height:0; overflow:hidden; border-radius:80px 0 0 0; }
                         .contentVisual-img-inner {}
-                        .contentVisual-img {position:absolute; left:50%; top:0; transform:translateX(-50%); min-height:400px; max-width:none;} 
+                        .contentVisual-img {position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); min-height:400px; max-width:none;} 
                         .sectionTitle {position:absolute; left:5%; bottom:10%; display:inline-block; text-transform:uppercase; font-size:48px; color:#fff; font-weight:400; letter-spacing:-1.75px;}
                             .sectionTitle-bg {display:inline-block; padding:0 10px; font-weight:700; background-color:#000168;}
                             .sectionTitle-eng{display:inline-block;}
@@ -305,7 +305,8 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
         .tubeInfo-img-w {margin:60px auto 0; max-width:95%; display:flex; justify-content: center; align-items: center;}
         .tubeInfo-img-w .arrow {display:block; width:144px; height:75px;}
 .content-w-envi04 .textNimgList-inner:first-of-type .detailList-image-w {padding:0;}
-
+/* 환경사업부 - 드럼스크린  */
+.content-w-envi11 .detailList-title-w {top:-18px;}
 /* 환경사업부 - 소독기부품 */
 .lampList-w {margin-top:70px; text-align:center;}
     .content-w-envi09 .detailList-w {margin:40px auto 0; position:relative; left:-5px; width:calc(100% - 30px);}
@@ -539,7 +540,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     /* 메인 */
     .serviceList-inner {padding:0 5%; width:100%; max-width:100%;}
     .serviceList:after  {display:none;}
-    .contentArticle-w {max-width:100%; width:100%; padding:8% 5%;}
+    .contentArticle-w {max-width:100%; width:100%; padding:8% 5% !important;}
     .serviceList {flex-wrap:wrap; justify-content: center; max-width:805px;}
         .serviceList-cont {padding-bottom:20px; width:220px;}
         .serviceList-text {bottom:13%;}
@@ -709,17 +710,9 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     /* 게시판  */
     .boardList-w td span {font-size:14px;}
 
-}
-
-/* Mobile 버전 */
-@media screen and (max-width:600px) {
-
-    .contentVisual-img-w {padding-top:31.5% !important; border-radius:40px 0 0 0;}
-    .content-w-main .contentVisual-img-w {padding-top:43% !important; }
-    .sectionTitle,
-    .sectionTitle-eng {font-size:28px;}
-    .sectionTitle-bg {padding:2px 10px;}
-
+    .contentVisual-img-w {padding-top:36.5%; border-radius:40px 0 0 0;}
+    .contentVisual-img-w .contentVisual-img {width:120%; min-height:auto;}
+    .content-w-main .contentVisual-img-w {padding-top:42% !important; }
     /* 컨테이너사업-운용대수현황 */
     .content-w-contain01 .contentVisual-img-w,
     .content-w-ceo .contentVisual-img-w,
@@ -735,7 +728,32 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .content-w-noticeEnd .contentVisual-img-w,
     .content-w-main .contentVisual-img-w,
     .content-w-paint01 .contentVisual-img-w {padding-top:43%; }
-        .contentVisual-img {width:100% !important; min-height:auto !important;}
+
+    .content-w-contain01 .contentVisual-img,
+    .content-w-ceo .contentVisual-img,
+    .content-w-history .contentVisual-img,
+    .content-w-orgChart .contentVisual-img,
+    .content-w-directions .contentVisual-img,
+    .content-w-rental01 .contentVisual-img,
+    .content-w-envi01 .contentVisual-img,
+    .content-w-contact .contentVisual-img,
+    .content-w-contactEnd .contentVisual-img,
+    .content-w-contactPw .contentVisual-img,
+    .content-w-notice .contentVisual-img,
+    .content-w-noticeEnd .contentVisual-img,
+    .content-w-main .contentVisual-img,
+    .content-w-paint01 .contentVisual-img {width:100% !important; min-height:auto !important;}
+
+}
+
+/* Mobile 버전 */
+@media screen and (max-width:600px) {
+
+   
+    .sectionTitle,
+    .sectionTitle-eng {font-size:28px;}
+    .sectionTitle-bg {padding:2px 10px;}
+    
 
     /* 메인 */
     .serviceList-text {font-size:15px; line-height:20px;}
@@ -766,7 +784,8 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     /* 장비사업부-부속장비현황 */
     .rentalList-w {margin-top:20px;}
     .rentalList-inner {max-width:calc(100% + 15px); width:calc(100% + 15px);}
-    .rentalList-cont {padding:15px 15px 0 0;}
+    .rentalList-cont {padding:15px 15px 0 0; width:50%;}
+    .rentalList-cont:last-of-type {width:100%;}
     /* 컨테이너사업-리조트(스크린골프/노래방) */
     .content-w-contain08 .imgList-cont25 {width:50%;}
     .content-w-contain10 .contentArticle-w:before {width:200px;}
@@ -777,9 +796,11 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
    .detailList-w {margin-top:80px;}
     /* 환경사업부 */
     .content-w-envi01 .imgList-cont33 {width:50%;}
+    .imgList-cont5 {width:100%;}
+    .imgList-cont33 {width:50%;}
     /* 환경사업부-관로형 튜브식 소독기 */
-   .textNimgList-w {display:block; max-width:calc(100% + 20px); width:calc(100% + 20px); margin-top:80px;}
-    .textNimgList-inner {width:100%; max-width:100%; margin-top:40px;}
+   .textNimgList-w {display:block; margin-top:80px; width:100%; max-width:100%;}
+    .textNimgList-inner {width:100%; max-width:100%; padding-right:0 !important; margin-top:40px;}
     .textNimgList-inner:first-of-type {margin-top:0;}
     /* 환경사업부-수로형 */
     .content-w-envi06 .listRowType .detailList-image-w {width:100%;}
@@ -787,7 +808,8 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .content-w-envi06 .listRowType .textNimgText-w:after {left:50%; top:0; margin-left:-15px;}
     /* 환경사업부-소형소독기 */
     .content-w-envi07 .imgList-cont33,
-    .content-w-envi10 .imgList-cont33 {width:50%;}
+    .content-w-envi10 .imgList-cont33,
+    .imgList-cont33 {width:50%;}
     .detailList-wrap {padding-top:20px;}
     .dbdottDetail-inner {padding-top:9%;}
     /* 견적문의 */
