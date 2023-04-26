@@ -33,17 +33,21 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
                 .gnbList-link:hover {font-weight:700;}
                 .gnbSub-w {position:absolute; left:50%; top:27px; margin-left:-70px; width:140px; padding:10px 0; box-sizing:border-box; background-color:rgba(255,255,255,.85); border-radius:30px 0 30px 0;}
                     .gnbSub-inner {}
-                        .gnbSub-cont {}
+                        .gnbSub-cont {position:relative;}
                             .gnbSub-link {padding:5px 10px; color: #000168; font-size:16px; font-weight:400;}
                             .gnbSub-link:hover {font-weight:700;}
                             .gnb2depthCurrent .gnbSub-link {font-weight:700; color:#000168;}
+                .gnb-w .gnbSub-cont:first-of-type .gnbSub3depth-list {margin-top:0;}
+                .gnb-w .gnbList-cont:nth-of-type(2) .gnbSub-cont:nth-of-type(5) {position:static;}
+                    .gnb-w .gnbList-cont:nth-of-type(2) .gnbSub-cont:nth-of-type(5) .gnbSub3depth-w {top:11px;}
+
 /*  header */
 .gnbSub-cont {}
     .gnbSub-link {position:relative; width:100%;}
     .gnb2depthCurrent .gnbSub-link:after {display:block; content:''; position:Absolute; right:-24px; top:50%; margin-top:-5px; transform:rotate(-180deg); width:10px; height:10px; background-image:url('../imgs/gnbPicker.png'); background-repeat:no-repeat; background-position:center;}
         .gnb2depthCurrent .gnbSub3depth-w {display:block;}
         .gnbSub3depth-w {display:none; position:absolute; left:140px;/*163*/ top:0; width:325px; padding-left:23px;}
-        .gnbSub3depth-list { background-color:rgba(255,255,255,.85); padding:10px; box-sizing:border-box;}
+        .gnbSub3depth-list {margin-top:-10px; background-color:rgba(255,255,255,.85); padding:10px; box-sizing:border-box;}
             .gnbSub3depth-cont {padding:5px 0; color:#6B6B6B;}
             .gnb3depthCurrent .gnbSub3depth-cont,
             .gnbSub3depth-cont:hover {color:#000168; font-weight:700;}
