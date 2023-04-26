@@ -101,8 +101,9 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
                                 .quickMenuList-link:hover:after,
                                 .quickMenuCurrent .quickMenuList-link:after {display:block; content:''; position:absolute; left:-1px; top:50%; margin-top:-5px; width:3px; height:10px; background-color:#fff; }
                 .contSection-right {}
-                    .contentVisual-img-w {position:relative; min-height:450px; max-height:450px; overflow:hidden;}
-                        .contentVisual-img { min-height:400px; max-width:none;} 
+                    .contentVisual-img-w {position:relative; padding-top:450px; height:0; overflow:hidden; border-radius:80px 0 0 0; }
+                        .contentVisual-img-inner {}
+                        .contentVisual-img {position:absolute; left:50%; top:0; transform:translateX(-50%); min-height:400px; max-width:none;} 
                         .sectionTitle {position:absolute; left:5%; bottom:10%; display:inline-block; text-transform:uppercase; font-size:48px; color:#fff; font-weight:400; letter-spacing:-1.75px;}
                             .sectionTitle-bg {display:inline-block; padding:0 10px; font-weight:700; background-color:#000168;}
                             .sectionTitle-eng{display:inline-block;}
@@ -364,7 +365,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
 .content-w-notice .contentVisual-img-w,
 .content-w-noticeEnd .contentVisual-img-w,
 .content-w-main .contentVisual-img-w,
-.content-w-paint01 .contentVisual-img-w {min-height:600px; max-height:600px;}
+.content-w-paint01 .contentVisual-img-w {padding-top:600px; }
 .content-w-contain02 .tableImage-cont:first-of-type {max-width:100%; width:100%;}
 /* 컨테이너-투명돔하우스 */
 .content-w-contain10 .contentArticle-w  {position:relative;}
@@ -662,6 +663,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
            .serviceList-cont {padding-bottom:20px; width:33.3%;}
             .serviceList-text {font-size:18px;}
     .contentVisual-img-w .slick-dots button {width:12px; height:12px;}
+    .contentVisual-img-w {padding-top:43% !important; border-radius:40px 0 0 0;}
     .footer-inner {padding:28px 20px 37px;}
     .contentArticle-w {padding:50px 20px;}
     .sectionTitle {left:20px;}

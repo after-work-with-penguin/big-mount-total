@@ -9,7 +9,7 @@
         <!-- 우측 content-->
         <div class="contSection-right">
             <div class="contentVisual-img-w">
-                <img src="./imgs/cont02-0501-top.png" alt="" class="contentVisual-img">
+                <img src="./imgs/cont02-0501-top2.png" alt="" class="contentVisual-img">
                 <h3 class="sectionTitle">
                     <strong class="sectionTitle-bg">환경 사업부 </strong>
                     <span class="sectionTitle-eng">Environmental</span>
