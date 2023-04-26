@@ -31,12 +31,14 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
                 .gnb1depthCurrent .gnbList-link {font-weight:700;}
                 .gnbList-link {display:inline-block; padding:2px 25px; color:#fff; font-size:20px;}
                 .gnbList-link:hover {font-weight:700;}
-                .gnbSub-w {position:absolute; left:50%; top:27px; margin-left:-70px; width:140px; padding:10px 0; box-sizing:border-box; background-color:rgba(255,255,255,.85); border-radius:30px 0 30px 0;}
+                .gnbSub-w {display:none; position:absolute; left:50%; top:28px; margin-left:-70px; width:140px; padding:10px 0; box-sizing:border-box; background-color:rgba(255,255,255,.85); border-radius:30px 0 30px 0;}
+                .gnb1depthCurrent .gnbSub-w {display:block;}
                     .gnbSub-inner {}
                         .gnbSub-cont {position:relative;}
                             .gnbSub-link {padding:5px 10px; color: #000168; font-size:16px; font-weight:400;}
                             .gnbSub-link:hover {font-weight:700;}
                             .gnb2depthCurrent .gnbSub-link {font-weight:700; color:#000168;}
+                }
                 .gnb-w .gnbSub-cont:first-of-type .gnbSub3depth-list {margin-top:0;}
                 .gnb-w .gnbList-cont:nth-of-type(2) .gnbSub-cont:nth-of-type(5) {position:static;}
                 .gnb-w .gnbList-cont:nth-of-type(2) .gnbSub-cont:nth-of-type(5) .gnbSub3depth-w {top:11px;}
