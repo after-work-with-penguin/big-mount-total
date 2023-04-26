@@ -365,7 +365,8 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
 .content-w-notice .contentVisual-img-w,
 .content-w-noticeEnd .contentVisual-img-w,
 .content-w-main .contentVisual-img-w,
-.content-w-paint01 .contentVisual-img-w {padding-top:600px; }
+.content-w-paint01 .contentVisual-img-w,
+.content-w-paint02 .contentVisual-img-w {padding-top:600px; }
 .content-w-contain02 .tableImage-cont:first-of-type {max-width:100%; width:100%;}
 /* 컨테이너-투명돔하우스 */
 .content-w-contain10 .contentArticle-w  {position:relative;}
@@ -664,6 +665,8 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
             .serviceList-text {font-size:18px;}
     .contentVisual-img-w .slick-dots button {width:12px; height:12px;}
     .contentVisual-img-w {padding-top:43% !important; border-radius:40px 0 0 0;}
+    .content-w-main .contentVisual-img-w {padding-top:43% !important; }
+        .contentVisual-img {width:100% !important; min-height:auto !important;}
     .footer-inner {padding:28px 20px 37px;}
     .contentArticle-w {padding:50px 20px;}
     .sectionTitle {left:20px;}
@@ -720,7 +723,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .contentArticle-w {padding:50px 20px;}
     .contentVisual-img-w,
     .contentVisual-img {min-height:auto !important; max-height:none; width:100%;}
-
+    /*.contentVisual-img-w {padding-top:43% !important; }*/
     /* 연혁 */
     .historyInfoText {font-size:18px; line-height:30px;}
     /* 조직도 */
