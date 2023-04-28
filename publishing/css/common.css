@@ -229,13 +229,17 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
         .rentalList-w .textNimgList-inner:last-of-type {min-width:60%; max-width:60%;}
         .rentalList-w .textNimgList-cont {border-radius:0 0 36px 36px; background-color:transparent;}
             .rentalList-w .textNimgList-box {width:50%; overflow:hidden;}
-                .textNimgText-subTitle {display:block; text-align:center; font-size:18px; color:#000168;}
-                .textNimgText-subText {display:block; padding:5px 0 10px; text-align:Center; font-size:14px; color:#000168;}
+                .textNimgText-subTitle {display:block; text-align:center; font-size:20px; color:#000168;}
+                .textNimgText-subText {display:block; padding:5px 0 10px; text-align:Center; font-size:14px; color:#000168; word-break: keep-all;}
                 .rentalList-w .detailList-image-w,
-                .rentalList-w .textNimgList-box .detailList-image-w {height:336px; justify-content: center; background-color:#fff;}
-                .rentalList-w .textNimgList-box:last-of-type .detailList-image-w {padding:35px 10px;}
-                    .rentalList-w .textNimgList-box:last-of-type img {margin:5px 0;}
-                    .rentalList-w .textNimgText-w {height:calc(100% - 336px); padding-bottom:10px; background-color:#E7E7ED; border-radius:0 0 36px 36px;}
+                .rentalList-w .textNimgList-box .detailList-image-w { padding:0 20px; height:374px; justify-content: center; background-color:#fff;}
+                .rentalList-w .textNimgList-box:last-of-type .detailList-image-w {padding:35px 20px;}
+                .rentalList-w .textNimgList-box .detailList-image-w img {width:100%;}
+                    .rentalList-w .textNimgList-box:last-of-type img {margin:10px 0 0 0;}
+                    .rentalList-w .textNimgList-box:last-of-type img:first-of-type {margin-top:0;}
+                    .rentalList-w .textNimgText-w {height:calc(100% - 374px); padding-bottom:10px; background-color:#E7E7ED; border-radius:0 0 36px 36px;}
+                    .rentalList-w .textNimgList-inner .textNimgText-inner {max-width:200px; box-sizing:border-box;}
+                    .rentalList-w .textNimgList-inner:first-of-type .textNimgText-inner {max-width:230px;}
                     .rentalList-w .textNimgList-box .textNimgText-w {border-radius:0 0 0 36px;}
                     .rentalList-w .textNimgList-box:last-of-type .textNimgText-w {border-radius:0 0 36px 0;}
 /* 도장 사업부 - 현황 */
@@ -645,6 +649,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .imgList-inner {max-width:calc(100% + 30px); width:calc(100% + 30px);}
     .rentalList-cont,
     [class^="imgList-cont"] {padding:30px 30px 0 0;}
+    .rentalList-w .textNimgList-inner:first-of-type .textNimgText-inner {padding-left:0 !important;}
     /* 컨테이너사업-사업부 */
     .dbdottDetail-w, .detailList-w {width:100%;}
     /* 컨테이너-일반컨테이너 */
@@ -716,6 +721,8 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
         .rentalList-w .textNimgList-inner:last-of-type .detailList-image-w {height:332px;}
         .rentalList-w .textNimgText-w {height:100%; padding-bottom:30px;}
         .rentalList-w .textNimgList-inner:last-of-type .textNimgText-w {height:calc(100% - 332px);}   
+        .rentalList-w .textNimgList-inner .textNimgText-inner {padding:0 4% 0 8% !important; max-width:314px;}
+        .textNimgList-box:last-of-type .textNimgText-inner {max-width:185px; padding:0 !important;}
     /* 컨테이너사업부-스크린골프/노래방 */
     .historyTitle {font-size:20px; padding-left:18px;}
     /* 컨테이너사업부-투명돔하우스 */
