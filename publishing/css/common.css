@@ -224,8 +224,20 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .rentalList-inner {display:flex; justify-content: flex-start; flex-wrap:wrap; width:104.5%;}
         .rentalList-cont {width:33.3%; padding:55px 4.5% 0 0; box-sizing:border-box;}
         .colspan2 {width:66.6%;}
-        .rentalList-cont:nth-of-type(6) {width:41%;}
-        .rentalList-cont:last-of-type {width:59%;}
+        .rentalList-w .textNimgList-w {width:104.5%;}
+        .rentalList-w .textNimgList-inner {padding-right:4.5%; min-width:40%; max-width:35%; widht:35px;}
+        .rentalList-w .textNimgList-inner:last-of-type {min-width:60%; max-width:60%;}
+        .rentalList-w .textNimgList-cont {border-radius:0 0 36px 36px; background-color:transparent;}
+            .rentalList-w .textNimgList-box {width:50%; overflow:hidden;}
+                .textNimgText-subTitle {display:block; text-align:center; font-size:18px; color:#000168;}
+                .textNimgText-subText {display:block; padding:5px 0 10px; text-align:Center; font-size:14px; color:#000168;}
+                .rentalList-w .detailList-image-w,
+                .rentalList-w .textNimgList-box .detailList-image-w {height:336px; justify-content: center; background-color:#fff;}
+                .rentalList-w .textNimgList-box:last-of-type .detailList-image-w {padding:35px 10px;}
+                    .rentalList-w .textNimgList-box:last-of-type img {margin:5px 0;}
+                    .rentalList-w .textNimgText-w {height:calc(100% - 336px); padding-bottom:10px; background-color:#E7E7ED; border-radius:0 0 36px 36px;}
+                    .rentalList-w .textNimgList-box .textNimgText-w {border-radius:0 0 0 36px;}
+                    .rentalList-w .textNimgList-box:last-of-type .textNimgText-w {border-radius:0 0 36px 0;}
 /* 도장 사업부 - 현황 */
 .paintList-w {padding-top:50px; width:100%;}
     .paintList-inner {display:flex; justify-content:left; flex-wrap:wrap; width:100%;}
@@ -321,7 +333,7 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .textNimgList-inner {display:flex; flex-wrap:wrap;  max-width:50%; min-width:50%; padding-right:50px; box-sizing:border-box; }
         .textNimgList-cont {display:flex; flex-wrap:wrap; width:100%; position:relative; margin-top:23px; height:100%; background-color:#fff; border-top:2px solid #000168; border-radius:0 0 36px 36px;}
             .textNimgList-cont .detailList-title {position:relative; z-index:1; height:38px; border-radius:20px; line-height:38px; font-size:24px;}
-            .detailList-image-w {text-align:center; width:100%; padding:0 10px; box-sizing:border-box; display:flex; align-items: center;}
+            .detailList-image-w {text-align:center; width:100%; padding:0 10px; box-sizing:border-box; display:flex; flex-wrap:wrap; align-items: center;}
                 .textNimgList-cont img {margin:45px auto;}
         .splitRow2 {height:auto;}
         .splitRow2 + .splitRow2 {margin-top:45px;}
@@ -697,6 +709,13 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .imgList-inner {padding-top:30px;}
     .rentalList-inner, .imgList-inner {max-width:calc(100% + 15px); width:calc(100% + 15px);}
     .rentalList-cont, [class^="imgList-cont"] {padding:15px 15px 0 0;}
+    .rentalList-w .textNimgList-w {display:block;}
+        .rentalList-w .textNimgList-inner,
+        .rentalList-w .textNimgList-inner:last-of-type {max-width:100%; width:100%; min-width:100%;}
+        .textNimgList-inner + .textNimgList-inner {margin-top:30px;}
+        .rentalList-w .textNimgList-inner:last-of-type .detailList-image-w {height:332px;}
+        .rentalList-w .textNimgText-w {height:100%; padding-bottom:30px;}
+        .rentalList-w .textNimgList-inner:last-of-type .textNimgText-w {height:calc(100% - 332px);}   
     /* 컨테이너사업부-스크린골프/노래방 */
     .historyTitle {font-size:20px; padding-left:18px;}
     /* 컨테이너사업부-투명돔하우스 */
@@ -791,6 +810,8 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
     .colspan2 {width:100%;}
     .rentalList-cont:nth-of-type(6) {width:65%; margin:0 auto;}
     .rentalList-cont:last-of-type {width:100%;}
+    .rentalList-w .textNimgList-inner:last-of-type .detailList-image-w {height:300px;}
+     .rentalList-w .textNimgList-inner:last-of-type .textNimgText-w {height:calc(100% - 300px);}   
     /* 컨테이너사업-리조트(스크린골프/노래방) */
     .content-w-contain08 .imgList-cont25 {width:50%;}
     .content-w-contain10 .contentArticle-w:before {width:200px;}
