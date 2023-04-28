@@ -193,7 +193,7 @@ require_once('head.php');
             <h1 class="mheaderLogo">
                 <a href="./index.php" class="mheaderLogo-link"><img src="./imgs/m/mheaderLogo.png" alt="대신토탈"></a>
             </h1>
-            <button type="button" class="stepPrev">
+            <button type="button" class="stepPrev" onclick="history.back();">
                 <span class="iconPrevArrow"><img src="./imgs/m/iconArrowPrev.png" alt="이전"></span>
             </button>
             <!--

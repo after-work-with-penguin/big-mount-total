@@ -9,7 +9,7 @@
         <!-- 우측 content-->
         <div class="contSection-right">
             <div class="contentVisual-img-w">
-                <img src="./imgs/cont02-0201-top.png" alt="" class="contentVisual-img">
+                <img src="./imgs/cont02-0203-top.png" alt="" class="contentVisual-img">
                 <h3 class="sectionTitle">
                     <strong class="sectionTitle-bg">컨테이너사업</strong>
                     <span class="sectionTitle-eng">Container</span>

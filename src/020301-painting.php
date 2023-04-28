@@ -22,6 +22,7 @@
             <div class="contentArticle-w">
                 <h4 class="contentTitle">도장사업부 현황</h4>
                 <div class="paintList-w">
+                    <img src="./imgs/paint00.png" alt="도장사업부현황 이미지">
                     <!--
                     <ul class="paintList-inner">
                         <li class="paintList-cont"><img src="./imgs/paint01.png" alt="최신 자동쇼트 시설 보유"></li>

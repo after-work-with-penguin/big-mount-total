@@ -17,7 +17,7 @@
                     <a href="javascript: void(0);" onclick="history.back();" class="quickMenuList-link">Back</a>
                 </li>
                 <li class="quickMenuList-cont">
-                    <a href="#content-main" class="quickMenuList-link">Front</a>
+                    <a href="#content-main" class="quickMenuList-link">Top</a>
                 </li>
                 <li class="quickMenuList-cont">
                     <a href="./0301-contact-us.php" class="quickMenuList-link">Contact Us</a>
