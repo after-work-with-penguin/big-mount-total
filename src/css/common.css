@@ -269,12 +269,12 @@ select, input[type="text"], input[type="password"], input[type="number"], input[
 .imgList-w {}
     .imgList-inner {display:flex; flex-wrap:wrap; width:104.5%; padding-top:10px;}
         [class^="imgList-cont"] { padding:4.5% 4.5% 0 0; box-sizing:border-box;}
-        .imgList-cont {width:40%;}
+        .imgList-cont {width:38%;}
         .imgList-cont25 {width:25%;}
         .imgList-cont33 {width:25%;}
         .imgList-cont33 {width:33.3%;}
         .imgList-cont5 {width:50%;}
-        .imgList-cont6 {width:60%;}
+        .imgList-cont6 {width:62%;}
             .imgList-w img {max-width:auto; width:100%;}
 /* 가설재 사업부 */
 .meterialTable-w {margin-top:105px; width:80%; }
