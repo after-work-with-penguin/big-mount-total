@@ -209,6 +209,6 @@ function isNumeric(num, opt) {
     }
 }
 
-function viewMap() {
-    window.open('http://kko.to/NY3fIrye3p', '', '_blank');    
+function openMap() {
+    window.open('http://kko.to/ZBEShTVcBs', '', '_blank');    
 }
