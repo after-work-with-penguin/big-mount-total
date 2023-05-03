@@ -2,7 +2,7 @@
 require_once('head.php');
 ?>
 
-<body >
+<body oncontextmenu="return false;">
     
 <div class="commonGnb-w">
     <div class="gnb-w">
