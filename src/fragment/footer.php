@@ -9,8 +9,8 @@
         </h3>
         <div class="footerList-w">
             <ul class="footerList-left">
-                <li class="footerList-inner">
-                    <span class="icon-spot"><img src="./imgs/icon_footerSpot.png" alt=""></span>충청남도 서산시 대산읍 평신1로 531-44
+                <li class="footerList-inner" onclick="viewMap()" style="cursor: pointer;">
+                    <span class="icon-spot"><img src="./imgs/icon_footerSpot.png" alt="address"></span>충청남도 서산시 대산읍 평신1로 531-44
                 </li>
                 <li class="footerList-inner2">사업자등록번호 316-81-21855</li>
                 <li class="footerList-inner2">대표이사 <strong>최태환</strong></li>

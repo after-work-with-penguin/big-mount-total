@@ -208,3 +208,7 @@ function isNumeric(num, opt) {
         return false;
     }
 }
+
+function viewMap() {
+    window.open('http://kko.to/NY3fIrye3p', '', '_blank');    
+}
