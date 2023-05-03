@@ -1,4 +1,7 @@
-<?php require_once('./fragment/header.php'); ?>
+<?php 
+require_once('./fragment/header.php'); 
+$PAGE_TYPE = 'material';
+?>
 
 <!-- contents -->
 <div class="content-w-paint02" id="content-main"><!-- 페이지 속성 분기 "content-w-aaa" -->

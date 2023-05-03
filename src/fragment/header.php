@@ -1,5 +1,6 @@
 <?php
 require_once('head.php');
+$PAGE_TYPE = 'common';
 ?>
 
 <body oncontextmenu="return false;">

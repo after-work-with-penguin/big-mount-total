@@ -2,6 +2,20 @@
 </div> <!-- .content-wrap -->
 
 <!-- 공통푸터 -->
+<?php
+//  (default) $PAGE_TYPE == 'common'
+$footer_tel = '041-663-7332';
+$footer_fax = '041-663-7331';
+
+if($PAGE_TYPE == 'material') {
+    $footer_tel = '041-669-7332';
+    $footer_fax = '041-669-7335';
+} else if($PAGE_TYPE == 'environment') {
+    $footer_tel = '010-3235-9372';
+    // $footer_fax = '041-663-7331';
+}
+
+?>
 <div class="footer-w">
     <div class="footer-inner">
         <h3 class="footerLogo">
@@ -17,8 +31,8 @@
                 <li class="footerList-inner"><strong>홈페이지</strong> : www.대산토탈.com</li>
             </ul>
             <ul class="footerList-right">
-                <li class="footerList-inner2"><strong>TEL</strong> : 041-663-7332</li>
-                <li class="footerList-inner2"><strong>FAX</strong> : 041-663-7331</li>
+                <li class="footerList-inner2"><strong>TEL</strong> : <?php echo $footer_tel ?></li>
+                <li class="footerList-inner2"><strong>FAX</strong> : <?php echo $footer_fax ?></li>
                 <li class="footerList-inner"><strong>E-MAIL</strong> : daesantotal@daesantotal.com</li>
             </ul>
         </div>
