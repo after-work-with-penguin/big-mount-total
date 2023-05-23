@@ -10,7 +10,7 @@
         <div class="contSection-right">
             <div class="contentVisual-img-w" id="content-image-slide">
                 <div class="contentVisual-img-inner">
-                    <img src="./imgs/cont01-02-top.png" alt="" class="contentVisual-img">
+                    <img src="./imgs/main-main.png" alt="" class="contentVisual-img">
                 </div>
                 <!-- <div class="contentVisual-img-inner">
                     <img src="./imgs/cont01-02-top.png" alt="" class="contentVisual-img">
