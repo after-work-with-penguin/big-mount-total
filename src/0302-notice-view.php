@@ -82,10 +82,12 @@ if ($notice_count <= 0) {
                 </div>
                 <div class="moduleBtn-w">
                     <button type="button" class="roundBtn" onclick="moveNoticeList()">목록 보기</button>
+<?php if($isLogin) { ?>
                     <div class="moduleBtn-inner">
                         <button type="button" class="bdlineBtn" onclick="editNotice(<?php echo $notice_seq ?>);">수정하기</button>
                         <button type="button" class="bdlineBtn" onclick="deleteNotice(<?php echo $notice_seq ?>);">삭제하기</button>
                     </div>
+<?php } ?>               
                 </div>
             </div>
         </div>
